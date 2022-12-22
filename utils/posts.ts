@@ -1,4 +1,5 @@
 import { extract } from "std/encoding/front_matter.ts";
+import { readEstimate } from "./readEstimate.ts";
 
 export interface Post {
   id: string;
@@ -9,7 +10,8 @@ export interface Post {
   tags: string[];
   hero: { src: string; alt?: string };
   summary: string;
-  content: string;
+  readEstimate: number;
+  isDir: boolean;
 }
 
 export interface FrontMatter extends Record<string, unknown> {
@@ -52,12 +54,12 @@ export async function isDir(id: string): Promise<boolean> {
 }
 
 export async function getPost(id: string, isDir = false): Promise<Post> {
-  const filename = isDir ? `./posts/${id}/index.md` : `./posts/${id}.md`;
-  const text = await Deno.readTextFile(filename);
+  const path = isDir ? `./posts/${id}/index.md` : `./posts/${id}.md`;
+  const str = await Deno.readTextFile(path);
   const {
     attrs: { title, description, date, author, hero = "", tags, summary },
     body: content,
-  } = extract<FrontMatter>(text);
+  } = extract<FrontMatter>(str);
   return {
     id,
     title,
@@ -67,6 +69,14 @@ export async function getPost(id: string, isDir = false): Promise<Post> {
     href: `/posts/${id}`,
     tags,
     summary: summary ?? description ?? "",
-    content,
+    readEstimate: readEstimate(content),
+    isDir,
   };
+}
+
+export async function getPostContent({ id, isDir }: Post): Promise<string> {
+  const path = isDir ? `./posts/${id}/index.md` : `./posts/${id}.md`;
+  const str = await Deno.readTextFile(path);
+  const { body } = extract(str);
+  return body;
 }

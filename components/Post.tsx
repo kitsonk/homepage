@@ -11,6 +11,7 @@ import "prism/components/prism-typescript?no-check";
 
 import config from "../config.json" assert { type: "json" };
 import { type Post } from "../utils/posts.ts";
+import { Meta } from "./Meta.tsx";
 
 const postCss = css({
   // headings
@@ -74,15 +75,77 @@ function Markdown(
 const formatMedium = new Intl.DateTimeFormat("en-GB", { dateStyle: "medium" });
 const formatLong = new Intl.DateTimeFormat("en-GB", { dateStyle: "long" });
 
-export function PostArticle(
-  { children: { title, content, author, date, summary, hero } }: {
+export function PostCard(
+  {
+    children: { hero, href, tags, title, summary, date, readEstimate, author },
+  }: {
     children: Post;
   },
 ) {
-  const { name, title: authorTitle, avatar } =
+  const { name, avatar } =
+    config.authors[author as keyof typeof config["authors"]] ??
+      { name: "", avatar: "" };
+  return (
+    <article class="p-4 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+      {hero.src && (
+        <a href={href}>
+          <img class="mb-5 rounded-lg" src={hero.src} alt={hero.alt} />
+        </a>
+      )}
+      {tags &&
+        (
+          <div class="flex flex-wrap">
+            {tags.map((tag) => (
+              <span class="bg-brown-100 text-brown-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-brown-200 dark:text-brown-900 my-1">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      <h2 class="font-header my-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <a href={href}>{title}</a>
+      </h2>
+      {summary && (
+        <p class="mb-4 font-light text-gray-500 dark:text-gray-400">
+          {summary}
+        </p>
+      )}
+      <div class="flex items-center space-x-4">
+        <img
+          class="w-10 h-10 rounded-full"
+          src={avatar}
+          alt={`${name} avatar`}
+        />
+        <div class="font-medium dark:text-white">
+          <div>{name}</div>
+          <div class="text-sm font-normal text-gray-500 dark:text-gray-400">
+            {formatMedium.format(date)} · {readEstimate} min read
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+export function PostArticle(
+  { children: content, post: { title, author, date, summary, hero, tags } }: {
+    children: string;
+    post: Post;
+  },
+) {
+  const { name, title: authorTitle, avatar, twitter } =
     config.authors[author as keyof typeof config["authors"]];
   return (
     <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900">
+      <Meta
+        title={title}
+        creator={twitter}
+        description={summary}
+        keywords={["blog", "kitson kelly", ...tags]}
+        image={hero.src}
+        alt={hero.alt}
+        type="article"
+      />
       <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
         <article class={tw`mx-auto w-full max-w-2xl ${postCss}`}>
           <header class="mb-4 lg:mb-6">

@@ -1,6 +1,7 @@
 import { ComponentChildren } from "https://esm.sh/v95/preact@10.11.0/src/index";
 
 import { Footer } from "../components/Footer.tsx";
+import { Meta } from "../components/Meta.tsx";
 
 const icons = {
   "twitter": (
@@ -86,6 +87,11 @@ function ContactCard(
 export default function Contact() {
   return (
     <>
+      <Meta
+        title="Contact"
+        description="Contact information for Kitson Kelly"
+        keywords={["contact", "kitson kelly"]}
+      />
       <section class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
           <div class="max-w-screen-md mb-8 lg:mb-16">

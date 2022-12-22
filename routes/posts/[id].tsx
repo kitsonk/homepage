@@ -3,14 +3,17 @@ import { Footer } from "../../components/Footer.tsx";
 import { Meta } from "../../components/Meta.tsx";
 import { PostArticle } from "../../components/Post.tsx";
 import { Recent } from "../../components/Recent.tsx";
-import { getPosts, type Post } from "../../utils/posts.ts";
+import { getPostContent, getPosts, type Post } from "../../utils/posts.ts";
 
 interface Data {
   posts: Post[];
   post: Post;
+  content: string;
 }
 
-export default function Post({ data: { posts, post } }: PageProps<Data>) {
+export default function Post(
+  { data: { posts, post, content } }: PageProps<Data>,
+) {
   return (
     <>
       <Meta
@@ -21,8 +24,8 @@ export default function Post({ data: { posts, post } }: PageProps<Data>) {
         alt={post.hero.alt}
         type="article"
       />
-      <PostArticle>{post}</PostArticle>
-      <Recent />
+      <PostArticle post={post}>{content}</PostArticle>
+      <Recent>{posts}</Recent>
       <Footer />
     </>
   );
@@ -35,7 +38,8 @@ export const handler: Handlers<Data> = {
       const post = posts
         .find(({ id }) => id.toLowerCase() === params.id.toLowerCase());
       if (post) {
-        return render({ posts, post });
+        const content = await getPostContent(post);
+        return render({ posts, post, content });
       }
     } catch {
       // just ignoring, error === not found
