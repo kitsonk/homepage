@@ -32,29 +32,20 @@ export async function getPosts(): Promise<Post[]> {
     return posts;
   }
   const files = Deno.readDir("./posts");
-  const promises = [];
+  posts = [];
   for await (const file of files) {
     if (file.isDirectory) {
-      promises.push(getPost(file.name, true));
+      posts.push(await getPost(file.name, true));
     } else if (file.name.endsWith(".md")) {
-      promises.push(getPost(file.name.replace(".md", "")));
+      posts.push(await getPost(file.name.replace(".md", "")));
     }
   }
-  posts = await Promise.all(promises);
   return posts.sort((a, b) => b.date.getTime() - a.date.getTime());
-}
-
-export async function isDir(id: string): Promise<boolean> {
-  try {
-    const info = await Deno.stat(`./posts/${id}`);
-    return info.isDirectory;
-  } catch {
-    return false;
-  }
 }
 
 export async function getPost(id: string, isDir = false): Promise<Post> {
   const path = isDir ? `./posts/${id}/index.md` : `./posts/${id}.md`;
+  console.log(`load: ${path}`);
   const str = await Deno.readTextFile(path);
   const {
     attrs: { title, description, date, author, hero = "", tags, summary },
@@ -75,6 +66,7 @@ export async function getPost(id: string, isDir = false): Promise<Post> {
 }
 
 export async function getPostContent({ id, isDir }: Post): Promise<string> {
+  console.log(`getPostContent ${id}`);
   const path = isDir ? `./posts/${id}/index.md` : `./posts/${id}.md`;
   const str = await Deno.readTextFile(path);
   const { body } = extract(str);
