@@ -1,8 +1,14 @@
 import { Footer } from "../components/Footer.tsx";
+import { Meta } from "../components/Meta.tsx";
 
 export default function NotFound() {
   return (
     <>
+      <Meta
+        title="Not Found | 7 foot tall cactus"
+        description="The requested page could not be found."
+        keywords={["not found"]}
+      />
       <section class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
           <div class="mx-auto max-w-screen-sm text-center">

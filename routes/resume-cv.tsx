@@ -29,7 +29,7 @@ export default function ResumeCV() {
   return (
     <article class="bg-white dark:bg-gray-900 py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 sm:text-2xl">
       <Meta
-        title="Curriculum Vitae/Resumé"
+        title="Curriculum Vitae/Resumé of Kitson P. Kelly"
         description="Details about the professional work and accomplishments of Kitson P. Kelly."
         key={["resume", "cv", "curriculum vitae", "kitson kelly"]}
       />

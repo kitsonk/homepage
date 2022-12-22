@@ -88,7 +88,7 @@ export default function Contact() {
   return (
     <>
       <Meta
-        title="Contact"
+        title="Contact | 7 foot tall cactus"
         description="Contact information for Kitson Kelly"
         keywords={["contact", "kitson kelly"]}
       />
