@@ -1,6 +1,7 @@
 {
   "tasks": {
-    "start": "deno run -A --watch=static/,routes/,posts/ dev.ts"
+    "build": "deno run --allow-read=. --allow-write=. build.ts",
+    "start": "deno task build && deno run -A --watch=static/,routes/ dev.ts"
   },
   "importMap": "./import_map.json",
   "compilerOptions": {

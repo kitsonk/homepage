@@ -1,13 +1,9 @@
-import { type Handlers, type PageProps } from "$fresh/server.ts";
-
 import { Footer } from "../components/Footer.tsx";
 import { Meta } from "../components/Meta.tsx";
 import { PostCard } from "../components/Post.tsx";
-import { getPosts, type Post } from "../utils/posts.ts";
+import { posts } from "../utils/posts.ts";
 
-type Data = Post[];
-
-export default function Blog({ data }: PageProps<Data>) {
+export default function Blog() {
   return (
     <>
       <Meta
@@ -26,7 +22,7 @@ export default function Blog({ data }: PageProps<Data>) {
             </p>
           </div>
           <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {data.map((post) => <PostCard>{post}</PostCard>)}
+            {posts.map((post) => <PostCard>{post}</PostCard>)}
           </div>
         </div>
       </section>
@@ -34,14 +30,3 @@ export default function Blog({ data }: PageProps<Data>) {
     </>
   );
 }
-
-export const handler: Handlers<Data> = {
-  async GET(_req, { render, renderNotFound }) {
-    try {
-      return render(await getPosts());
-    } catch (e) {
-      console.log(e);
-    }
-    return renderNotFound();
-  },
-};

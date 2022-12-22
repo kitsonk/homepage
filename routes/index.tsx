@@ -1,13 +1,9 @@
-import { type Handlers, type PageProps } from "$fresh/server.ts";
-
 import { Footer } from "../components/Footer.tsx";
 import { Meta } from "../components/Meta.tsx";
 import { PostCard } from "../components/Post.tsx";
-import { getPosts, type Post } from "../utils/posts.ts";
+import { posts } from "../utils/posts.ts";
 
-type Data = Post[];
-
-export default function Home({ data: posts }: PageProps<Data>) {
+export default function Home() {
   return (
     <>
       <Meta
@@ -68,14 +64,3 @@ export default function Home({ data: posts }: PageProps<Data>) {
     </>
   );
 }
-
-export const handler: Handlers<Data> = {
-  async GET(_req, { render, renderNotFound }) {
-    try {
-      return render(await getPosts());
-    } catch (e) {
-      console.log(e);
-    }
-    return renderNotFound();
-  },
-};

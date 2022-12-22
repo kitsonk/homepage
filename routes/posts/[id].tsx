@@ -3,7 +3,7 @@ import { Footer } from "../../components/Footer.tsx";
 import { Meta } from "../../components/Meta.tsx";
 import { PostArticle } from "../../components/Post.tsx";
 import { Recent } from "../../components/Recent.tsx";
-import { getPostContent, getPosts, type Post } from "../../utils/posts.ts";
+import { getPostContent, type Post, posts } from "../../utils/posts.ts";
 
 interface Data {
   posts: Post[];
@@ -34,7 +34,6 @@ export default function Post(
 export const handler: Handlers<Data> = {
   async GET(_req, { params, render, renderNotFound }) {
     try {
-      const posts = await getPosts();
       const post = posts
         .find(({ id }) => id.toLowerCase() === params.id.toLowerCase());
       if (post) {

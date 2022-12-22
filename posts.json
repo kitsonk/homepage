@@ -1,0 +1,807 @@
+[
+  {
+    "id": "a-year-in-deno-land",
+    "title": "A Year in Deno Land",
+    "date": "2021-09-05T02:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": "/posts/a-year-in-deno-land/hero.png"
+    },
+    "href": "/posts/a-year-in-deno-land",
+    "tags": [
+      "deno",
+      "work",
+      "work culture"
+    ],
+    "summary": "I started working full time on Deno on the 21st of September 2020 and wanted to share some of my thoughts.\n",
+    "readEstimate": 13,
+    "isDir": true
+  },
+  {
+    "id": "deno-cdns-and-types",
+    "title": "Deno, CDNs and Types",
+    "date": "2021-07-11T01:57:17.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": "/posts/deno-cdns-and-types/hero.png"
+    },
+    "href": "/posts/deno-cdns-and-types",
+    "tags": [
+      "deno",
+      "editors",
+      "TypeScript",
+      "SkyPack",
+      "esm.sh",
+      "CDNs"
+    ],
+    "summary": "Deno and some CDNs offer an easy and powerful way to develop.",
+    "readEstimate": 10,
+    "isDir": true
+  },
+  {
+    "id": "deno-is-a-browser-for-code",
+    "title": "Deno is a Browser for Code",
+    "date": "2020-05-28T02:00:17.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": "/posts/deno-is-a-browser-for-code/hero.png",
+      "alt": "Title card showing Deno Logo"
+    },
+    "href": "/posts/deno-is-a-browser-for-code",
+    "tags": [
+      "deno",
+      "package manager",
+      "registry"
+    ],
+    "summary": "Explaining the different mental model Deno has about managing dependant code.\n",
+    "readEstimate": 15,
+    "isDir": true
+  },
+  {
+    "id": "Bundling-in-Deno",
+    "title": "Bundling in Deno",
+    "date": "2019-12-10T09:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": "/images/DenoBundling.png"
+    },
+    "href": "/posts/Bundling-in-Deno",
+    "tags": [
+      "deno",
+      "bundling"
+    ],
+    "summary": "I've been working on Deno for a while now, and one of the features I am proud of, which I wanted to share a bit more detail on, is how we do bundling.\n",
+    "readEstimate": 8,
+    "isDir": false
+  },
+  {
+    "id": "Experiments-with-Deno",
+    "title": "Experiments with Deno",
+    "date": "2018-05-31T09:18:03.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": "/images/Dojo_Experiments.png"
+    },
+    "href": "/posts/Experiments-with-Deno",
+    "tags": [
+      "v8",
+      "typescript",
+      "golang",
+      "deno"
+    ],
+    "summary": "My early explorations into Deno.",
+    "readEstimate": 5,
+    "isDir": false
+  },
+  {
+    "id": "TSConf-2018",
+    "title": "TSConf 2018",
+    "date": "2018-03-13T14:28:59.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": "/images/TSConf_Sign_hero.jpeg"
+    },
+    "href": "/posts/TSConf-2018",
+    "tags": [
+      "conference",
+      "technology",
+      "TypeScript"
+    ],
+    "summary": "I got the opportunity to attend TSConf 2018. It was the worlds first focused conference on TypeScript and the lead organiser was my former employer SitePen.\n",
+    "readEstimate": 22,
+    "isDir": false
+  },
+  {
+    "id": "going-down-under",
+    "title": "Going Down Under",
+    "date": "2018-01-03T15:42:39.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": "/posts/going-down-under/hero.jpg"
+    },
+    "href": "/posts/going-down-under",
+    "tags": [
+      "travel",
+      "Australia"
+    ],
+    "summary": "After over 11 years of calling the UK my home, Simon and I are moving to Australia.\n",
+    "readEstimate": 2,
+    "isDir": true
+  },
+  {
+    "id": "Sick-America",
+    "title": "Sick America",
+    "date": "2017-06-25T16:55:36.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": "/images/Healthcare.jpg"
+    },
+    "href": "/posts/Sick-America",
+    "tags": [
+      "politics",
+      "America"
+    ],
+    "summary": "Having now lived full time outside of the US for over a decade, in the UK  where we have socialised medical care. A word I was taught from all aspects as evil and anti-American. I can say without a doubt, I would never go back.\n",
+    "readEstimate": 6,
+    "isDir": false
+  },
+  {
+    "id": "fanboy",
+    "title": "Fanboy",
+    "date": "2017-06-16T20:05:50.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": "/posts/fanboy/hero.jpg"
+    },
+    "href": "/posts/fanboy",
+    "tags": [
+      "nerd",
+      "technology"
+    ],
+    "summary": "I got to be a fanboy this week.",
+    "readEstimate": 3,
+    "isDir": true
+  },
+  {
+    "id": "Writing-more",
+    "title": "Writing more?",
+    "date": "2017-06-10T16:41:40.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Writing-more",
+    "tags": [
+      "personal"
+    ],
+    "summary": "I am going to try to commit to writing and blogging a bit more.",
+    "readEstimate": 0,
+    "isDir": false
+  },
+  {
+    "id": "Goodbye-TextMate-2-Hello-Sublime-Text-2",
+    "title": "Goodbye TextMate 2, Hello Sublime Text 2",
+    "date": "2012-06-30T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Goodbye-TextMate-2-Hello-Sublime-Text-2",
+    "summary": "I tried, I really tried TextMate, but having dealt with an alpha of 2 for a long time with no clear indication of what is going on, dwindling community innovation and just a few really annoying things that I couldn’t continue to put up with, I have this morning tried Sublime Text 2 and I am afraid I am not looking back.\n",
+    "readEstimate": 2,
+    "isDir": false
+  },
+  {
+    "id": "dojo-parser",
+    "title": "dojo/parser",
+    "date": "2012-05-25T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/dojo-parser",
+    "tags": [
+      "dojo"
+    ],
+    "summary": "Ok, what is becoming a bit of a trend, I am adding a third to my series on forthcoming features in Dojo core in 1.8.\n",
+    "readEstimate": 6,
+    "isDir": false
+  },
+  {
+    "id": "dojo-promise",
+    "title": "dojo/promise",
+    "date": "2012-05-23T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/dojo-promise",
+    "tags": [
+      "dojo"
+    ],
+    "summary": "It seems that my dojo/request article got a few views, so I figured I would take a moment to talk about dojo/promise, another major enhancement in the core of the Dojo Toolkit in 1.8. Mark Wubben rewrote the promise API while keeping it compatible with the “modern” Dojo promise API.\n",
+    "readEstimate": 3,
+    "isDir": false
+  },
+  {
+    "id": "dojo-request",
+    "title": "dojo/request",
+    "date": "2012-05-20T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/dojo-request",
+    "tags": [
+      "dojo"
+    ],
+    "summary": "In the forthcoming Dojo Toolkit 1.8, the dojo/request package, written by Bryan Forbes, has some really “cool” features in my opinion.\n",
+    "readEstimate": 3,
+    "isDir": false
+  },
+  {
+    "id": "Marriage",
+    "title": "Marriage...",
+    "date": "2012-05-12T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Marriage",
+    "summary": "On the 6th December 2006 I entered into a civil partnership with Simon.  It was about a year after the UK made such an option open to us.  I encountered the immigration officer years later as I became an immigration advocate in the UK.  He indicated to me that my proposed civil partnership visa was the first one he had ever issued.\n",
+    "readEstimate": 2,
+    "isDir": false
+  },
+  {
+    "id": "Just-git-on-with-it",
+    "title": "Just git on with it...",
+    "date": "2012-01-24T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Just-git-on-with-it",
+    "summary": "Ok, coding nerd moment here.  I have been becoming more and more involved in my spare time with the Dojo Toolkit.  For me it keeps my mind in an enjoyable \"problem solving\" mode, which I enjoy, versus necessarily all the fun of being a senior IT manager affords itself, where I wouldn’t get near the sharp end of code even if I wanted to.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "2012",
+    "title": "2012",
+    "date": "2012-01-08T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/2012",
+    "summary": "I have tried to make New Year’s resolutions before, but they usually come to naught.  So this isn’t a news years resolution post, this is just a plan.\n",
+    "readEstimate": 2,
+    "isDir": false
+  },
+  {
+    "id": "two-idiots-abroad",
+    "title": "Two Idiots Abroad",
+    "date": "2011-12-18T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/two-idiots-abroad",
+    "summary": "My boss and I recently went on trip to India.  We called ourselves \"Two Idiots Abroad\" which was apropos we felt since we worked for Sky and Sky had the TV Show An Idiot Abroad.\n",
+    "readEstimate": 5,
+    "isDir": false
+  },
+  {
+    "id": "hardware-and-hardtimes",
+    "title": "Hardware and Hardtimes...",
+    "date": "2007-10-08T22:49:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/hardware-and-hardtimes",
+    "summary": "Ok, I will admit I have been totally remiss in keeping my blog up to date.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "Lost",
+    "title": "Lost...",
+    "date": "2007-07-28T19:49:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Lost",
+    "summary": "I have been losing weight since I went to Structure House in October 2006. Originally 318 lbs, I have gotten myself down to around 228 lbs on most days. My original goal was to get to 218 lbs by September 2007 and it looks like I might make it.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "09f911029d74e35bd84156c5635688c0",
+    "title": "09f911029d74e35bd84156c5635688c0",
+    "date": "2007-05-07T13:51:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/09f911029d74e35bd84156c5635688c0",
+    "summary": "What can you say about a number?",
+    "readEstimate": 0,
+    "isDir": false
+  },
+  {
+    "id": "School-Rates",
+    "title": "School Rates.",
+    "date": "2007-03-10T16:55:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/School-Rates",
+    "tags": [
+      "immigration"
+    ],
+    "summary": "Well, it seems that the Universities partly got their way with the rate  increases.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "Going-Up",
+    "title": "Going Up...",
+    "date": "2007-03-08T10:45:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Going-Up",
+    "tags": [
+      "immigration"
+    ],
+    "summary": "I am a fairly active member of the UK Yankee community on the web, a community that provides support and information to US expatriates in the UK.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "Home-Secretary-Proposes-Foreigner-Clampdown",
+    "title": "Home Secretary Proposes Foreigner Clampdown",
+    "date": "2007-03-07T19:45:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Home-Secretary-Proposes-Foreigner-Clampdown",
+    "tags": [
+      "immigration"
+    ],
+    "summary": "Mr. Reid suggested yesterday on the BBC that there be a clamp down on illegal migrants.\n",
+    "readEstimate": 2,
+    "isDir": false
+  },
+  {
+    "id": "Proposed-Increase-in-UK-Visas",
+    "title": "Proposed Increase in UK Visas",
+    "date": "2007-03-07T16:26:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Proposed-Increase-in-UK-Visas",
+    "tags": [
+      "immigration"
+    ],
+    "summary": "IND is proposing that fees be increased for visas. While it is going to the House of Commons to be debated, it is unlikely that it won't be approved.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "Nation-Insurance-Number-NIN-Application-Experience",
+    "title": "National Insurance Number (NIN) Application Experience",
+    "date": "2007-01-13T16:54:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Nation-Insurance-Number-NIN-Application-Experience",
+    "tags": [
+      "immigration"
+    ],
+    "summary": "Here is my recent (January 2007) experience in apply for my National Insurance Number after receiving my Civil Partnership FLR Visa and getting a job.\n",
+    "readEstimate": 6,
+    "isDir": false
+  },
+  {
+    "id": "IND-Sneakily-Removes-ILE-for-Those-Married-Long-Term",
+    "title": "IND Sneakily Removes ILE for Those Married Long Term",
+    "date": "2006-12-01T10:21:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/IND-Sneakily-Removes-ILE-for-Those-Married-Long-Term",
+    "tags": [
+      "immigration"
+    ],
+    "summary": "Come April 2, 2007, the IND will no longer issue Indefinite Leave to Remain to foreign nationals settling in the UK have have been married to their spouses for over six years.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "and-so-it-continues",
+    "title": "and so it continues.",
+    "date": "2006-05-11T08:35:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/and-so-it-continues",
+    "summary": "Now I am not naive enough to think that the NSA doesn’t do things to spy on American’s without proper oversight or permission, but the amount of information that has come to light is rather amazing and takes consideration.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "outlaw-political-parties",
+    "title": "outlaw political parties.",
+    "date": "2006-05-08T00:13:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/outlaw-political-parties",
+    "tags": [
+      "politics"
+    ],
+    "summary": "I was reading an editorial by Paul Johnson in the May 8th, 2006 issue of Forbes magazine. He suggests that political parties are the root cause of most corruption in the world. He makes a strong argument, that in a democracy, parties limit the will of the people.\n",
+    "readEstimate": 2,
+    "isDir": false
+  },
+  {
+    "id": "and-so-it-begins",
+    "title": "and so it begins.",
+    "date": "2006-05-06T16:40:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/and-so-it-begins",
+    "summary": "Well, it was going to happen sooner or later... And now it has happened.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "mini-disc-dud",
+    "title": "mini disc dud.",
+    "date": "2006-04-03T01:38:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/mini-disc-dud",
+    "tags": [
+      "geek",
+      "music"
+    ],
+    "summary": "This article on OSNews tries to argue for Sony and Hi-MD over \"mp3 players\". I used to be a huge fan of MiniDisc, but I am afraid it has failed as a format.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "greenback-aliens",
+    "title": "greenback aliens.",
+    "date": "2006-04-02T01:26:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/greenback-aliens",
+    "tags": [
+      "politics",
+      "rant",
+      "rights"
+    ],
+    "summary": "Immigration in the United States has been at the forefront of the news the past several weeks. I have my own opinion on what should be done about the \"illegal immigrant problem.\"\n",
+    "readEstimate": 3,
+    "isDir": false
+  },
+  {
+    "id": "asterisk-and-conferencing",
+    "title": "asterisk and conferencing.",
+    "date": "2006-03-26T15:18:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/asterisk-and-conferencing",
+    "tags": [
+      "asterisk"
+    ],
+    "summary": "Ok, more Asterisk news… It seems that my friends at GDS Partners have been busy.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "asterisk-and-gvp",
+    "title": "asterisk and gvp.",
+    "date": "2006-03-01T13:34:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/asterisk-and-gvp",
+    "tags": [
+      "asterisk"
+    ],
+    "summary": "I recently heard from my friends at GDS Partners that are working in the Asterisk and Genesys space. I also have noticed a few hits on my web page about GVP and Asterisk. It inspired me to keep up with my Asterisk experiences.\n",
+    "readEstimate": 2,
+    "isDir": false
+  },
+  {
+    "id": "new-zealand",
+    "title": "new zealand.",
+    "date": "2006-03-01T13:27:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/new-zealand",
+    "tags": [
+      "travel"
+    ],
+    "summary": "It has been several years since I have been able to travel like I have wanted to. In order to celebrate my return to determining my own destiny, my partner and I have decided to go to New Zealand for 20 days.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "cackpots-and-their-free-speech",
+    "title": "crackpots and their free speech.",
+    "date": "2006-02-20T09:14:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/cackpots-and-their-free-speech",
+    "tags": [
+      "politics",
+      "stupid",
+      "rights"
+    ],
+    "summary": "It is amazing, that in what you consider a moderm society, that you find out that certain things are not as you would expect.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "cartoons",
+    "title": "cartoons.",
+    "date": "2006-02-09T13:56:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/cartoons",
+    "tags": [
+      "rights"
+    ],
+    "summary": "This has been brewing in my mind for a while now. I see a lot of what is being said in the media about “cartoon demonstrations” and what I see is a lot of fear.\n",
+    "readEstimate": 2,
+    "isDir": false
+  },
+  {
+    "id": "do-no-evil",
+    "title": "do no evil.",
+    "date": "2006-01-26T23:35:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/do-no-evil",
+    "tags": [
+      "rights"
+    ],
+    "summary": "There has been much ado about Google’s decision to filter search results in China.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "electronic-voting",
+    "title": "electronic voting.",
+    "date": "2006-01-24T16:11:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/electronic-voting",
+    "tags": [
+      "politics"
+    ],
+    "summary": "Every once in a while I read an article on the Internet about electronic voting, and most of the time it is about how bad it is.\n",
+    "readEstimate": 2,
+    "isDir": false
+  },
+  {
+    "id": "where-is-the-outrage",
+    "title": "where is the outrage.",
+    "date": "2006-01-19T22:13:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/where-is-the-outrage",
+    "tags": [
+      "politics",
+      "rant",
+      "rights"
+    ],
+    "summary": "The US Department of Justice, in hopes of proving that the government needs more control over the lives of its private citizens after being told it cannot by the Supreme Court, last year requested that the top search organizations hand over information on the search terms of private citizens.\n",
+    "readEstimate": 2,
+    "isDir": false
+  },
+  {
+    "id": "tin-foil-hats",
+    "title": "tin foil hats.",
+    "date": "2004-03-27T14:43:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/tin-foil-hats",
+    "summary": "Wacko people saying they blew up their new $20 bills by microwaving the RFID tags out of them can be found here.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "who-let-the-dogs-out",
+    "title": "who let the dogs out.",
+    "date": "2004-03-27T14:16:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/who-let-the-dogs-out",
+    "summary": "It seems that Clarke has gotten his wish after his appearance on 60 Minutes. The hounds from hell have been unleashed on the earth.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "ack-ins",
+    "title": "ack-ins.",
+    "date": "2004-03-21T14:38:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/ack-ins",
+    "summary": "This low carb thing sucks! I feel like crap, but I am losing weight.",
+    "readEstimate": 0,
+    "isDir": false
+  },
+  {
+    "id": "donkey-diddling",
+    "title": "donkey diddling.",
+    "date": "2004-03-17T07:12:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/donkey-diddling",
+    "summary": "Ok, maybe I got a hang-up with devient sex, but oh well. This from odd news from Reuters.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "speaking-analy",
+    "title": "speaking analy.",
+    "date": "2004-03-14T14:46:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/speaking-analy",
+    "summary": "From the News of the Weird...",
+    "readEstimate": 0,
+    "isDir": false
+  },
+  {
+    "id": "mail-box-madness",
+    "title": "mail-box madness.",
+    "date": "2004-03-12T10:15:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/mail-box-madness",
+    "summary": "Someone ran into my mailbox yesterday, knocked the mailbox of its post and left it lying in my driveway. I didn't even get as much as a little note.\n",
+    "readEstimate": 0,
+    "isDir": false
+  },
+  {
+    "id": "enormous-penis",
+    "title": "enormous penis.",
+    "date": "2004-03-07T08:10:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/enormous-penis",
+    "summary": "Do you ever feel like your sense of humour is unappreciated? Do you feel sometimes it isn't even worth telling people what you find funny, because no one is going to laugh as loud as you do at something?\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "salad-bar-brawl",
+    "title": "salad bar brawl.",
+    "date": "2004-03-06T09:28:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/salad-bar-brawl",
+    "summary": "I love The Smoking Gun. It always amazes me how us average people can become really weird in an instant, and how famous people have just as many problems as us.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "things-that-go-pop-in-the-night",
+    "title": "things that go pop in the night.",
+    "date": "2004-03-03T07:32:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/things-that-go-pop-in-the-night",
+    "summary": "Well... I knew it was going to happen sooner or later, I just kept hoping for later. My Mitsubishi 900u monitor \"blew up\" yesterday.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "we-loves-the-oscars",
+    "title": "we loves the oscars.",
+    "date": "2004-02-29T23:19:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/we-loves-the-oscars",
+    "summary": "Well, all I can say is that it was nice that Lord of the Rings won 11 Oscars.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "depressed-homosexual-tendencies",
+    "title": "depressed homosexual tendencies.",
+    "date": "2004-02-29T21:33:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/depressed-homosexual-tendencies",
+    "summary": "I was a bit frustrated last week. I had purchased tickets long ago to see Rufus Wainwright in concert.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "institutions",
+    "title": "institutions.",
+    "date": "2004-02-29T18:48:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/institutions",
+    "summary": "I was watching Real Time with Bill Maher and Sir Ian McKellen was on. The subject of gay marriage came up.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "first-post",
+    "title": "First Post",
+    "date": "2004-02-29T18:38:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/first-post",
+    "summary": "Well, finally couldn't stand it anymore.",
+    "readEstimate": 1,
+    "isDir": false
+  }
+]
