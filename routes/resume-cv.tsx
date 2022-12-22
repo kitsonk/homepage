@@ -1,5 +1,7 @@
 import { type ComponentChildren } from "preact";
 
+import { Meta } from "../components/Meta.tsx";
+
 function Role(
   { children, title, company, start, end = "Present" }: {
     children: ComponentChildren;
@@ -26,6 +28,11 @@ function Role(
 export default function ResumeCV() {
   return (
     <article class="bg-white dark:bg-gray-900 py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 sm:text-2xl">
+      <Meta
+        title="Curriculum Vitae/Resumé"
+        description="Details about the professional work and accomplishments of Kitson P. Kelly."
+        key={["resume", "cv", "curriculum vitae", "kitson kelly"]}
+      />
       <h1 class="font-header text-center mb-4 text-5xl md:text-7xl tracking-tight font-extrabold text-gray-900 dark:text-white">
         Kitson P. Kelly
       </h1>
@@ -50,7 +57,7 @@ export default function ResumeCV() {
                   <strong>Email</strong>:
                 </td>
                 <td class="px-4">
-                  &#109;&#101;&#064;&#107;&#105;&#116;&#115;&#111;&#110;&#107;&#101;&#108;&#108;&#121;&#046;&#099;&#111;&#109;
+                  me@kitsonkelly.com
                 </td>
               </tr>
               <tr>

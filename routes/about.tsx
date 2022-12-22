@@ -13,10 +13,6 @@ function Project(
 ) {
   return (
     <div class="p-6 bg-gray-50 rounded shadow dark:bg-gray-800">
-      <Meta
-        title="About | 7 foot tall cactus"
-        description="Hi, I'm Kit. I am a husband. I am a father. I am a technologist. I have lots of opinions. I work on M&A due diligence."
-      />
       <a
         href={href}
         target="_blank"
@@ -41,6 +37,10 @@ function Project(
 export default function About() {
   return (
     <>
+      <Meta
+        title="About | 7 foot tall cactus"
+        description="Hi, I'm Kit. I am a husband. I am a father. I am a technologist. I have lots of opinions. I work on M&A due diligence."
+      />
       <section class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-screen-lg lg:py-16 lg:px-6">
           <div class="text-gray-700 sm:text-lg dark:text-gray-200 space-y-6">
@@ -50,6 +50,11 @@ export default function About() {
             <p class="mb-4">
               Hi, I'm Kit. I am a husband. I am a father. I am a technologist. I
               have lots of opinions. I work on M&amp;A due diligence.
+            </p>
+            <p>
+              The site is named <em>7 foot tall cactus</em>{" "}
+              which is a reference to me being my High School mascot, which was
+              a 7 foot tall cactus outfit.
             </p>
             <h2 class="font-header mb-4 text-3xl tracking-tight font-bold text-gray-900 dark:text-white">
               Life and Family
