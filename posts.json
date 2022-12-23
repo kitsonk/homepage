@@ -179,6 +179,202 @@
     "isDir": false
   },
   {
+    "id": "Transport-for-London-Craziness",
+    "title": "Transport for London Craziness",
+    "date": "2015-09-30T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Transport-for-London-Craziness",
+    "tags": [
+      "rant"
+    ],
+    "summary": "According to the Telepgraph, Transport for London is about to open a public consultation on several things about “minicabs” that are just insane and are clearly an attempt to try to hinder Uber and other similar “on demand” transport apps. \n",
+    "readEstimate": 2,
+    "isDir": false
+  },
+  {
+    "id": "Dignity",
+    "title": "Dignity",
+    "date": "2015-06-27T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Dignity",
+    "tags": [
+      "marriage equality",
+      "civil rights"
+    ],
+    "summary": "When the Supreme Court in the US ruled two years ago that the Federal Government could not ignore us as a couple, I broke down in tears.\n",
+    "readEstimate": 2,
+    "isDir": false
+  },
+  {
+    "id": "My-Royals-Royce-is-not-Going-Fast-Enough",
+    "title": "My Royals Royce is not Going Fast Enough",
+    "date": "2015-04-22T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/My-Royals-Royce-is-not-Going-Fast-Enough",
+    "summary": "I am experiencing up close what when I was young was taught was a horrible evil, “socialised medicine.”\n",
+    "readEstimate": 4,
+    "isDir": false
+  },
+  {
+    "id": "Rewriting-History",
+    "title": "Rewriting History",
+    "date": "2015-03-12T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Rewriting-History",
+    "summary": "On Friday, Simon and I re-wrote history.  We walked into the Wandsworth Registrar’s Office and walked out as a couple who had been married since December 2006.\n",
+    "readEstimate": 2,
+    "isDir": false
+  },
+  {
+    "id": "Gastric-Sleeve-Two-Years-On",
+    "title": "Gastric Sleeve Two Years On",
+    "date": "2013-12-27T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Gastric-Sleeve-Two-Years-On",
+    "tags": [
+      "weight loss"
+    ],
+    "summary": "I am coming up on almost 3 years since I have had my Gastric Sleeve weight loss surgery.  Some people might wonder how I am doing and how does the long term look like for someone with the surgery.  Well, the news is good.\n",
+    "readEstimate": 3,
+    "isDir": false
+  },
+  {
+    "id": "Marriage-Equality-Finally",
+    "title": "Marriage Equality, Finally",
+    "date": "2013-06-27T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Marriage-Equality-Finally",
+    "summary": "Yesterday I was in tears, in the office.",
+    "readEstimate": 3,
+    "isDir": false
+  },
+  {
+    "id": "Marriage-Equality",
+    "title": "Marriage Equality",
+    "date": "2013-03-27T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Marriage-Equality",
+    "summary": "Being “gay” does not dominate my life and I don’t often think about being “gay”. I do often thing of my civil partner, Simon, much as I would assume any married couple would.\n",
+    "readEstimate": 3,
+    "isDir": false
+  },
+  {
+    "id": "Dojo-2.0",
+    "title": "Dojo 2.0",
+    "date": "2013-03-03T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Dojo-2.0",
+    "tags": [
+      "dojo"
+    ],
+    "summary": "I have been working on a few things which I will be trying to campaign for as being part of Dojo 2.0.\n",
+    "readEstimate": 10,
+    "isDir": false
+  },
+  {
+    "id": "ES5-Accessor-Properties",
+    "title": "ES5 Accessor Properties",
+    "date": "2013-02-03T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/ES5-Accessor-Properties",
+    "summary": "I have been messing around this weekend with Object.defineProperty and realising some unanticipated behaviour when using accessor properties and prototype inheritance.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "Dojo-and-Node",
+    "title": "Dojo and Node",
+    "date": "2012-12-01T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Dojo-and-Node",
+    "tags": [
+      "dojo",
+      "node.js"
+    ],
+    "summary": "Using client side JavaScript frameworks on server side NodeJS? “Crazy…” I can hear you mumble to yourself.  Well, I tend to disagree.\n",
+    "readEstimate": 8,
+    "isDir": false
+  },
+  {
+    "id": "Equality-versus-Fairness",
+    "title": "Equality versus Fairness",
+    "date": "2012-10-17T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Equality-versus-Fairness",
+    "tags": [
+      "society",
+      "cultural norms"
+    ],
+    "summary": "Being an American expatriate, especially living in the United Kingdom, gives a particular perspective on US society.  I think this is highlighted during the Presidential election, when you see Americans en masse struggle with the concepts of equality and fairness.\n",
+    "readEstimate": 2,
+    "isDir": false
+  },
+  {
+    "id": "Socialised-Medicine-Again",
+    "title": "Soclialised Medicine Again...",
+    "date": "2012-09-23T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Socialised-Medicine-Again",
+    "tags": [
+      "healthcare"
+    ],
+    "summary": "Unlucky for me, I have had another up close and personal experience with the “evil incarnate” that US public opinion raised me on of socialised medicine. Paul Ryan’s recent comment about “death panels” have made me again desire to speak about my experiences.\n",
+    "readEstimate": 9,
+    "isDir": false
+  },
+  {
+    "id": "criticism-of-Dojo",
+    "title": "Criticism of Dojo?",
+    "date": "2012-08-17T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/criticism-of-Dojo",
+    "tags": [
+      "dojo"
+    ],
+    "summary": "With the release of Dojo 1.8, I thought I might share my thoughts on criticisms of Dojo and if I think they are valid.  So I am going to try to take an honest look at those criticisms and give my opinion of where the community is at.\n",
+    "readEstimate": 6,
+    "isDir": false
+  },
+  {
     "id": "Goodbye-TextMate-2-Hello-Sublime-Text-2",
     "title": "Goodbye TextMate 2, Hello Sublime Text 2",
     "date": "2012-06-30T00:00:00.000Z",
@@ -289,6 +485,248 @@
     "href": "/posts/two-idiots-abroad",
     "summary": "My boss and I recently went on trip to India.  We called ourselves \"Two Idiots Abroad\" which was apropos we felt since we worked for Sky and Sky had the TV Show An Idiot Abroad.\n",
     "readEstimate": 5,
+    "isDir": false
+  },
+  {
+    "id": "20-Year-High-School-Reunion",
+    "title": "20 Year High School Reunion",
+    "date": "2011-10-09T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/20-Year-High-School-Reunion",
+    "tags": [
+      "social"
+    ],
+    "summary": "Well, the other week I attended my 20 Year High School Reunion. First was the shock and horror realising that I graduated High School over 20 years ago. Then was the realisation that I felt a compelling need to go back.\n",
+    "readEstimate": 8,
+    "isDir": false
+  },
+  {
+    "id": "Surrogacy",
+    "title": "Surrogacy...",
+    "date": "2011-09-18T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Surrogacy",
+    "tags": [
+      "surrogacy"
+    ],
+    "summary": "While this might be a controversial topic for some, a gay couple considering surrogacy, for Simon and myself it has become a realistic proposition.  This weekend we attended the Alternative Families Show 2011 in London.\n",
+    "readEstimate": 3,
+    "isDir": false
+  },
+  {
+    "id": "Bank-White-Wash",
+    "title": "Bank White Wash",
+    "date": "2011-09-12T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Bank-White-Wash",
+    "tags": [
+      "banking"
+    ],
+    "summary": "",
+    "readEstimate": 2,
+    "isDir": false
+  },
+  {
+    "id": "In-Memory",
+    "title": "In Memory...",
+    "date": "2011-09-11T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/In-Memory",
+    "summary": "Ten years on and I still remember that day very well.  I was working in Dublin, at a client site, looking down onto College Green.  It happened that there were two other American’s in the office with me, my boss and a peer of mine.  It was just another day.\n",
+    "readEstimate": 6,
+    "isDir": false
+  },
+  {
+    "id": "Gastric-Sleeve-Update",
+    "title": "Gastric Sleeve Update",
+    "date": "2011-09-10T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Gastric-Sleeve-Update",
+    "tags": [
+      "gastric surgery",
+      "weight loss"
+    ],
+    "summary": "A while ago, I wrote about my Gastric Sleeve surgery, and figured it was about time to provide an update.  So 7 months on, and where am I at?\n",
+    "readEstimate": 4,
+    "isDir": false
+  },
+  {
+    "id": "Socialised-Medicine",
+    "title": "Socialised Medicine...",
+    "date": "2011-09-03T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Socialised-Medicine",
+    "tags": [
+      "social commentary",
+      "medicine"
+    ],
+    "summary": "As I posted before, I had an accident when I was away in Canada on holiday. As an American living in the UK, I had always been stigmatised since I was young that “socialised medicine” was a bad thing, so it was with a bit of trepidation that upon my return to the UK I was going to have to jump into it with both feet.\n",
+    "readEstimate": 7,
+    "isDir": false
+  },
+  {
+    "id": "UFC-Match-Kit-vs-Le-Velo",
+    "title": "UFC Match: Kit vs. Le Velo",
+    "date": "2011-08-25T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/UFC-Match-Kit-vs-Le-Velo",
+    "tags": [
+      "health",
+      "travel"
+    ],
+    "summary": "Well, I held off telling anyone (except my boss at work), but I guess now is a good as time as any.  I had a pretty serious bike accident when I was in Mont Tremblant on holiday.\n",
+    "readEstimate": 4,
+    "isDir": false
+  },
+  {
+    "id": "Obama-and-Debt",
+    "title": "Obama and Debt",
+    "date": "2011-07-23T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Obama-and-Debt",
+    "tags": [
+      "politics"
+    ],
+    "summary": "Being a US expatriate, I feel it gives me a luxury of a 3rd party view of things in the US.  While I have been a Democrat in my mind for a long time,it is more of a curiosity what happens.\n",
+    "readEstimate": 3,
+    "isDir": false
+  },
+  {
+    "id": "News-of-the-World",
+    "title": "News of the World",
+    "date": "2011-07-08T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/News-of-the-World",
+    "tags": [
+      "social",
+      "immigration",
+      "politics"
+    ],
+    "summary": "I often find myself questioning the collective wisdom of the UK. The situations with the News of the World is one such moment.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "Data-Crunch-Crisis",
+    "title": "Data Crunch Crisis",
+    "date": "2011-06-19T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Data-Crunch-Crisis",
+    "tags": [
+      "bandwidth",
+      "net neutrality"
+    ],
+    "summary": "I was reading an article in Slashdot today that got me thinking. I remember seeing an article about how Netflix represent 1/3 of network bandwidth in North America.\n",
+    "readEstimate": 2,
+    "isDir": false
+  },
+  {
+    "id": "Disappointed",
+    "title": "Disappointed",
+    "date": "2011-06-13T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Disappointed",
+    "tags": [
+      "bariatric",
+      "surgery",
+      "weight loss"
+    ],
+    "summary": "I am a little disappointed in this recent post from CNN.  It really is only giving a narrow view of the subject.  It is suggesting that bariatric surgery does not affect the mortality rate, but when you actually read the article, it indicates it is a fairly narrow study.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "Gastric-Sleeve-Weight-Loss",
+    "title": "Gastric Sleeve Weight Loss",
+    "date": "2011-06-08T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Gastric-Sleeve-Weight-Loss",
+    "tags": [
+      "weight loss"
+    ],
+    "summary": "On the 10th of February, I had a gastric sleeve, which is a surgery that removes 75-80% of your stomach and essentially turns your stomach into a tube (or “sleeve”).\n",
+    "readEstimate": 4,
+    "isDir": false
+  },
+  {
+    "id": "PHP-Restful",
+    "title": "PHP Restful",
+    "date": "2011-05-21T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/PHP-Restful",
+    "summary": "I have been working with the dojo Toolkit for a couple of years and one of the things that I had to do was implement a RESTful class handler in PHP to support the ability to implement RESTful services.\n",
+    "readEstimate": 1,
+    "isDir": false
+  },
+  {
+    "id": "Inception",
+    "title": "Inception",
+    "date": "2010-07-19T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Inception",
+    "tags": [
+      "movies"
+    ],
+    "summary": "I read a review that said \"Sometimes, expectations are exceeded... Welcome to that day.\"\n",
+    "readEstimate": 3,
+    "isDir": false
+  },
+  {
+    "id": "Returning",
+    "title": "Returning...",
+    "date": "2010-07-05T00:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": ""
+    },
+    "href": "/posts/Returning",
+    "tags": [
+      "music"
+    ],
+    "summary": "I used to keep a quite regular blog, but I stopped some number of years ago.\n",
+    "readEstimate": 1,
     "isDir": false
   },
   {
