@@ -14,7 +14,7 @@ author: kitsonk
 I often find myself questioning the collective wisdom of the UK. The situations
 with the News of the World is one such moment.
 
-The shock and disdane that the public is expounding, admittedly whipped into a
+The shock and disdain that the public is expounding, admittedly whipped into a
 fury by the very same journalistic “integrity” that NoW traded in, are shocked
 and horrified that the tabloid newspaper they used to turn to for salacious and
 scandalous news used salacious and scandalous methods to get their information.
