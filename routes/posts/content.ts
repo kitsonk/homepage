@@ -1,5 +1,5 @@
 import { type Handlers, type RouteConfig } from "$fresh/server.ts";
-import { BUILD_ID } from "$fresh/src/server/constants.ts";
+import { BUILD_ID } from "$fresh/src/server/build_id.ts";
 import { ASSET_CACHE_BUST_KEY } from "$fresh/runtime.ts";
 import { extname, resolve } from "std/path/mod.ts";
 import { typeByExtension } from "std/media_types/mod.ts";
