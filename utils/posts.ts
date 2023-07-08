@@ -1,4 +1,4 @@
-import { extract } from "std/encoding/front_matter.ts";
+import { extract } from "std/front_matter/any.ts";
 import { readEstimate } from "./readEstimate.ts";
 import postsJson from "../posts.json" assert { type: "json" };
 
