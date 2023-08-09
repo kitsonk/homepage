@@ -7,7 +7,8 @@ export async function handler(request: Request, ctx: MiddlewareHandlerContext) {
     if (!isDocument(request, response)) {
       return;
     }
-    const report = new GA4Report({ request, response, conn: ctx });
+    // deno-lint-ignore no-explicit-any
+    const report = new GA4Report({ request, response, conn: ctx as any });
     await report.send();
   });
   return response;

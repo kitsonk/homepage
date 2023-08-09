@@ -1,7 +1,7 @@
 import { PostCard } from "./Post.tsx";
 import { type Post } from "../utils/posts.ts";
 
-export function Recent({ children }: { children: Post[] }) {
+export function Recent({ children }: { children?: Post[] }) {
   return (
     <aside
       aria-label="Recent posts"
@@ -13,7 +13,7 @@ export function Recent({ children }: { children: Post[] }) {
         </h2>
         <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
           {children
-            .slice(0, 3)
+            ?.slice(0, 3)
             .map((post) => <PostCard>{post}</PostCard>)}
         </div>
       </div>

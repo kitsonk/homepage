@@ -1,19 +1,16 @@
-import { type Handlers, type PageProps } from "$fresh/server.ts";
+import { type RouteContext } from "$fresh/server.ts";
+import { assert } from "std/_util/asserts.ts";
 import { Footer } from "../../components/Footer.tsx";
 import { Meta } from "../../components/Meta.tsx";
 import { PostArticle } from "../../components/Post.tsx";
 import { Recent } from "../../components/Recent.tsx";
 import { getPostContent, type Post, posts } from "../../utils/posts.ts";
 
-interface Data {
-  posts: Post[];
-  post: Post;
-  content: string;
-}
-
-export default function Post(
-  { data: { posts, post, content } }: PageProps<Data>,
-) {
+export default async function Post(_req: Request, { params }: RouteContext) {
+  const post = posts
+    .find(({ id }) => id.toLowerCase() === params.id.toLowerCase());
+  assert(post);
+  const content = await getPostContent(post);
   return (
     <>
       <Meta
@@ -30,19 +27,3 @@ export default function Post(
     </>
   );
 }
-
-export const handler: Handlers<Data> = {
-  async GET(_req, { params, render, renderNotFound }) {
-    try {
-      const post = posts
-        .find(({ id }) => id.toLowerCase() === params.id.toLowerCase());
-      if (post) {
-        const content = await getPostContent(post);
-        return render({ posts, post, content });
-      }
-    } catch {
-      // just ignoring, error === not found
-    }
-    return renderNotFound();
-  },
-};

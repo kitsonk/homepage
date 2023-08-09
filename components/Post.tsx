@@ -12,6 +12,7 @@ import "prism/components/prism-typescript?no-check";
 import config from "../config.json" assert { type: "json" };
 import { type Post } from "../utils/posts.ts";
 import { Meta } from "./Meta.tsx";
+import { assert } from "std/_util/asserts.ts";
 
 const postCss = css({
   // headings
@@ -64,8 +65,9 @@ const highlightCss = css({
 });
 
 function Markdown(
-  { children: markdown, baseUrl }: { children: string; baseUrl?: string },
+  { children: markdown, baseUrl }: { children?: string; baseUrl?: string },
 ) {
+  assert(markdown);
   const __html = render(markdown, { allowIframes: true, baseUrl });
   return (
     <div class={tw`${highlightCss}`} dangerouslySetInnerHTML={{ __html }}></div>
@@ -129,7 +131,7 @@ export function PostCard(
 
 export function PostArticle(
   { children: content, post: { title, author, date, summary, hero, tags } }: {
-    children: string;
+    children?: string;
     post: Post;
   },
 ) {
