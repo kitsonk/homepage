@@ -57,5 +57,5 @@ export const handler: Handlers = {
 };
 
 export const config: RouteConfig = {
-  routeOverride: "/posts/:id/:path*",
+  routeOverride: "/posts/:id/:path+",
 };
