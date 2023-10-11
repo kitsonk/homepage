@@ -133,7 +133,7 @@ export default function ResumeCV() {
         >
           <p>
             Leading delivery for the Advisory practice within CTO Labs.
-            Specialising in &A technical due diligence and providing technical
+            Specialising in M&A technical due diligence and providing technical
             advisory to organisations at executive levels. In addition to
             providing advisory services, working to internally scale our
             advisory capability in the market and organise and manage the
