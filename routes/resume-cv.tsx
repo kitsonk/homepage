@@ -127,15 +127,17 @@ export default function ResumeCV() {
       </section>
       <section class="py-8 border-b-2">
         <Role
-          title="Principal Technologist"
+          title="Principal Advisor"
           company="CTO Labs"
           start="Nov 2022"
         >
           <p>
-            Working within the M&A technical due diligence and technical
-            advisory capability within CTO Labs, leading technical due
-            diligences activities for merger and acquisition transactions, as
-            well as providing strategic technical advisory for clients.
+            Leading delivery for the Advisory practice within CTO Labs.
+            Specialising in &A technical due diligence and providing technical
+            advisory to organisations at executive levels. In addition to
+            providing advisory services, working to internally scale our
+            advisory capability in the market and organise and manage the
+            delivery of services.
           </p>
         </Role>
         <Role
