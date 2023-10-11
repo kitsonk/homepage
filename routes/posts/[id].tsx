@@ -1,5 +1,5 @@
 import { type RouteContext } from "$fresh/server.ts";
-import { assert } from "std/_util/asserts.ts";
+import { assert } from "std/assert/assert.ts";
 import { Footer } from "../../components/Footer.tsx";
 import { Meta } from "../../components/Meta.tsx";
 import { PostArticle } from "../../components/Post.tsx";

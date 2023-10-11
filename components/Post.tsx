@@ -12,7 +12,7 @@ import "prism/components/prism-typescript?no-check";
 import config from "../config.json" assert { type: "json" };
 import { type Post } from "../utils/posts.ts";
 import { Meta } from "./Meta.tsx";
-import { assert } from "std/_util/asserts.ts";
+import { assert } from "std/assert/assert.ts";
 
 const postCss = css({
   // headings

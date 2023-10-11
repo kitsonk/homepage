@@ -4,38 +4,22 @@
     "start": "deno task build && deno run -A --watch=static/,routes/ dev.ts",
     "preview": "deno run -A main.ts"
   },
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "preact"
-  },
+  "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
   "imports": {
-    "$fresh/": "https://deno.land/x/fresh@1.4.2/",
-    "preact": "https://esm.sh/preact@10.15.1",
-    "preact/": "https://esm.sh/preact@10.15.1/",
-    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.2.1",
-    "@preact/signals": "https://esm.sh/*@preact/signals@1.1.3",
-    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.2.3",
+    "$fresh/": "https://deno.land/x/fresh@1.5.0/",
+    "preact": "https://esm.sh/preact@10.18.1",
+    "preact/": "https://esm.sh/preact@10.18.1/",
+    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.2.2",
+    "@preact/signals": "https://esm.sh/*@preact/signals@1.2.1",
+    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.0",
     "twind": "https://esm.sh/twind@0.16.19",
     "twind/": "https://esm.sh/twind@0.16.19/",
     "ga4": "https://raw.githubusercontent.com/denoland/ga4/main/mod.ts",
     "gfm": "https://deno.land/x/gfm@0.2.5/mod.ts",
     "prism/": "https://esm.sh/stable/prismjs@1.29.0/",
-    "std/": "https://deno.land/std@0.193.0/"
+    "std/": "https://deno.land/std@0.203.0/"
   },
-  "lint": {
-    "rules": {
-      "tags": [
-        "fresh",
-        "recommended"
-      ]
-    },
-    "exclude": [
-      "_fresh"
-    ]
-  },
-  "fmt": {
-    "exclude": [
-      "_fresh"
-    ]
-  }
+  "lock": false,
+  "lint": { "rules": { "tags": ["fresh", "recommended"] } },
+  "exclude": ["**/_fresh/*"]
 }
