@@ -113,6 +113,30 @@ export default function About() {
               server, and other DX features.
             </Project>
             <Project
+              title="kview"
+              logo="/images/projects/kview.svg"
+              href="https://deno.land/x/kview"
+            >
+              A{" "}
+              <a
+                href="https://deno.com/kv"
+                target="_blank"
+                class="text-green(600 dark:400) hover:underline"
+              >
+                Deno KV
+              </a>{" "}
+              viewer, editor, and other tooling to make it easy to manage KV
+              stores.
+            </Project>
+            <Project
+              title="oak"
+              logo="/images/projects/oak.png"
+              href="https://oakserver.github.io/oak/"
+            >
+              The most popular server middleware framework for Deno. Adapting a
+              lot of concepts from Express or koa.
+            </Project>
+            <Project
               title="nocuous"
               logo="/images/projects/nocuous.svg"
               href="https://nocuous.deno.dev/"
@@ -126,14 +150,6 @@ export default function About() {
               >
                 How toxic is your code?
               </a>
-            </Project>
-            <Project
-              title="oak"
-              logo="/images/projects/oak.png"
-              href="https://oakserver.github.io/oak/"
-            >
-              The most popular server middleware framework for Deno. Adapting a
-              lot of concepts from Express or koa.
             </Project>
             <Project
               title="Dojo"
