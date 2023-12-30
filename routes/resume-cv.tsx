@@ -44,7 +44,7 @@ export default function ResumeCV() {
           <p>
             <strong>Kitson P. Kelly</strong>
           </p>
-          <p>1/60 Naples Road</p>
+          <p>1 Rogers Street</p>
           <p>Mentone</p>
           <p>Victoria 3194</p>
           <p>Australia</p>
@@ -82,7 +82,7 @@ export default function ResumeCV() {
               </tr>
               <tr>
                 <td>
-                  <strong>Twitter</strong>:
+                  <strong>Twitter/X</strong>:
                 </td>
                 <td class="px-4">
                   <a
