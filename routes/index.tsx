@@ -1,6 +1,7 @@
 import { Footer } from "../components/Footer.tsx";
 import { Meta } from "../components/Meta.tsx";
 import { PostCard } from "../components/Post.tsx";
+import { Project } from "../components/Project.tsx";
 import { posts } from "../utils/posts.ts";
 
 export default function Home() {
@@ -57,6 +58,115 @@ export default function Home() {
           </div>
           <div class="grid gap-8 lg:grid-cols-3">
             {posts.slice(0, 3).map((post) => <PostCard>{post}</PostCard>)}
+          </div>
+        </div>
+      </section>
+      <section class="bg-white dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 text-gray-700 sm:text-lg dark:text-gray-200 space-y-6">
+          <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
+            <h2 class="font-header mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+              Projects
+            </h2>
+            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+              Open source projects that I created or had a significant role in
+              developing.
+            </p>
+          </div>
+          <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 xl:gap-8 md:space-y-0">
+            <Project
+              title="Deno"
+              logo="/images/projects/deno.svg"
+              href="https://deno.land/"
+            >
+              A former core team member, having worked on Deno for four and half
+              years. Mainly focused on the TypeScript integration, the language
+              server, and other DX features.
+            </Project>
+            <Project
+              title="kview"
+              logo="/images/projects/kview.svg"
+              href="https://deno.land/x/kview"
+            >
+              A{" "}
+              <a
+                href="https://deno.com/kv"
+                target="_blank"
+                class="text-green(600 dark:400) hover:underline"
+              >
+                Deno KV
+              </a>{" "}
+              viewer, editor, and other tooling to make it easy to manage KV
+              stores.
+            </Project>
+            <Project
+              title="tswhy?"
+              logo="/images/projects/tswhy.svg"
+              href="https://tswhy.deno.dev/"
+            >
+              A community effort to enrich TypeScript diagnostics, providing
+              documentation of what can cause the diagnostic to occur and common
+              fixes or workarounds.
+            </Project>
+            <Project
+              title="oak"
+              logo="/images/projects/oak.png"
+              href="https://oakserver.github.io/oak/"
+            >
+              The most popular server middleware framework for Deno. Adapting a
+              lot of concepts from Express or koa.
+            </Project>
+            <Project
+              title="nocuous"
+              logo="/images/projects/nocuous.svg"
+              href="https://nocuous.deno.dev/"
+            >
+              Static code toxicity analysis for JavaScript and TypeScript, based
+              on Erik Dörnenburg's concepts described in{" "}
+              <a
+                href="https://erik.doernenburg.com/2008/11/how-toxic-is-your-code/"
+                target="_blank"
+                class="text-green(600 dark:400) hover:underline"
+              >
+                How toxic is your code?
+              </a>
+            </Project>
+            <Project
+              title="Dojo"
+              logo="/images/projects/dojo.png"
+              href="https://dojo.io"
+            >
+              Former project lead, taking the "legacy" Dojo Toolkit and
+              re-inventing it as a modern JavaScript/TypeScript web application
+              framework.
+            </Project>
+            <Project
+              title="entente"
+              logo="/images/projects/h-o-t.png"
+              href="https://github.com/h-o-t/entente"
+            >
+              A convention testing framework for JavaScript/TypeScript.
+            </Project>
+            <Project
+              title="Fresh Charts"
+              logo="/images/projects/fresh.svg"
+              href="https://fresh-charts.deno.dev/"
+            >
+              Server side rendering for{" "}
+              <a
+                href="https://www.chartjs.org/"
+                target="_blank"
+                class="text-green(600 dark:400) hover:underline"
+              >
+                Chart.js
+              </a>, intended for use with{" "}
+              <a
+                href="https://fresh.deno.dev/"
+                target="_blank"
+                class="text-green(600 dark:400) hover:underline"
+              >
+                Fresh.
+              </a>
+            </Project>
           </div>
         </div>
       </section>
