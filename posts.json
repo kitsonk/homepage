@@ -1,5 +1,24 @@
 [
   {
+    "id": "jsr-first-impressions",
+    "title": "JSR first impressions",
+    "date": "2023-07-08T02:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": "/posts/jsr-first-impressions/hero.png"
+    },
+    "href": "/posts/jsr-first-impressions",
+    "tags": [
+      "deno",
+      "jsr",
+      "npm",
+      "node"
+    ],
+    "summary": "JSR is a new package repository being introduced by the team at Deno that aims to solve many problems in the Javascript eco-system. I was invited to take part in very early access to it and want to share my impressions.\n",
+    "readEstimate": 14,
+    "isDir": true
+  },
+  {
     "id": "leaving-deno-land",
     "title": "Leaving Deno Land",
     "date": "2023-07-08T02:00:00.000Z",
