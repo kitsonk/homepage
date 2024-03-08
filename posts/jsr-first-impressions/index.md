@@ -1,7 +1,7 @@
 ---
 title: "JSR first impressions"
 description: Initial impressions of the JSR registry.
-date: 2023-07-08T12:00:00+10:00
+date: 2024-02-12T12:00:00+10:00
 hero: /posts/jsr-first-impressions/hero.png
 summary: >
   JSR is a new package repository being introduced by the team at Deno that aims
@@ -93,12 +93,12 @@ with the benefits of not always pinning to a specific version.
 
 Another problem that JSR appears to be trying to solve is **fully supporting
 TypeScript alongside Javascript**. TypeScript didn't exist with the creation of
-TypeScript and the solutions around TypeScript the community have arrived at
-really work around the challenges. It is confusing for package maintainers, "do
-I ship both transpiled and source TypeScript code? If I ship both, how do I help
-the users consume the package?" It is a real mess. In JSR you publish your
-source, be it TypeScript or Javascript, and the registry makes sure that the
-users consume the right version of code.
+npm and the solutions around TypeScript the community have arrived at really
+work around the challenges. It is confusing for package maintainers, "do I ship
+both transpiled and source TypeScript code? If I ship both, how do I help the
+users consume the package?" It is a real mess. In JSR you publish your source,
+be it TypeScript or Javascript, and the registry makes sure that the users
+consume the right version of code.
 
 In addition, **published code is "zapped"** (which appears to be originally
 called FastCheck bit is migrating to Zap, which I suspect is because of the
