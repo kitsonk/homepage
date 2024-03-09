@@ -1,8 +1,28 @@
 [
   {
+    "id": "the-usual-suspects",
+    "title": "The Usual Suspects",
+    "date": "2024-03-09T02:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": "/posts/the-usual-suspects/hero.webp"
+    },
+    "href": "/posts/the-usual-suspects",
+    "tags": [
+      "jsr",
+      "deno",
+      "node",
+      "bun",
+      "cloudflare workers"
+    ],
+    "summary": "The Javascript eco-system is varied these days and JSR is attempting to be a package registry up for the challenge. I wanted to share my experience of taking the middleware framework I originally wrote for Deno and making it work under Node.js, Bun and Cloudflare Workers.\n",
+    "readEstimate": 0,
+    "isDir": true
+  },
+  {
     "id": "jsr-first-impressions",
     "title": "JSR first impressions",
-    "date": "2023-07-08T02:00:00.000Z",
+    "date": "2024-02-12T02:00:00.000Z",
     "author": "kitsonk",
     "hero": {
       "src": "/posts/jsr-first-impressions/hero.png"
@@ -15,7 +35,7 @@
       "node"
     ],
     "summary": "JSR is a new package repository being introduced by the team at Deno that aims to solve many problems in the Javascript eco-system. I was invited to take part in very early access to it and want to share my impressions.\n",
-    "readEstimate": 14,
+    "readEstimate": 15,
     "isDir": true
   },
   {

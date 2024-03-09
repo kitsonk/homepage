@@ -22,6 +22,7 @@ export function Meta(
   return (
     <Head>
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:domain" content="kitsonkelly.com" />
       <meta name="twitter:site" content="@kitsonk" />
       <meta rel="me" href="https://aus.social/@kitsonk" />
 
