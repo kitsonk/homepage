@@ -16,7 +16,7 @@
       "cloudflare workers"
     ],
     "summary": "The Javascript eco-system is varied these days and JSR is attempting to be a package registry up for the challenge. I wanted to share my experience of taking the middleware framework I originally wrote for Deno and making it work under Node.js, Bun and Cloudflare Workers.\n",
-    "readEstimate": 0,
+    "readEstimate": 8,
     "isDir": true
   },
   {

@@ -19,6 +19,7 @@ export default async function Post(
     <>
       <Meta
         title={post.title}
+        canonical={post.href}
         description={post.summary}
         keywords={["blog", ...post.tags]}
         image={post.hero.src}

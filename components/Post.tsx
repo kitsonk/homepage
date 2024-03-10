@@ -130,7 +130,10 @@ export function PostCard(
 }
 
 export function PostArticle(
-  { children: content, post: { title, author, date, summary, hero, tags } }: {
+  {
+    children: content,
+    post: { title, href, author, date, summary, hero, tags },
+  }: {
     children?: string;
     post: Post;
   },
@@ -139,15 +142,6 @@ export function PostArticle(
     config.authors[author as keyof typeof config["authors"]];
   return (
     <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900">
-      <Meta
-        title={title}
-        creator={twitter}
-        description={summary}
-        keywords={["blog", "kitson kelly", ...tags]}
-        image={hero.src}
-        alt={hero.alt}
-        type="article"
-      />
       <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
         <article class={tw`mx-auto w-full max-w-2xl ${postCss}`}>
           <header class="mb-4 lg:mb-6">

@@ -6,6 +6,7 @@ export default function About() {
     <>
       <Meta
         title="About | 7 foot tall cactus"
+        canonical="/about"
         description="Hi, I'm Kit. I am a husband. I am a father. I am a technologist. I have lots of opinions. I work on M&A due diligence."
       />
       <section class="bg-white dark:bg-gray-900">

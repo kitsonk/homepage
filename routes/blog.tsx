@@ -8,6 +8,7 @@ export default function Blog() {
     <>
       <Meta
         title="Blog | 7 foot tall cactus"
+        canonical="/blog"
         description="Long form rantings from a recovering 7 foot tall cactus."
         keywords={["blog", "kitson kelly"]}
       />

@@ -9,6 +9,7 @@ export default function Home() {
     <>
       <Meta
         title="7 foot tall cactus"
+        canonical="/"
         description="The homepage of Kitson P. Kelly."
       />
       <section class="bg-hero-pattern bg-no-repeat bg-cover bg-center bg-gray-700 bg-blend-multiply">

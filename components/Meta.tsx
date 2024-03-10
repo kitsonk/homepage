@@ -4,6 +4,7 @@ export function Meta(
   {
     title,
     description,
+    canonical,
     creator = "@kitsonk",
     keywords = ["homepage", "kitson kelly"],
     image,
@@ -11,6 +12,7 @@ export function Meta(
     type = "website",
   }: {
     title: string;
+    canonical?: string;
     description?: string;
     creator?: string;
     keywords?: string[];
@@ -19,6 +21,7 @@ export function Meta(
     type?: "website" | "article";
   },
 ) {
+  console.log("canonical", canonical);
   return (
     <Head>
       <meta name="twitter:card" content="summary_large_image" />
@@ -67,6 +70,10 @@ export function Meta(
       <meta property="og:locale" content="en_AU" />
 
       <meta name="keywords" content={keywords.join(", ")} />
+
+      {canonical && (
+        <link rel="canonical" href={`https://kitsonkelly.com${canonical}`} />
+      )}
     </Head>
   );
 }
