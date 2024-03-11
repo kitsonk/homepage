@@ -9,9 +9,8 @@ import "prism/components/prism-rust?no-check";
 import "prism/components/prism-tsx?no-check";
 import "prism/components/prism-typescript?no-check";
 
-import config from "../config.json" assert { type: "json" };
+import config from "../config.json" with { type: "json" };
 import { type Post } from "../utils/posts.ts";
-import { Meta } from "./Meta.tsx";
 import { assert } from "std/assert/assert.ts";
 
 const postCss = css({

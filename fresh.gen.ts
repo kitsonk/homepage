@@ -7,6 +7,12 @@ import * as $_app from "./routes/_app.tsx";
 import * as $_middleware from "./routes/_middleware.ts";
 import * as $about from "./routes/about.tsx";
 import * as $blog from "./routes/blog.tsx";
+import * as $charts_latency_edge_m from "./routes/charts/latency-edge-m.tsx";
+import * as $charts_latency_edge from "./routes/charts/latency-edge.tsx";
+import * as $charts_latency_local from "./routes/charts/latency-local.tsx";
+import * as $charts_rps_edge_m from "./routes/charts/rps-edge-m.tsx";
+import * as $charts_rps_edge from "./routes/charts/rps-edge.tsx";
+import * as $charts_rps_local from "./routes/charts/rps-local.tsx";
 import * as $contact from "./routes/contact.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $posts_id_ from "./routes/posts/[id].tsx";
@@ -22,6 +28,12 @@ const manifest = {
     "./routes/_middleware.ts": $_middleware,
     "./routes/about.tsx": $about,
     "./routes/blog.tsx": $blog,
+    "./routes/charts/latency-edge-m.tsx": $charts_latency_edge_m,
+    "./routes/charts/latency-edge.tsx": $charts_latency_edge,
+    "./routes/charts/latency-local.tsx": $charts_latency_local,
+    "./routes/charts/rps-edge-m.tsx": $charts_rps_edge_m,
+    "./routes/charts/rps-edge.tsx": $charts_rps_edge,
+    "./routes/charts/rps-local.tsx": $charts_rps_local,
     "./routes/contact.tsx": $contact,
     "./routes/index.tsx": $index,
     "./routes/posts/[id].tsx": $posts_id_,

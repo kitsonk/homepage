@@ -1,5 +1,26 @@
 [
   {
+    "id": "http-speed",
+    "title": "HTTP Speed",
+    "date": "2024-03-11T02:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": "/posts/http-speed/hero.webp"
+    },
+    "href": "/posts/http-speed",
+    "tags": [
+      "jsr",
+      "deno",
+      "deno deploy",
+      "node",
+      "bun",
+      "cloudflare workers"
+    ],
+    "summary": "Since I was writing recently about getting oak to work under Deno, Deno Deploy, Node.js, Bun and Cloudflare Workers, I started to wonder if there would be performance differences. Well I found out.\n",
+    "readEstimate": 11,
+    "isDir": true
+  },
+  {
     "id": "the-usual-suspects",
     "title": "The Usual Suspects",
     "date": "2024-03-09T02:00:00.000Z",

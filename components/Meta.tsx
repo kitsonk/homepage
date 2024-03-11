@@ -21,7 +21,6 @@ export function Meta(
     type?: "website" | "article";
   },
 ) {
-  console.log("canonical", canonical);
   return (
     <Head>
       <meta name="twitter:card" content="summary_large_image" />

@@ -8,6 +8,8 @@
   "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.6.3/",
+    "$fresh_charts": "https://deno.land/x/fresh_charts@0.3.1/mod.ts",
+    "$fresh_charts/utils": "https://deno.land/x/fresh_charts@0.3.1/utils.ts",
     "preact": "https://esm.sh/preact@10.19.2",
     "preact/": "https://esm.sh/preact@10.19.2/",
     "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.2.2",
