@@ -21,7 +21,8 @@ export function Meta(
     type?: "website" | "article";
   },
 ) {
-  const imageUrl = image && new URL(image, import.meta.url).toString();
+  const imageUrl = image &&
+    new URL(image, "https://kitsonkelly.com/").toString();
   return (
     <Head>
       <meta name="twitter:card" content="summary_large_image" />
