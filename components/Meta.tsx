@@ -21,6 +21,7 @@ export function Meta(
     type?: "website" | "article";
   },
 ) {
+  const imageUrl = image && new URL(image, import.meta.url).toString();
   return (
     <Head>
       <meta name="twitter:card" content="summary_large_image" />
@@ -42,11 +43,11 @@ export function Meta(
 
       {creator && <meta name="twitter:creator" content={creator} />}
 
-      {image
+      {imageUrl
         ? (
           <>
-            <meta name="twitter:image" content={image} />
-            <meta property="og:image" content={image} />
+            <meta name="twitter:image" content={imageUrl} />
+            <meta property="og:image" content={imageUrl} />
             {alt && (
               <>
                 <meta name="twitter:image:alt" content={alt} />
