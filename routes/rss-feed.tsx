@@ -25,8 +25,11 @@ declare module "preact" {
 
     interface RssAttributes<Target extends EventTarget = RssElement>
       extends PreactJSX.HTMLAttributes<Target> {
+      medium?: string | undefined | SignalLike<string | undefined>;
+      url?: string | undefined | SignalLike<string | undefined>;
       version?: string | undefined | SignalLike<string | undefined>;
       "xmlns:atom"?: string | undefined | SignalLike<string | undefined>;
+      "xmlns:media"?: string | undefined | SignalLike<string | undefined>;
     }
 
     export interface IntrinsicElements {
@@ -38,6 +41,7 @@ declare module "preact" {
       guid: RssAttributes<RssElement>;
       item: RssAttributes<RssElement>;
       language: RssAttributes<RssElement>;
+      "media:content": RssAttributes<RssElement>;
       pubDate: RssAttributes<RssElement>;
       rss: RssAttributes<RssElement>;
       url: RssAttributes<RssElement>;
@@ -47,6 +51,9 @@ declare module "preact" {
 
 function Item({ post }: { post: Post }) {
   const href = new URL(post.href, "https://kitsonkelly.com").toString();
+  const hero = post.hero.src
+    ? new URL(post.hero.src, "https://kitsonkelly.com").toString()
+    : undefined;
   const categories = post.tags &&
     post.tags.map((tag) => <category>{tag}</category>);
   return (
@@ -56,6 +63,7 @@ function Item({ post }: { post: Post }) {
       <description>{post.summary}</description>
       <pubDate>{new Date(post.date).toUTCString()}</pubDate>
       <guid>{href}</guid>
+      {hero && <media:content medium="image" url={hero} />}
       {categories}
     </item>
   );
@@ -64,7 +72,11 @@ function Item({ post }: { post: Post }) {
 function Rss() {
   const items = postsJson.map((post) => <Item post={post} />);
   return (
-    <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <rss
+      xmlns:atom="http://www.w3.org/2005/Atom"
+      xmlns:media="http://search.yahoo.com/mrss/"
+      version="2.0"
+    >
       <channel>
         <title>7 foot tall cactus</title>
         <link>https://kitsonkelly.com</link>
