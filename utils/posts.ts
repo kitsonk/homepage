@@ -1,6 +1,6 @@
 import { extract } from "std/front_matter/any.ts";
 import { readEstimate } from "./readEstimate.ts";
-import postsJson from "../posts.json" assert { type: "json" };
+import postsJson from "../posts.json" with { type: "json" };
 
 export interface Post {
   id: string;

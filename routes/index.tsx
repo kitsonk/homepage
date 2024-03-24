@@ -1,3 +1,5 @@
+import { Head } from "$fresh/runtime.ts";
+
 import { Footer } from "../components/Footer.tsx";
 import { Meta } from "../components/Meta.tsx";
 import { PostCard } from "../components/Post.tsx";
@@ -12,6 +14,14 @@ export default function Home() {
         canonical="/"
         description="The homepage of Kitson P. Kelly."
       />
+      <Head>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="RSS"
+          href="https://kitsonkelly.com/rss-feed"
+        />
+      </Head>
       <section class="bg-hero-pattern bg-no-repeat bg-cover bg-center bg-gray-700 bg-blend-multiply">
         <div class="relative py-8 px-4 mx-auto max-w-screen-xl text-white lg:py-16 z-0">
           <div class="mb-6 max-w-screen-lg lg:mb-0">

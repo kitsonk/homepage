@@ -18,6 +18,7 @@ import * as $index from "./routes/index.tsx";
 import * as $posts_id_ from "./routes/posts/[id].tsx";
 import * as $posts_content from "./routes/posts/content.ts";
 import * as $resume_cv from "./routes/resume-cv.tsx";
+import * as $rss_feed from "./routes/rss-feed.tsx";
 
 import { type Manifest } from "$fresh/server.ts";
 
@@ -39,6 +40,7 @@ const manifest = {
     "./routes/posts/[id].tsx": $posts_id_,
     "./routes/posts/content.ts": $posts_content,
     "./routes/resume-cv.tsx": $resume_cv,
+    "./routes/rss-feed.tsx": $rss_feed,
   },
   islands: {},
   baseUrl: import.meta.url,
