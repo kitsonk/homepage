@@ -54,7 +54,7 @@ function Item({ post }: { post: Post }) {
       <title>{post.title}</title>
       <link>{href}</link>
       <description>{post.summary}</description>
-      <pubDate>{post.date}</pubDate>
+      <pubDate>{new Date(post.date).toUTCString()}</pubDate>
       <guid>{href}</guid>
       {categories}
     </item>
@@ -72,7 +72,7 @@ function Rss() {
         <language>en-AU</language>
         <generator>Fresh + Preact</generator>
         <atom:link
-          href="https://www.rssboard.org/files/sample-rss-2.xml"
+          href="https://kitsonkelly.com/rss-feed"
           rel="self"
           type="application/rss+xml"
         />
