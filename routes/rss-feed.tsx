@@ -81,8 +81,8 @@ function Rss() {
           <title>7 foot tall cactus</title>
           <link>https://kitsonkelly.com</link>
         </image>
+        {items}
       </channel>
-      {items}
     </rss>
   );
 }
