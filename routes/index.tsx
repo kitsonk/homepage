@@ -96,7 +96,7 @@ export default function Home() {
             <Project
               title="kview"
               logo="/images/projects/kview.svg"
-              href="https://deno.land/x/kview"
+              href="https://kview.deno.dev/"
             >
               A{" "}
               <a
@@ -121,7 +121,7 @@ export default function Home() {
             <Project
               title="oak"
               logo="/images/projects/oak.png"
-              href="https://oakserver.github.io/oak/"
+              href="https://oakserver.org/"
             >
               The most popular server middleware framework for Deno. Adapting a
               lot of concepts from Express or koa.

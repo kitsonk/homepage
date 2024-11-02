@@ -76,6 +76,19 @@ const icons = {
       <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
     </svg>
   ),
+  "bluesky": (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      aria-label="BlueSky Icon"
+    >
+      <path
+        fill="currentColor"
+        d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565C.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479c.815 2.736 3.713 3.66 6.383 3.364q.204-.03.415-.056q-.207.033-.415.056c-3.912.58-7.387 2.005-2.83 7.078c5.013 5.19 6.87-1.113 7.823-4.308c.953 3.195 2.05 9.271 7.733 4.308c4.267-4.308 1.172-6.498-2.74-7.078a9 9 0 0 1-.415-.056q.21.026.415.056c2.67.297 5.568-.628 6.383-3.364c.246-.828.624-5.79.624-6.478c0-.69-.139-1.861-.902-2.206c-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8"
+      >
+      </path>
+    </svg>
+  ),
 };
 
 type Icon = keyof typeof icons;
@@ -133,6 +146,11 @@ export default function Contact() {
           </div>
           <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
             <ContactCard
+              title="@kitsonkelly.com"
+              icon="bluesky"
+              href="https://bsky.app/profile/kitsonkelly.com"
+            />
+            <ContactCard
               title="@kitsonk"
               icon="x"
               href="https://twitter.com/kitsonk"
@@ -156,11 +174,6 @@ export default function Contact() {
               title="threads.net/@kitsonk"
               icon="threads"
               href="https://www.threads.net/@kitsonk"
-            />
-            <ContactCard
-              title="Signal"
-              icon="signal"
-              href="sgnl://signal.me/#p/+61451089418"
             />
             <ContactCard
               title="me@kitsonkelly.com"
