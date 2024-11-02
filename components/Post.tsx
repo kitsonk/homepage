@@ -1,17 +1,17 @@
-import { render } from "gfm";
+import { render } from "@deno/gfm";
 import { apply, tw } from "twind";
 import { css } from "twind/css";
 
-import "prism/components/prism-jsx?no-check";
-import "prism/components/prism-javascript?no-check";
-import "prism/components/prism-json?no-check";
-import "prism/components/prism-rust?no-check";
-import "prism/components/prism-tsx?no-check";
-import "prism/components/prism-typescript?no-check";
+import "prismjs/components/prism-jsx.js";
+import "prismjs/components/prism-javascript.js";
+import "prismjs/components/prism-json.js";
+import "prismjs/components/prism-rust.js";
+import "prismjs/components/prism-tsx.js";
+import "prismjs/components/prism-typescript.js";
 
 import config from "../config.json" with { type: "json" };
 import { type Post } from "../utils/posts.ts";
-import { assert } from "std/assert/assert.ts";
+import { assert } from "@std/assert/assert";
 
 const postCss = css({
   // headings
@@ -131,13 +131,13 @@ export function PostCard(
 export function PostArticle(
   {
     children: content,
-    post: { title, href, author, date, summary, hero, tags },
+    post: { title, author, date },
   }: {
     children?: string;
     post: Post;
   },
 ) {
-  const { name, title: authorTitle, avatar, twitter } =
+  const { name, title: authorTitle, avatar } =
     config.authors[author as keyof typeof config["authors"]];
   return (
     <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900">

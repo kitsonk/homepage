@@ -1,4 +1,4 @@
-import { extract } from "std/front_matter/any.ts";
+import { extract } from "@std/front-matter/any";
 import { readEstimate } from "./readEstimate.ts";
 import postsJson from "../posts.json" with { type: "json" };
 

@@ -20,7 +20,7 @@ import * as $posts_content from "./routes/posts/content.ts";
 import * as $resume_cv from "./routes/resume-cv.tsx";
 import * as $rss_feed from "./routes/rss-feed.tsx";
 
-import { type Manifest } from "$fresh/server.ts";
+import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {

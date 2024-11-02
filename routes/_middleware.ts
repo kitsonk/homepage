@@ -1,7 +1,7 @@
-import { MiddlewareHandlerContext } from "$fresh/server.ts";
-import { GA4Report, isDocument } from "ga4";
+import { FreshContext } from "$fresh/server.ts";
+import { GA4Report, isDocument } from "@kitsonk/ga4";
 
-export async function handler(request: Request, ctx: MiddlewareHandlerContext) {
+export async function handler(request: Request, ctx: FreshContext) {
   const response = await ctx.next();
   queueMicrotask(async () => {
     if (!isDocument(request, response)) {
