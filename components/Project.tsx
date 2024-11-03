@@ -13,7 +13,7 @@ export function Project(
       <a
         href={href}
         target="_blank"
-        class="text-green(700 dark:400) hover:underline"
+        class="text-green-700 dark:text-green-400 hover:underline"
       >
         <img
           class="justify-center items-center mb-4 w-12 h-12 rounded bg-white lg:h-16 lg:w-16 p-2"

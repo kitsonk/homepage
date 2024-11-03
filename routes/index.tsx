@@ -102,7 +102,7 @@ export default function Home() {
               <a
                 href="https://deno.com/kv"
                 target="_blank"
-                class="text-green(600 dark:400) hover:underline"
+                class="text-green-600 dark:text-green-400 hover:underline"
               >
                 Deno KV
               </a>{" "}
@@ -136,7 +136,7 @@ export default function Home() {
               <a
                 href="https://erik.doernenburg.com/2008/11/how-toxic-is-your-code/"
                 target="_blank"
-                class="text-green(600 dark:400) hover:underline"
+                class="text-green-600 dark:text-green-400 hover:underline"
               >
                 How toxic is your code?
               </a>
@@ -166,14 +166,14 @@ export default function Home() {
               <a
                 href="https://www.chartjs.org/"
                 target="_blank"
-                class="text-green(600 dark:400) hover:underline"
+                class="text-green-600 dark:text-green-400 hover:underline"
               >
                 Chart.js
               </a>, intended for use with{" "}
               <a
                 href="https://fresh.deno.dev/"
                 target="_blank"
-                class="text-green(600 dark:400) hover:underline"
+                class="text-green-600 dark:text-green-400 hover:underline"
               >
                 Fresh.
               </a>

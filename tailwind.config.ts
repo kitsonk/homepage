@@ -1,3 +1,5 @@
+import { type Config } from "tailwindcss";
+
 const colors = {
   "chalet-green": {
     DEFAULT: "#606C38",
@@ -79,8 +81,10 @@ const colors = {
   },
 };
 
-/** @type {Omit<import("$fresh/plugins/twind.ts").Options, "selfURL">} */
 export default {
+  content: [
+    "{routes,islands,components}/**/*.{ts,tsx}",
+  ],
   theme: {
     backgroundImage: {
       "hero-pattern": "url('/images/bg_green.jpg')",
@@ -147,8 +151,8 @@ export default {
       },
     },
   },
-  preflight: {
-    "@import":
-      "url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Love+Ya+Like+A+Sister&family=Mali:ital,wght@0,400;0,700;1,400;1,700&display=swap')",
-  },
-};
+  // preflight: {
+  //   "@import":
+  //     "url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Love+Ya+Like+A+Sister&family=Mali:ital,wght@0,400;0,700;1,400;1,700&display=swap')",
+  // },
+} satisfies Config;
