@@ -22,8 +22,8 @@ I will admit, my emotions and thoughts about having a family have swayed over
 the years, from thinking that it would never be possible to thinking that
 adoption might be viable to now honestly considering surrogacy as the way to
 accomplish it. We are lucky to be comfortable financially. A child, via
-surrogacy, will cost you about $120,000 USD (~£76,000) in the US and about
-$40,000 (~£25,000) USD in India. While both of those are staggering amounts of
+surrogacy, will cost you about $120,000 USD (~~£76,000) in the US and about
+$40,000 (~~£25,000) USD in India. While both of those are staggering amounts of
 money, they are not beyond the realm of possibility for us. The strange thing is
 that these large amounts follow Britain’s regressive rules against commercial
 surrogacy.

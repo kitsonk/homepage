@@ -82,18 +82,33 @@ Now the declarative scripting supports those as well, so you can do the
 following:
 
 ```html
-<div data-dojo-type=...>
-  <script type="dojo/aspect" data-dojo-advice="after" data-dojo-method="method1" data-dojo-args="e">
+<div data-dojo-type="...">
+  <script
+    type="dojo/aspect"
+    data-dojo-advice="after"
+    data-dojo-method="method1"
+    data-dojo-args="e"
+  >
     console.log("I ran after!");
   </script>
-  <script type="dojo/aspect" data-dojo-advice="around" data-dojo-method="method2" data-dojo-args="origFn">
-    return function(){ // Have to act as a function factory
+  <script
+    type="dojo/aspect"
+    data-dojo-advice="around"
+    data-dojo-method="method2"
+    data-dojo-args="origFn"
+  >
+    return function () { // Have to act as a function factory
       console.log("I ran before!");
       origFn.call(this); // You have to call the original function
       console.log("I ran after!");
     };
   </script>
-  <script type="dojo/aspect" data-dojo-advice="before" data-dojo-method="method3" data-dojo-args="i">
+  <script
+    type="dojo/aspect"
+    data-dojo-advice="before"
+    data-dojo-method="method3"
+    data-dojo-args="i"
+  >
     console.log("I ran before!");
     i++; // Modifying argument
     return [i]; // Returning modified arguments to be used with original function

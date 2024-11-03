@@ -1,8 +1,8 @@
 {
   "tasks": {
     "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
-    "build": "deno run --allow-read=. --allow-write=. build.ts && deno run -A dev.ts build",
-    "start": "deno task build && deno run -A --watch=static/,routes/ dev.ts",
+    "build": "deno run -A dev.ts build",
+    "start": "deno run -A --watch=static/,routes/,posts/ dev.ts",
     "preview": "deno run -A main.ts",
     "update": "deno run -A -r https://fresh.deno.dev/update ."
   },

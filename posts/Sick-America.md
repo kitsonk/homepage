@@ -3,7 +3,7 @@ title: Sick America
 date: 2017-06-25 16:55:36
 hero: /images/Healthcare.jpg
 summary: >
-  Having now lived full time outside of the US for over a decade, in the UK 
+  Having now lived full time outside of the US for over a decade, in the UK
   where we have socialised medical care. A word I was taught from all aspects as
   evil and anti-American. I can say without a doubt, I would never go back.
 tags:

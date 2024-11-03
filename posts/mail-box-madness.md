@@ -1,7 +1,7 @@
 ---
 title: mail-box madness.
 date: 2004-03-12 10:15:00
-summary: > 
+summary: >
   Someone ran into my mailbox yesterday, knocked the mailbox of its post and
   left it lying in my driveway. I didn't even get as much as a little note.
 author: kitsonk

@@ -2,7 +2,7 @@
 title: School Rates.
 date: 2007-03-10 16:55:00
 summary: >
-  Well, it seems that the Universities partly got their way with the rate 
+  Well, it seems that the Universities partly got their way with the rate
   increases.
 tags:
   - immigration

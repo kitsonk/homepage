@@ -5,7 +5,7 @@ summary: >
   According to the Telepgraph, Transport for London is about to open a public
   consultation on several things about “minicabs” that are just insane and are
   clearly an attempt to try to hinder Uber and other similar “on demand”
-  transport apps. 
+  transport apps.
 tags:
   - rant
 author: kitsonk

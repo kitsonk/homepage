@@ -2,8 +2,6 @@ import { type Handlers } from "$fresh/server.ts";
 import { renderChart } from "$fresh_charts";
 import { transparentize } from "$fresh_charts/utils";
 
-const HEADER_TYPEFACE =
-  `"Love Ya Like A Sister","ui-sans-serif","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","Noto Sans","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"`;
 const BODY_TYPEFACE =
   `"Mali","ui-sans-serif","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","Noto Sans","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"`;
 
