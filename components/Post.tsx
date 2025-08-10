@@ -16,6 +16,7 @@ function Markdown(
 ) {
   assert(markdown);
   const __html = render(markdown, { allowIframes: true, baseUrl });
+  // deno-lint-ignore react-no-danger
   return <div class="markdown" dangerouslySetInnerHTML={{ __html }}></div>;
 }
 
@@ -29,9 +30,8 @@ export function PostCard(
     children: Post;
   },
 ) {
-  const { name, avatar } =
-    config.authors[author as keyof typeof config["authors"]] ??
-      { name: "", avatar: "" };
+  const { name, avatar } = config.authors[author as keyof typeof config["authors"]] ??
+    { name: "", avatar: "" };
   return (
     <article class="p-4 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
       {hero.src && (
@@ -83,8 +83,7 @@ export function PostArticle(
     post: Post;
   },
 ) {
-  const { name, title: authorTitle, avatar } =
-    config.authors[author as keyof typeof config["authors"]];
+  const { name, title: authorTitle, avatar } = config.authors[author as keyof typeof config["authors"]];
   return (
     <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900">
       <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">

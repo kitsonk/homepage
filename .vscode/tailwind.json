@@ -17,7 +17,17 @@
       "references": [
         {
           "name": "Tailwind Documentation",
-          "url": "https://tailwindcss.com/docs/functions-and-directives#apply"
+          "url": "https://tailwindcss.com/docs/functions-and-directives#apply-directive"
+        }
+      ]
+    },
+    {
+      "name": "@theme",
+      "description": "Use the `@theme` directive to define your theme's colors, fonts, and other design tokens in one place.",
+      "references": [
+        {
+          "name": "Tailwind Documentation",
+          "url": "https://tailwindcss.com/docs/functions-and-directives#theme-directive"
         }
       ]
     },
@@ -27,7 +37,7 @@
       "references": [
         {
           "name": "Tailwind Documentation",
-          "url": "https://tailwindcss.com/docs/functions-and-directives#responsive"
+          "url": "https://tailwindcss.com/docs/functions-and-directives#responsive-directive"
         }
       ]
     },
@@ -37,7 +47,7 @@
       "references": [
         {
           "name": "Tailwind Documentation",
-          "url": "https://tailwindcss.com/docs/functions-and-directives#screen"
+          "url": "https://tailwindcss.com/docs/functions-and-directives#screen-directive"
         }
       ]
     },
@@ -47,7 +57,7 @@
       "references": [
         {
           "name": "Tailwind Documentation",
-          "url": "https://tailwindcss.com/docs/functions-and-directives#variants"
+          "url": "https://tailwindcss.com/docs/functions-and-directives#variants-directive"
         }
       ]
     }

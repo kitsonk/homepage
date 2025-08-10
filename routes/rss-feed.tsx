@@ -1,10 +1,9 @@
-import { type JSX as PreactJSX } from "preact";
-import { render } from "preact-render-to-string";
-import { type Handlers } from "$fresh/server.ts";
-
+// deno-lint-ignore-file jsx-void-dom-elements-no-children
 import postsJson from "../posts.json" with { type: "json" };
+import { define } from "../utils.ts";
+import "../utils/rss-types.ts";
 
-export interface Post {
+interface Post {
   id: string;
   title: string;
   date: string;
@@ -17,45 +16,11 @@ export interface Post {
   isDir: boolean;
 }
 
-declare module "preact" {
-  export namespace JSX {
-    interface RssElement extends Element, EventTarget {
-      "xmlns:atom"?: string;
-    }
-
-    interface RssAttributes<Target extends EventTarget = RssElement>
-      extends PreactJSX.HTMLAttributes<Target> {
-      medium?: string | undefined | SignalLike<string | undefined>;
-      url?: string | undefined | SignalLike<string | undefined>;
-      version?: string | undefined | SignalLike<string | undefined>;
-      "xmlns:atom"?: string | undefined | SignalLike<string | undefined>;
-      "xmlns:media"?: string | undefined | SignalLike<string | undefined>;
-    }
-
-    export interface IntrinsicElements {
-      "atom:link": RssAttributes<RssElement>;
-      category: RssAttributes<RssElement>;
-      channel: RssAttributes<RssElement>;
-      description: RssAttributes<RssElement>;
-      generator: RssAttributes<RssElement>;
-      guid: RssAttributes<RssElement>;
-      item: RssAttributes<RssElement>;
-      language: RssAttributes<RssElement>;
-      "media:content": RssAttributes<RssElement>;
-      pubDate: RssAttributes<RssElement>;
-      rss: RssAttributes<RssElement>;
-      url: RssAttributes<RssElement>;
-    }
-  }
-}
-
 function Item({ post }: { post: Post }) {
   const href = new URL(post.href, "https://kitsonkelly.com").toString();
-  const hero = post.hero.src
-    ? new URL(post.hero.src, "https://kitsonkelly.com").toString()
-    : undefined;
+  const hero = post.hero.src ? new URL(post.hero.src, "https://kitsonkelly.com").toString() : undefined;
   const categories = post.tags &&
-    post.tags.map((tag) => <category>{tag}</category>);
+    post.tags.map((tag, idx) => <category key={idx}>{tag}</category>);
   return (
     <item>
       <title>{post.title}</title>
@@ -69,8 +34,8 @@ function Item({ post }: { post: Post }) {
   );
 }
 
-function Rss() {
-  const items = postsJson.map((post) => <Item post={post} />);
+function RssFeed() {
+  const items = postsJson.map((post, idx) => <Item post={post} key={idx} />);
   return (
     <rss
       xmlns:atom="http://www.w3.org/2005/Atom"
@@ -99,13 +64,12 @@ function Rss() {
   );
 }
 
-export const handler: Handlers = {
-  GET() {
-    const body = render(Rss());
-    return new Response(body, {
+export const handler = define.handlers({
+  GET(ctx) {
+    return ctx.render(<RssFeed />, {
       headers: {
         "content-type": "application/rss+xml",
       },
     });
   },
-};
+});

@@ -7,8 +7,7 @@ author: kitsonk
 
 This low carb thing sucks! I feel like crap, but I am losing weight.
 
-Hopefully I will feel better after I get past this withdrawl from carbs. Man
-what I wouldn't give for a roast beef sandwidch.
+Hopefully I will feel better after I get past this withdrawl from carbs. Man what I wouldn't give for a roast beef
+sandwidch.
 
-I ate three filets last night! Sheesh, hopefully I won't always have such
-expensive tastes.
+I ate three filets last night! Sheesh, hopefully I won't always have such expensive tastes.

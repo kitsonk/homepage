@@ -4,10 +4,10 @@ My homepage on the internet.
 
 ### Usage
 
-Start the project:
+Start the project, in development mode:
 
 ```
-deno task start
+deno task dev
 ```
 
 This will watch the project directory and restart as necessary.

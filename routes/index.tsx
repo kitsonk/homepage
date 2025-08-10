@@ -1,27 +1,21 @@
-import { Head } from "$fresh/runtime.ts";
+import { page } from "fresh";
 
 import { Footer } from "../components/Footer.tsx";
-import { Meta } from "../components/Meta.tsx";
 import { PostCard } from "../components/Post.tsx";
 import { Project } from "../components/Project.tsx";
+import { define } from "../utils.ts";
 import { posts } from "../utils/posts.ts";
 
-export default function Home() {
+export const handler = define.handlers(({ state }) => {
+  state.title = "7 foot tall cactus";
+  state.canonical = "/";
+  state.description = "The homepage of Kitson P. Kelly.";
+  return page();
+});
+
+export default define.page(function Home() {
   return (
     <>
-      <Meta
-        title="7 foot tall cactus"
-        canonical="/"
-        description="The homepage of Kitson P. Kelly."
-      />
-      <Head>
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          title="RSS"
-          href="https://kitsonkelly.com/rss-feed"
-        />
-      </Head>
       <section class="bg-hero-pattern bg-no-repeat bg-cover bg-center bg-gray-700 bg-blend-multiply">
         <div class="relative py-8 px-4 mx-auto max-w-screen-xl text-white lg:py-16 z-0">
           <div class="mb-6 max-w-screen-lg lg:mb-0">
@@ -32,8 +26,8 @@ export default function Home() {
               Hi, I'm Kit.
             </p>
             <p class="mb-6 font-light text-gray-400 lg:mb-8 md:text-lg lg:text-xl">
-              I am a husband. I am a father. I am a technologist. I have lots of
-              opinions. I work on M&amp;A due diligence.
+              I am a husband. I am a father. I am a technologist. I have lots of opinions. I work on M&amp;A due
+              diligence.
             </p>
             <a
               href="/resume-cv"
@@ -68,7 +62,7 @@ export default function Home() {
             </p>
           </div>
           <div class="grid gap-8 lg:grid-cols-3">
-            {posts.slice(0, 3).map((post) => <PostCard>{post}</PostCard>)}
+            {posts.slice(0, 3).map((post, idx) => <PostCard key={idx}>{post}</PostCard>)}
           </div>
         </div>
       </section>
@@ -79,8 +73,7 @@ export default function Home() {
               Projects
             </h2>
             <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
-              Open source projects that I created or had a significant role in
-              developing.
+              Open source projects that I created or had a significant role in developing.
             </p>
           </div>
           <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 xl:gap-8 md:space-y-0">
@@ -89,9 +82,8 @@ export default function Home() {
               logo="/images/projects/deno.svg"
               href="https://deno.land/"
             >
-              A former core team member, having worked on Deno for four and half
-              years. Mainly focused on the TypeScript integration, the language
-              server, and other DX features.
+              A former core team member, having worked on Deno for four and half years. Mainly focused on the TypeScript
+              integration, the language server, and other DX features.
             </Project>
             <Project
               title="kview"
@@ -106,33 +98,30 @@ export default function Home() {
               >
                 Deno KV
               </a>{" "}
-              viewer, editor, and other tooling to make it easy to manage KV
-              stores.
+              viewer, editor, and other tooling to make it easy to manage KV stores.
             </Project>
             <Project
               title="tswhy?"
               logo="/images/projects/tswhy.svg"
               href="https://tswhy.deno.dev/"
             >
-              A community effort to enrich TypeScript diagnostics, providing
-              documentation of what can cause the diagnostic to occur and common
-              fixes or workarounds.
+              A community effort to enrich TypeScript diagnostics, providing documentation of what can cause the
+              diagnostic to occur and common fixes or workarounds.
             </Project>
             <Project
               title="oak"
               logo="/images/projects/oak.png"
               href="https://oakserver.org/"
             >
-              The most popular server middleware framework for Deno. Adapting a
-              lot of concepts from Express or koa.
+              The most popular server middleware framework for Deno. Adapting a lot of concepts from Express or koa.
             </Project>
             <Project
               title="nocuous"
               logo="/images/projects/nocuous.svg"
               href="https://nocuous.deno.dev/"
             >
-              Static code toxicity analysis for JavaScript and TypeScript, based
-              on Erik Dörnenburg's concepts described in{" "}
+              Static code toxicity analysis for JavaScript and TypeScript, based on Erik Dörnenburg's concepts described
+              in{" "}
               <a
                 href="https://erik.doernenburg.com/2008/11/how-toxic-is-your-code/"
                 target="_blank"
@@ -146,9 +135,8 @@ export default function Home() {
               logo="/images/projects/dojo.png"
               href="https://dojo.io"
             >
-              Former project lead, taking the "legacy" Dojo Toolkit and
-              re-inventing it as a modern JavaScript/TypeScript web application
-              framework.
+              Former project lead, taking the "legacy" Dojo Toolkit and re-inventing it as a modern
+              JavaScript/TypeScript web application framework.
             </Project>
             <Project
               title="entente"
@@ -184,4 +172,4 @@ export default function Home() {
       <Footer />
     </>
   );
-}
+});

@@ -14,7 +14,7 @@ export function Recent({ children }: { children?: Post[] }) {
         <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
           {children
             ?.slice(0, 3)
-            .map((post) => <PostCard>{post}</PostCard>)}
+            .map((post, idx) => <PostCard key={idx}>{post}</PostCard>)}
         </div>
       </div>
     </aside>

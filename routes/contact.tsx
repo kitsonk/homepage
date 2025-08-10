@@ -1,19 +1,10 @@
-import { ComponentChildren } from "https://esm.sh/v95/preact@10.11.0/src/index";
+import type { ComponentChildren } from "preact";
+import { page } from "fresh";
 
 import { Footer } from "../components/Footer.tsx";
-import { Meta } from "../components/Meta.tsx";
+import { define } from "../utils.ts";
 
 const icons = {
-  "x": (
-    <svg
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 300 300"
-      aria-label="X Icon"
-    >
-      <path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.4-116.59 81.8 116.59h89.34M36.01 19.54H76.66l187.13 262.13h-40.66" />
-    </svg>
-  ),
   "mastodon": (
     <svg
       fill="currentColor"
@@ -124,15 +115,17 @@ function ContactCard(
   );
 }
 
-export default function Contact() {
+export const handler = define.handlers(({ state }) => {
+  state.title = "Contact | 7 foot tall cactus";
+  state.canonical = "/contact";
+  state.description = "Contact information for Kitson Kelly";
+  state.keywords = ["contact", "kitson kelly"];
+  return page();
+});
+
+export default define.page(function Contact() {
   return (
     <>
-      <Meta
-        title="Contact | 7 foot tall cactus"
-        canonical="/contact"
-        description="Contact information for Kitson Kelly"
-        keywords={["contact", "kitson kelly"]}
-      />
       <section class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
           <div class="max-w-screen-md mb-8 lg:mb-16">
@@ -140,50 +133,24 @@ export default function Contact() {
               Contact
             </h2>
             <p class="text-gray-500 sm:text-xl dark:text-gray-400">
-              If for whatever reason, you wanted to contact me, there are
-              various methods to reach out.
+              If for whatever reason, you wanted to contact me, there are various methods to reach out.
             </p>
           </div>
           <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
-            <ContactCard
-              title="@kitsonkelly.com"
-              icon="bluesky"
-              href="https://bsky.app/profile/kitsonkelly.com"
-            />
-            <ContactCard
-              title="@kitsonk"
-              icon="x"
-              href="https://twitter.com/kitsonk"
-            />
-            <ContactCard
-              title="@kitsonk@aus.social"
-              icon="mastodon"
-              href="https://aus.social/@kitsonk"
-            />
-            <ContactCard
-              title="github.com/kitsonk"
-              icon="github"
-              href="https://github.com/kitsonk"
-            />
+            <ContactCard title="@kitsonkelly.com" icon="bluesky" href="https://bsky.app/profile/kitsonkelly.com" />
+            <ContactCard title="github.com/kitsonk" icon="github" href="https://github.com/kitsonk" />
             <ContactCard
               title="linkedin.com/in/kitsonkelly/"
               icon="linkedin"
               href="https://www.linkedin.com/in/kitsonkelly/"
             />
-            <ContactCard
-              title="threads.net/@kitsonk"
-              icon="threads"
-              href="https://www.threads.net/@kitsonk"
-            />
-            <ContactCard
-              title="me@kitsonkelly.com"
-              icon="email"
-              href="mailto:me@kitsonkelly.com"
-            />
+            <ContactCard title="me@kitsonkelly.com" icon="email" href="mailto:me@kitsonkelly.com" />
+            <ContactCard title="threads.net/@kitsonk" icon="threads" href="https://www.threads.net/@kitsonk" />
+            <ContactCard title="@kitsonk@aus.social" icon="mastodon" href="https://aus.social/@kitsonk" />
           </div>
         </div>
       </section>
       <Footer />
     </>
   );
-}
+});

@@ -1,8 +1,108 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Love+Ya+Like+A+Sister&family=Mali:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Love+Ya+Like+A+Sister&family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-body: "Mali", sans-serif;
+  --font-header: "Love Ya Like A Sister", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --background-image-hero-pattern: url("/images/bg_green.jpg");
+
+  --color-primary: oklch(50.823% 0.07615 119.86);
+  --color-primary-50: oklch(85.695% 0.05166 117.16);
+  --color-primary-100: oklch(83.428% 0.06286 118.7);
+  --color-primary-200: oklch(78.576% 0.07942 119.29);
+  --color-primary-300: oklch(73.679% 0.09667 119.82);
+  --color-primary-400: oklch(68.036% 0.10558 119.98);
+  --color-primary-500: oklch(59.586% 0.09117 119.93);
+  --color-primary-600: oklch(50.823% 0.07615 119.86);
+  --color-primary-700: oklch(38.139% 0.05401 119.87);
+  --color-primary-800: oklch(24.273% 0.02909 120.04);
+  --color-primary-900: oklch(0% 0 none);
+  --color-primary-950: oklch(0% 0 none);
+
+  --color-green: oklch(50.823% 0.07615 119.86);
+  --color-green-50: oklch(85.695% 0.05166 117.16);
+  --color-green-100: oklch(83.428% 0.06286 118.7);
+  --color-green-200: oklch(78.576% 0.07942 119.29);
+  --color-green-300: oklch(73.679% 0.09667 119.82);
+  --color-green-400: oklch(68.036% 0.10558 119.98);
+  --color-green-500: oklch(59.586% 0.09117 119.93);
+  --color-green-600: oklch(50.823% 0.07615 119.86);
+  --color-green-700: oklch(38.139% 0.05401 119.87);
+  --color-green-800: oklch(24.273% 0.02909 120.04);
+  --color-green-900: oklch(0% 0 none);
+  --color-green-950: oklch(0% 0 none);
+
+  --color-dark-green: oklch(31.179% 0.05286 129.56);
+  --color-dark-green-50: oklch(85.346% 0.06867 127.82);
+  --color-dark-green-100: oklch(83.031% 0.08036 128.28);
+  --color-dark-green-200: oklch(78.174% 0.10306 128.6);
+  --color-dark-green-300: oklch(73.589% 0.12502 129.54);
+  --color-dark-green-400: oklch(67.656% 0.13169 129.95);
+  --color-dark-green-500: oklch(59.191% 0.11335 130.05);
+  --color-dark-green-600: oklch(50.136% 0.0937 129.66);
+  --color-dark-green-700: oklch(40.942% 0.07346 129.76);
+  --color-dark-green-800: oklch(31.179% 0.05286 129.56);
+  --color-dark-green-900: oklch(16.09% 0.01797 129.12);
+  --color-dark-green-950: oklch(0% 0 none);
+
+  --color-yellow: oklch(98.14% 0.03418 99.828);
+  --color-yellow-50: oklch(99.312% 0.01201 96.417);
+  --color-yellow-100: oklch(98.14% 0.03418 99.828);
+  --color-yellow-200: oklch(95.055% 0.09031 100.42);
+  --color-yellow-300: oklch(92.267% 0.13887 100.68);
+  --color-yellow-400: oklch(90.102% 0.1711 100.1);
+  --color-yellow-500: oklch(87.639% 0.18028 98.147);
+  --color-yellow-600: oklch(72.728% 0.14963 98.782);
+  --color-yellow-700: oklch(56.881% 0.11663 98.512);
+  --color-yellow-800: oklch(40.072% 0.08141 98.997);
+  --color-yellow-900: oklch(21.047% 0.04228 103.11);
+  --color-yellow-950: oklch(6.5053% 0.01418 109.77);
+
+  --color-brown: oklch(75.25% 0.11027 67.833);
+  --color-brown-50: oklch(98.629% 0.00619 75.407);
+  --color-brown-100: oklch(95.918% 0.01755 73.076);
+  --color-brown-200: oklch(90.594% 0.04122 70.827);
+  --color-brown-300: oklch(85.319% 0.0651 69.813);
+  --color-brown-400: oklch(80.334% 0.08791 69.409);
+  --color-brown-500: oklch(75.25% 0.11027 67.833);
+  --color-brown-600: oklch(68.599% 0.13526 64.329);
+  --color-brown-700: oklch(57.622% 0.11409 64.507);
+  --color-brown-800: oklch(45.855% 0.08805 64.713);
+  --color-brown-900: oklch(33.267% 0.0603 65.542);
+  --color-brown-950: oklch(26.41% 0.04514 64.857);
+
+  --color-dark-brown: oklch(60.94% 0.13021 57.347);
+  --color-dark-brown-50: oklch(86.177% 0.05907 63.556);
+  --color-dark-brown-100: oklch(83.611% 0.07153 63.811);
+  --color-dark-brown-200: oklch(78.084% 0.09547 62.049);
+  --color-dark-brown-300: oklch(73.016% 0.11919 60.466);
+  --color-dark-brown-400: oklch(68.063% 0.1393 58.099);
+  --color-dark-brown-500: oklch(60.94% 0.13021 57.347);
+  --color-dark-brown-600: oklch(49.587% 0.10341 57.72);
+  --color-dark-brown-700: oklch(37.543% 0.07459 58.311);
+  --color-dark-brown-800: oklch(24.435% 0.04295 60.551);
+  --color-dark-brown-900: oklch(4.2201% 0.01732 29.234);
+  --color-dark-brown-950: oklch(0% 0 none);
+
+  --color-gray: oklch(44.066% 0.00346 128.55);
+  --color-gray-50: oklch(81.582% 0.00297 128.5);
+  --color-gray-100: oklch(78.437% 0.003 128.5);
+  --color-gray-200: oklch(72.022% 0.00441 121.59);
+  --color-gray-300: oklch(65.406% 0.00495 134.86);
+  --color-gray-400: oklch(58.451% 0.00465 121.62);
+  --color-gray-500: oklch(51.456% 0.00525 134.88);
+  --color-gray-600: oklch(44.066% 0.00346 128.55);
+  --color-gray-700: oklch(33.509% 0.00371 128.58);
+  --color-gray-800: oklch(21.779% 0 none);
+  --color-gray-900: oklch(0% 0 none);
+  --color-gray-950: oklch(0% 0 none);
+
+  --color-white: oklch(97.632% 0.03129 91.02);
+  --color-black: oklch(0% 0 none);
+}
 
 .markdown h2 {
   @apply font-header text-2xl;
@@ -45,9 +145,8 @@
 }
 
 .markdown blockquote {
-  @apply p-4 my-4 bg-gray-50 border-l-4 border-gray-300 italic font-medium
-    leading-relaxed text-gray-900 dark:border-gray-500 dark:bg-gray-800
-    dark:text-white;
+  @apply p-4 my-4 bg-gray-50 border-l-4 border-gray-300 italic font-medium leading-relaxed text-gray-900
+    dark:border-gray-500 dark:bg-gray-800 dark:text-white;
 }
 
 .markdown code {
@@ -95,11 +194,11 @@
 }
 
 .highlight .token.attr-name {
-  @apply text-darkGreen-500;
+  @apply text-dark-green-500;
 }
 
 .highlight .token.class-name {
-  @apply text-darkGreen-600 dark:text-darkGreen-400;
+  @apply text-dark-green-600 dark:text-dark-green-400;
 }
 
 .highlight .token.comment {
@@ -111,7 +210,7 @@
 }
 
 .highlight .token.number {
-  @apply text-darkBrown-400 dark:text-darkBrown-300;
+  @apply text-dark-brown-400 dark:text-dark-brown-300;
 }
 
 .highlight .token.operator {

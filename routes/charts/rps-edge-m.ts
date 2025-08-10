@@ -1,24 +1,23 @@
-import { type Handlers } from "$fresh/server.ts";
-import { renderChart } from "$fresh_charts";
-import { transparentize } from "$fresh_charts/utils";
+import { renderChart } from "@deno/fresh_charts";
+import { transparentize } from "@deno/fresh_charts/utils";
+
+import { define } from "../../utils.ts";
 
 const BODY_TYPEFACE =
   `"Mali","ui-sans-serif","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","Noto Sans","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"`;
 
-export const handler: Handlers = {
-  GET() {
+export const handler = define.handlers({
+  GET: () => {
     return renderChart({
       type: "bar",
       data: {
         labels: [
-          "Deno 1.41.2",
-          "Bun 1.0.30",
-          "Node.js 20.11.1",
-          "Node.js 21.6.2",
+          "Deno Deploy",
+          "Cloudflare Workers",
         ],
         datasets: [{
           label: "Avg Request per Second",
-          data: [70989.1, 78833.46, 24492.37, 29756.37],
+          data: [2735, 924],
           borderColor: "#F6D608",
           backgroundColor: transparentize("#F6D608", 0.3),
           borderWidth: 2,
@@ -64,4 +63,4 @@ export const handler: Handlers = {
       },
     });
   },
-};
+});

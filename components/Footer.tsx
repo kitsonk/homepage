@@ -75,7 +75,7 @@ export function Footer() {
           </li>
         </ul>
         <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-          © 2022 Kitson P. Kelly. All Rights Reserved.
+          © 2022-2025 Kitson P. Kelly. All Rights Reserved.
         </span>
       </div>
     </footer>

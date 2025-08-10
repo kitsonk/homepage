@@ -11,18 +11,14 @@ tags:
 author: kitsonk
 ---
 
-It seems that my [dojo/request](./dojo-request) article got a few views, so I
-figured I would take a moment to talk about
-[dojo/promise](https://dojotoolkit.org/reference-guide/1.8/dojo/promise.html),
-another major enhancement in the core of the
-[Dojo Toolkit](https://dojotoolkit.org) in 1.8.
-[Mark Wubben](https://novemberborn.net/) rewrote the promise API while keeping
-it compatible with the “modern” Dojo promise API.
+It seems that my [dojo/request](./dojo-request) article got a few views, so I figured I would take a moment to talk
+about [dojo/promise](https://dojotoolkit.org/reference-guide/1.8/dojo/promise.html), another major enhancement in the
+core of the [Dojo Toolkit](https://dojotoolkit.org) in 1.8. [Mark Wubben](https://novemberborn.net/) rewrote the promise
+API while keeping it compatible with the “modern” Dojo promise API.
 
-Just a reminder, the “modern” promise API arrived in Dojo 1.5, where “callback
-chaining” and the promise was introduced. Prior to that you had to use
-addCallback and addErrback when dealing with a Deferred object. As of 1.5, the
-API changed so you could do something like this:
+Just a reminder, the “modern” promise API arrived in Dojo 1.5, where “callback chaining” and the promise was introduced.
+Prior to that you had to use addCallback and addErrback when dealing with a Deferred object. As of 1.5, the API changed
+so you could do something like this:
 
 ```js
 var d = new Deferred();
@@ -32,11 +28,10 @@ d.then(function (results) {
 });
 ```
 
-None of that changes for 1.8, but the underpinnings have totally changed and
-there is a more robust API for managing promises and futures. In 1.8, the new
-abstract class of `dojo/promise/Promise` is introduced. This provides the core
-API of Promises in Dojo and is what `dojo/Deferred` now implements. Plus there
-are a couple of new syntactically named methods:
+None of that changes for 1.8, but the underpinnings have totally changed and there is a more robust API for managing
+promises and futures. In 1.8, the new abstract class of `dojo/promise/Promise` is introduced. This provides the core API
+of Promises in Dojo and is what `dojo/Deferred` now implements. Plus there are a couple of new syntactically named
+methods:
 
 ```js
 var d = new Deferred();
@@ -58,12 +53,10 @@ d.both(function (value) {
 });
 ```
 
-Dealing with multiple promises (like for example, making several requests to
-several services) and then doing something when one or all of them were resolved
-was dealt with `dojo/DeferredList`. While that is still there (and still works),
-`dojo/promise` has introduced two new syntactically named modules
-`dojo/promise/all` and `dojo/promise/first`, which will roll up a bunch of
-promises and return you a new promise that could work something like this:
+Dealing with multiple promises (like for example, making several requests to several services) and then doing something
+when one or all of them were resolved was dealt with `dojo/DeferredList`. While that is still there (and still works),
+`dojo/promise` has introduced two new syntactically named modules `dojo/promise/all` and `dojo/promise/first`, which
+will roll up a bunch of promises and return you a new promise that could work something like this:
 
 ```js
 require(["dojo/Deferred", "dojo/promise/all", "dojo/promise/first"]),
@@ -81,11 +74,9 @@ function(Deferred, all, first){
 });
 ```
 
-The last significant “new thing” in my opinion is that there is the
-`dojo/promise/tracer`. What this does is essentially allow you to centrally
-manage the events of Promises. What you do is load the module and then on any of
-your Promises/Deferred, turn on trace by calling the `.trace()` (or
-`.traceRejected()`):
+The last significant “new thing” in my opinion is that there is the `dojo/promise/tracer`. What this does is essentially
+allow you to centrally manage the events of Promises. What you do is load the module and then on any of your
+Promises/Deferred, turn on trace by calling the `.trace()` (or `.traceRejected()`):
 
 ```js
 require(["dojo/promise/tracer", "dojo/Deferred"], function(tracer)){
@@ -107,5 +98,4 @@ require(["dojo/promise/tracer", "dojo/Deferred"], function(tracer)){
 });
 ```
 
-So like `dojo/request`, I think there are some really “cool” things coming in
-1.8 in the “core” of Dojo.
+So like `dojo/request`, I think there are some really “cool” things coming in 1.8 in the “core” of Dojo.
