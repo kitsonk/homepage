@@ -11,5 +11,5 @@ tailwind(builder);
 if (Deno.args.includes("build")) {
   await builder.build();
 } else {
-  await builder.listen(() => import("./main.tsx"));
+  await builder.listen(() => import("./main.ts"));
 }

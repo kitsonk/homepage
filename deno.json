@@ -3,7 +3,7 @@
     "check": "deno fmt --check . && deno lint . && deno check",
     "dev": "deno run -A --watch=static/,routes/,posts/ --watch-exclude=posts.json dev.ts",
     "build": "deno run -A dev.ts build",
-    "start": "deno run -A main.tsx",
+    "start": "deno serve -A _fresh/server.js",
     "update": "deno run -A -r jsr:@fresh/update ."
   },
   "lint": { "rules": { "tags": ["fresh", "recommended"] } },
