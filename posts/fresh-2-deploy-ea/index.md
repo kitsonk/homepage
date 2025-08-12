@@ -306,6 +306,10 @@ zero-config persistence like Cloudflare's [Durable Objects](https://developers.c
 these type of workloads. The post announcing the demise of Deno KV back in May 2025 hinted that there was something
 else, but I am not privy to it.
 
+_[Edit 12-08-2025]_ I missed it when the
+[Databases were announced](https://bsky.app/profile/deno.land/post/3luiexi2eu22d), but buried in there is that there is
+some form of key value storage coming soon. 🥳
+
 Classic Deploy had already shrunk from 35 regions to 6, while EA is only in 2 regions. As the May 2025
 [post explains](https://deno.com/blog/greatly-exaggerated#deno-deploy) this was driven by cost and demand, but I still
 think at least something in Asia is called for.
