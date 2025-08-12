@@ -10,7 +10,7 @@
   "fmt": { "lineWidth": 120 },
   "exclude": ["**/_fresh/*"],
   "imports": {
-    "fresh": "jsr:@fresh/core@^2.0.0-alpha.57",
+    "fresh": "jsr:@fresh/core@^2.0.0-alpha.58",
     "@fresh/build-id": "jsr:@fresh/build-id@^1.0.0",
     "@fresh/plugin-tailwind": "jsr:@fresh/plugin-tailwind@^0.0.1-alpha.9",
     "preact": "npm:preact@^10.27.0",
