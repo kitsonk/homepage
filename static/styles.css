@@ -104,6 +104,40 @@
   --color-black: oklch(0% 0 none);
 }
 
+.markdown .anchor {
+  @apply float-left -ml-6 pr-1 leading-4;
+}
+
+.markdown svg.octicon {
+  @apply fill-current;
+}
+
+.markdown .anchor > .octicon {
+  @apply inline;
+}
+
+.markdown h1 .octicon-link,
+.markdown h2 .octicon-link,
+.markdown h3 .octicon-link,
+.markdown h4 .octicon-link,
+.markdown h5 .octicon-link,
+.markdown h6 .octicon-link {
+  @apply invisible mt-2;
+}
+
+.markdown h1:hover .octicon-link,
+.markdown h2:hover .octicon-link,
+.markdown h3:hover .octicon-link,
+.markdown h4:hover .octicon-link,
+.markdown h5:hover .octicon-link,
+.markdown h6:hover .octicon-link {
+  @apply visible;
+}
+
+.markdown h1 {
+  @apply font-header text-3xl;
+}
+
 .markdown h2 {
   @apply font-header text-2xl;
 }
@@ -150,11 +184,11 @@
 }
 
 .markdown code {
-  @apply p-1 bg-gray-50 dark:bg-gray-800;
+  @apply p-1 bg-white border border-primary-100 rounded dark:border-0 dark:bg-gray-800;
 }
 
 .markdown pre {
-  @apply my-6 py-2 px-4 bg-gray-50 dark:bg-gray-800 rounded overflow-x-auto;
+  @apply my-6 py-2 px-4 bg-white border border-primary-100 dark:bg-gray-800 dark:border-0 rounded overflow-x-auto;
 }
 
 .markdown pre > code {
@@ -198,11 +232,23 @@
 }
 
 .highlight .token.class-name {
-  @apply text-dark-green-600 dark:text-dark-green-400;
+  @apply text-brown-600 dark:text-brown-400;
 }
 
 .highlight .token.comment {
   @apply text-gray-600 dark:text-gray-400;
+}
+
+.highlight .token.deleted {
+  @apply text-red-600 dark:text-red-400 bg-red-950;
+}
+
+.highlight .token.function {
+  @apply text-brown-600 dark:text-brown-400;
+}
+
+.highlight .token.inserted {
+  @apply text-dark-green-600 dark:text-dark-green-400 bg-dark-green-800;
 }
 
 .highlight .token.keyword {
@@ -222,7 +268,7 @@
 }
 
 .highlight .token.string {
-  @apply text-brown-700 dark:text-brown-400;
+  @apply text-yellow-600 dark:text-yellow-400;
 }
 
 .highlight .token.tag {

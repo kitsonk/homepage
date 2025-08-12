@@ -1,5 +1,6 @@
 import { render } from "@deno/gfm";
 
+import "prismjs/components/prism-diff.js";
 import "prismjs/components/prism-jsx.js";
 import "prismjs/components/prism-javascript.js";
 import "prismjs/components/prism-json.js";

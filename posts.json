@@ -1,5 +1,24 @@
 [
   {
+    "id": "fresh-2-deploy-ea",
+    "title": "Fresh 2 and Deno Deploy Early Access",
+    "date": "2025-08-12T02:00:00.000Z",
+    "author": "kitsonk",
+    "hero": {
+      "src": "/posts/fresh-2-deploy-ea/hero.jpg"
+    },
+    "href": "/posts/fresh-2-deploy-ea",
+    "tags": [
+      "deno",
+      "deno deploy",
+      "fresh",
+      "fresh 2"
+    ],
+    "summary": "Both Fresh 2 and Deploy Early Access are being heavily worked on, but I wanted to take both for a \"test drive\" to see what the current state of play was for both of these, in particular what it takes to move from Fresh 1 and the original Deno Deploy, which has been a host to this blog for a long time.\n",
+    "readEstimate": 10,
+    "isDir": true
+  },
+  {
     "id": "http-speed",
     "title": "HTTP Speed",
     "date": "2024-03-11T02:00:00.000Z",
