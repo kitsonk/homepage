@@ -10,17 +10,17 @@
   "fmt": { "lineWidth": 120 },
   "exclude": ["**/_fresh/*"],
   "imports": {
-    "fresh": "jsr:@fresh/core@^2.0.0-alpha.58",
-    "@fresh/build-id": "jsr:@fresh/build-id@^1.0.0",
+    "fresh": "jsr:@fresh/core@^2.0.0-beta.4",
+    "@fresh/build-id": "jsr:@fresh/build-id@^1.0.1",
     "@fresh/plugin-tailwind": "jsr:@fresh/plugin-tailwind@^0.0.1-alpha.9",
     "preact": "npm:preact@^10.27.0",
     "prismjs": "npm:prismjs@1.30.0",
-    "tailwindcss": "npm:tailwindcss@^4.1.7",
+    "tailwindcss": "npm:tailwindcss@^4.1.13",
     "@deno/fresh_charts": "https://deno.land/x/fresh_charts@0.3.1/mod.ts",
     "@deno/fresh_charts/utils": "https://deno.land/x/fresh_charts@0.3.1/utils.ts",
     "@deno/gfm": "jsr:/@deno/gfm@0.11.0",
     "@kitsonk/ga4": "jsr:/@kitsonk/ga4@0.1.0",
-    "@preact/signals": "npm:@preact/signals@^2.2.1",
+    "@preact/signals": "npm:@preact/signals@^2.3.1",
     "@std/assert": "jsr:/@std/assert@~1",
     "@std/front-matter": "jsr:/@std/front-matter@~1",
     "@std/media-types": "jsr:/@std/media-types@~1",
@@ -30,7 +30,22 @@
     "lib": ["dom", "dom.asynciterable", "dom.iterable", "deno.ns"],
     "jsx": "precompile",
     "jsxImportSource": "preact",
-    "jsxPrecompileSkipElements": ["a", "img", "source", "body", "html", "head"]
+    "jsxPrecompileSkipElements": [
+      "a",
+      "img",
+      "source",
+      "body",
+      "html",
+      "head",
+      "title",
+      "meta",
+      "script",
+      "link",
+      "style",
+      "base",
+      "noscript",
+      "template"
+    ]
   },
   "nodeModulesDir": "auto"
 }
