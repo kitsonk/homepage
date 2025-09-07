@@ -129,15 +129,35 @@ export default define.page(function ResumeCV() {
       </section>
       <section class="py-8 border-b-2">
         <Role
+          title="Interim Director of Product & Technology"
+          company="A2B Australia"
+          start="Aug 2025"
+        >
+          <p>
+            Assisting{" "}
+            <a
+              href="https://www.a2baustralia.com/"
+              target="_blank"
+              class="text-green-600 dark:text-green-400 hover:underline"
+            >
+              A2B
+            </a>{" "}
+            in their journey to be the leading Australian point-to-point ground transportation company including
+            offering technology solutions to the market.
+          </p>
+        </Role>
+        <Role
           title="Director"
           company="CTO Labs"
           start="Nov 2022"
         >
           <p>
-            Leading delivery for the Advisory practice within CTO Labs. Specialising in M&A technical due diligence and
-            providing technical advisory to organisations at executive levels. In addition to providing advisory
-            services, working to internally scale our advisory capability in the market and organise and manage the
-            delivery of services.
+            Leading delivery for the Advisory practice within{" "}
+            <a href="https://ctolabs.com.au" target="_blank" class="text-green-600 dark:text-green-400 hover:underline">
+              CTO Labs
+            </a>. Specialising in M&A technical due diligence and providing technical advisory to organisations at
+            executive levels. In addition to providing advisory services, working to internally scale our advisory
+            capability in the market and organise and manage the delivery of services.
           </p>
           <p>
             Recently have been leading research and development into applying AI as part of the due diligence process to
@@ -182,10 +202,16 @@ export default define.page(function ResumeCV() {
           end="Sep 2020"
         >
           <p>
-            Thoughtworks provides consulting and technology delivery services to large IT organisations. As a Principal
-            Technologist I focused on advising clients, on their digital transformation strategy, data platform
-            strategy, platform architecture, and engineering practices. I advised across verticals but specialised in
-            the financial sector.
+            <a
+              href="https://thoughtworks.com"
+              target="_blank"
+              class="text-green-600 dark:text-green-400 hover:underline"
+            >
+              Thoughtworks
+            </a>{" "}
+            provides consulting and technology delivery services to large IT organisations. As a Principal Technologist
+            I focused on advising clients, on their digital transformation strategy, data platform strategy, platform
+            architecture, and engineering practices. I advised across verticals but specialised in the financial sector.
           </p>
         </Role>
         <Role
