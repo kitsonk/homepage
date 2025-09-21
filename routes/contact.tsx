@@ -1,7 +1,7 @@
 import type { ComponentChildren } from "preact";
-import { page } from "fresh";
 
 import { Footer } from "../components/Footer.tsx";
+import { Meta } from "../components/Meta.tsx";
 import { define } from "../utils.ts";
 
 const icons = {
@@ -115,17 +115,15 @@ function ContactCard(
   );
 }
 
-export const handler = define.handlers(({ state }) => {
-  state.title = "Contact | 7 foot tall cactus";
-  state.canonical = "/contact";
-  state.description = "Contact information for Kitson Kelly";
-  state.keywords = ["contact", "kitson kelly"];
-  return page();
-});
-
 export default define.page(function Contact() {
   return (
     <>
+      <Meta
+        title="Contact | 7 foot tall cactus"
+        canonical="/contact"
+        description="Contact information for Kitson Kelly"
+        keywords={["contact", "kitson kelly"]}
+      />
       <section class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
           <div class="max-w-screen-md mb-8 lg:mb-16">

@@ -1,21 +1,18 @@
-import { page } from "fresh";
-
 import { Footer } from "../components/Footer.tsx";
+import { Meta } from "../components/Meta.tsx";
 import { PostCard } from "../components/Post.tsx";
 import { define } from "../utils.ts";
 import { posts } from "../utils/posts.ts";
 
-export const handler = define.handlers(({ state }) => {
-  state.title = "Blog | 7 foot tall cactus";
-  state.canonical = "/blog";
-  state.description = "Long form rantings from a recovering 7 foot tall cactus.";
-  state.keywords = ["blog", "kitson kelly"];
-  return page();
-});
-
 export default define.page(function Blog() {
   return (
     <>
+      <Meta
+        title="Blog | 7 foot tall cactus"
+        canonical="/blog"
+        description="Long form rantings from a recovering 7 foot tall cactus."
+        keywords={["blog", "kitson kelly"]}
+      />
       <section class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
           <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">

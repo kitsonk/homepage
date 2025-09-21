@@ -1,21 +1,14 @@
-import { page } from "fresh";
-
 import { Footer } from "../components/Footer.tsx";
+import { Meta } from "../components/Meta.tsx";
 import { PostCard } from "../components/Post.tsx";
 import { Project } from "../components/Project.tsx";
 import { define } from "../utils.ts";
 import { posts } from "../utils/posts.ts";
 
-export const handler = define.handlers(({ state }) => {
-  state.title = "7 foot tall cactus";
-  state.canonical = "/";
-  state.description = "The homepage of Kitson P. Kelly.";
-  return page();
-});
-
 export default define.page(function Home() {
   return (
     <>
+      <Meta title="7 foot tall cactus" description="The homepage of Kitson P. Kelly." canonical="/" />
       <section class="bg-hero-pattern bg-no-repeat bg-cover bg-center bg-gray-700 bg-blend-multiply">
         <div class="relative py-8 px-4 mx-auto max-w-screen-xl text-white lg:py-16 z-0">
           <div class="mb-6 max-w-screen-lg lg:mb-0">

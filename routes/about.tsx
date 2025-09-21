@@ -1,19 +1,16 @@
-import { page } from "fresh";
-
 import { Footer } from "../components/Footer.tsx";
+import { Meta } from "../components/Meta.tsx";
 import { define } from "../utils.ts";
-
-export const handler = define.handlers(({ state }) => {
-  state.title = "About | 7 foot tall cactus";
-  state.canonical = "/about";
-  state.description =
-    "Hi, I'm Kit. I am a husband. I am a father. I am a technologist. I have lots of opinions. I work on M&A due diligence.";
-  return page();
-});
 
 export default define.page(function About() {
   return (
     <>
+      <Meta
+        title="About | 7 foot tall cactus"
+        canonical="/about"
+        description="Hi, I'm Kit. I am a husband. I am a father. I am a technologist. I have lots of opinions. I work on M&A due diligence."
+        keywords={["about", "kitson kelly"]}
+      />
       <section class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-screen-lg lg:py-16 lg:px-6">
           <div class="text-gray-700 sm:text-lg dark:text-gray-200 space-y-6">

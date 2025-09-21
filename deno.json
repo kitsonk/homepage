@@ -10,10 +10,10 @@
   "fmt": { "lineWidth": 120 },
   "exclude": ["**/_fresh/*"],
   "imports": {
-    "fresh": "jsr:@fresh/core@^2.0.0-beta.4",
+    "fresh": "jsr:@fresh/core@^2.1.1",
     "@fresh/build-id": "jsr:@fresh/build-id@^1.0.1",
-    "@fresh/plugin-tailwind": "jsr:@fresh/plugin-tailwind@^0.0.1-alpha.9",
-    "preact": "npm:preact@^10.27.0",
+    "@fresh/plugin-tailwind": "jsr:@fresh/plugin-tailwind@^1.0.0",
+    "preact": "npm:preact@^10.27.2",
     "prismjs": "npm:prismjs@1.30.0",
     "tailwindcss": "npm:tailwindcss@^4.1.13",
     "@deno/fresh_charts": "https://deno.land/x/fresh_charts@0.3.1/mod.ts",

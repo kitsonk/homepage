@@ -7,8 +7,8 @@
     "jsr:@denosaurs/emoji@~0.3.1": "0.3.1",
     "jsr:@fresh/build-id@1": "1.0.1",
     "jsr:@fresh/build-id@^1.0.1": "1.0.1",
-    "jsr:@fresh/core@^2.0.0-beta.4": "2.0.0-beta.4",
-    "jsr:@fresh/plugin-tailwind@^0.0.1-alpha.9": "0.0.1-alpha.9",
+    "jsr:@fresh/core@^2.1.1": "2.1.1",
+    "jsr:@fresh/plugin-tailwind@1": "1.0.0",
     "jsr:@kitsonk/ga4@0.1.0": "0.1.0",
     "jsr:@luca/cases@1": "1.0.0",
     "jsr:@std/assert@1": "1.0.14",
@@ -40,8 +40,8 @@
     "jsr:@std/uuid@^1.0.7": "1.0.9",
     "jsr:@std/yaml@^1.0.5": "1.0.9",
     "npm:@opentelemetry/api@^1.9.0": "1.9.0",
-    "npm:@preact/signals@^2.2.1": "2.3.1_preact@10.27.1",
-    "npm:@preact/signals@^2.3.1": "2.3.1_preact@10.27.1",
+    "npm:@preact/signals@^2.2.1": "2.3.1_preact@10.27.2",
+    "npm:@preact/signals@^2.3.1": "2.3.1_preact@10.27.2",
     "npm:@tailwindcss/postcss@^4.1.10": "4.1.11",
     "npm:esbuild-wasm@0.25.7": "0.25.7",
     "npm:esbuild@0.25.7": "0.25.7",
@@ -53,8 +53,9 @@
     "npm:marked-gfm-heading-id@^3.1.0": "3.2.0_marked@12.0.2",
     "npm:marked@12": "12.0.2",
     "npm:postcss@8.5.6": "8.5.6",
-    "npm:preact-render-to-string@^6.5.11": "6.5.13_preact@10.27.1",
-    "npm:preact@^10.27.0": "10.27.1",
+    "npm:preact-render-to-string@^6.5.11": "6.5.13_preact@10.27.2",
+    "npm:preact@^10.27.0": "10.27.2",
+    "npm:preact@^10.27.2": "10.27.2",
     "npm:prismjs@1.30.0": "1.30.0",
     "npm:prismjs@^1.29.0": "1.30.0",
     "npm:sanitize-html@^2.13.0": "2.17.0",
@@ -95,8 +96,8 @@
         "jsr:@std/encoding@^1.0.10"
       ]
     },
-    "@fresh/core@2.0.0-beta.4": {
-      "integrity": "d8fe71024d89f95c740a5a123688d152a7ccfa7250d77ef5f9b3a072c913b95a",
+    "@fresh/core@2.1.1": {
+      "integrity": "8ec49ee86c54947faf965d67e206383c79333bee2b7e891594e87bbd31b16d52",
       "dependencies": [
         "jsr:@deno/esbuild-plugin",
         "jsr:@fresh/build-id@1",
@@ -114,12 +115,12 @@
         "npm:@preact/signals@^2.2.1",
         "npm:esbuild",
         "npm:esbuild-wasm",
-        "npm:preact",
-        "npm:preact-render-to-string"
+        "npm:preact-render-to-string",
+        "npm:preact@^10.27.0"
       ]
     },
-    "@fresh/plugin-tailwind@0.0.1-alpha.9": {
-      "integrity": "e2cddf75ffd3203950a79913eb35ec454e23df54cb95c7549d14172e5b3c4b59",
+    "@fresh/plugin-tailwind@1.0.0": {
+      "integrity": "3bb3598fb0422392d52ad017285f1d702f1d7b3bddd4028f9da90c0c3baebf37",
       "dependencies": [
         "npm:@tailwindcss/postcss",
         "npm:postcss"
@@ -443,7 +444,7 @@
     "@preact/signals-core@1.12.1": {
       "integrity": "sha512-BwbTXpj+9QutoZLQvbttRg5x3l5468qaV2kufh+51yha1c53ep5dY4kTuZR35+3pAZxpfQerGJiQqg34ZNZ6uA=="
     },
-    "@preact/signals@2.3.1_preact@10.27.1": {
+    "@preact/signals@2.3.1_preact@10.27.2": {
       "integrity": "sha512-nyuRIGmcwM/HjvFHhN2xUWfyla9D4llHt+prWoxjQfD6b5prO7CFPlG/xjJkP31Oic4KQXfH9SIhJFP9cy4lmg==",
       "dependencies": [
         "@preact/signals-core",
@@ -821,14 +822,14 @@
         "source-map-js"
       ]
     },
-    "preact-render-to-string@6.5.13_preact@10.27.1": {
+    "preact-render-to-string@6.5.13_preact@10.27.2": {
       "integrity": "sha512-iGPd+hKPMFKsfpR2vL4kJ6ZPcFIoWZEcBf0Dpm3zOpdVvj77aY8RlLiQji5OMrngEyaxGogeakTb54uS2FvA6w==",
       "dependencies": [
         "preact"
       ]
     },
-    "preact@10.27.1": {
-      "integrity": "sha512-V79raXEWch/rbqoNc7nT9E4ep7lu+mI3+sBmfRD4i1M73R3WLYcCtdI0ibxGVf4eQL8ZIz2nFacqEC+rmnOORQ=="
+    "preact@10.27.2": {
+      "integrity": "sha512-5SYSgFKSyhCbk6SrXyMpqjb5+MQBgfvEKE/OC+PujcY34sOpqtr+0AZQtPYx5IA6VxynQ7rUPCtKzyovpj9Bpg=="
     },
     "prismjs@1.30.0": {
       "integrity": "sha512-DEvV2ZF2r2/63V+tK8hQvrR2ZGn10srHbXviTlcv7Kpzw8jWiNTqbVgjO3IY8RxrrOUF8VPMQQFysYYYv0YZxw=="
@@ -874,19 +875,41 @@
       "integrity": "sha512-YgvUTfwqyc7UXVMrB+SImsVYSmTS8X/tSrtdNZMImM+n7+QTriRXyXim0mBrTXNeqzVF0KWGgHPeiyViFFrNDw=="
     }
   },
+  "remote": {
+    "https://deno.land/x/fresh_charts@0.3.1/Chart.tsx": "0b67f9c26bcfd7c86d185b80f6e3cedd0a0dbcfaf9f5a54c308ae06c34ba10d7",
+    "https://deno.land/x/fresh_charts@0.3.1/core.ts": "16890d5ecf98a4c668a7052dfdd64994c0fe38f5b80c9654a6f6073798e6f783",
+    "https://deno.land/x/fresh_charts@0.3.1/deps.ts": "954b239be312a2b29a75da5c21f9e1ba5c16b53d687e10c64b8292feee798b8c",
+    "https://deno.land/x/fresh_charts@0.3.1/deps_server.ts": "73715afde9ed29a0adf9eef8253c9e581b0e1b61254d42379764d28f8cb63625",
+    "https://deno.land/x/fresh_charts@0.3.1/mod.ts": "e42efd8c50b6e999cf74b83f88bfeb97da80225389d852fb24ff16e4752146c2",
+    "https://deno.land/x/fresh_charts@0.3.1/render.ts": "972e90ec4e61e3354164a5f9df1731f7bad3e29b2834ceb2b667d6935ea98b69",
+    "https://deno.land/x/fresh_charts@0.3.1/utils.ts": "23ce817f4b75b1bcb19c2a67bb2817220e768123b4cbece606e7037001e44dc3",
+    "https://esm.sh/stable/@kurkle/color@0.3.1": "24c2eea0dfe8583a93af249524d9871e0d54f20502604b11f8b369e673d0bc65",
+    "https://esm.sh/stable/chart.js@4.3.0/auto?target=es2022": "b263bdd43498d59b9513baf9ff0c32c106e1184d551d8816f0b9234eb2971e2f",
+    "https://esm.sh/stable/red-agate-svg-canvas@0.5.0": "0bc95162ac45d909865136aea5ec7da5efca1c86eee50ebd73d84e36ae2882a9",
+    "https://esm.sh/v135/@kurkle/color@0.3.1/denonext/color.mjs": "ceebe66dd0036fd9ae6e4c0f71a45b16239380f1d0fead68194cebe4f13600ac",
+    "https://esm.sh/v135/@kurkle/color@0.3.2/es2022/color.mjs": "f58a39cebaabcb9796e07a5dd67040dd3284abbd22af200ab80eccf419009c26",
+    "https://esm.sh/v135/chart.js@4.3.0/es2022/auto.js": "0274593ddea3826884dce6b3ce92733c77cab94541f639d00632ea2814d06e53",
+    "https://esm.sh/v135/chart.js@4.3.0/es2022/chart.mjs": "474386bf5c5a63d220263b02138fd779d0394cddbc08951734f1b8d5a5dc0954",
+    "https://esm.sh/v135/red-agate-svg-canvas@0.5.0/denonext/red-agate-svg-canvas.mjs": "ac3a7307bd532afb8fa930e22d020a4e12838d11f7aea0c4adffbf40982bafa7",
+    "https://esm.sh/v135/red-agate-util@0.5.0/denonext/modules/convert/Base64.js": "ae35090536776a59cc5c1bb235990ff45d220bdbcae31db3b8d27fddcff4b666",
+    "https://esm.sh/v135/red-agate-util@0.5.0/denonext/modules/convert/Escape.js": "32047eef1cbdb443e13b2f58b61267e22c47cadf59427f8278c8c040342074a6",
+    "https://esm.sh/v135/red-agate-util@0.5.0/denonext/modules/convert/NumberPrecision.js": "ac3cf952b4ac33688223f96567fea8dca53f257cde247da7a464a19b8cf34f76",
+    "https://esm.sh/v135/red-agate-util@0.5.0/denonext/modules/convert/TextEncoding.js": "9e88e2da12251eeb2515ef7b378bfab08759164f44d9948dbecd563a7a618f50",
+    "https://esm.sh/v135/red-agate-util@0.5.0/denonext/modules/convert/WordWrap.js": "41050522a3f108b09d7304ae90200f42f62f190051b8c807501385f0733495cc"
+  },
   "workspace": {
     "dependencies": [
       "jsr:@deno/gfm@0.11.0",
       "jsr:@fresh/build-id@^1.0.1",
-      "jsr:@fresh/core@^2.0.0-beta.4",
-      "jsr:@fresh/plugin-tailwind@^0.0.1-alpha.9",
+      "jsr:@fresh/core@^2.1.1",
+      "jsr:@fresh/plugin-tailwind@1",
       "jsr:@kitsonk/ga4@0.1.0",
       "jsr:@std/assert@1",
       "jsr:@std/front-matter@1",
       "jsr:@std/media-types@1",
       "jsr:@std/path@1",
       "npm:@preact/signals@^2.3.1",
-      "npm:preact@^10.27.0",
+      "npm:preact@^10.27.2",
       "npm:prismjs@1.30.0",
       "npm:tailwindcss@^4.1.13"
     ]

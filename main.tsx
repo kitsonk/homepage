@@ -26,86 +26,24 @@ app
     });
     return response;
   })
-  .appWrapper(({ Component, state }) => {
-    const {
-      alt,
-      canonical,
-      creator = "@kitsonk",
-      description,
-      image,
-      keywords = ["homepage", "kitson kelly"],
-      title,
-      type = "website",
-    } = state;
-    const imageUrl = image && new URL(image, "https://kitsonkelly.com/").toString();
-    return (
-      <html>
-        <head>
-          <meta charset="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  .appWrapper(({ Component }) => (
+    <html>
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:domain" content="kitsonkelly.com" />
-          <meta name="twitter:site" content="@kitsonk" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:domain" content="kitsonkelly.com" />
+        <meta name="twitter:site" content="@kitsonk" />
 
-          <title>{title}</title>
-          <meta name="twitter:title" content={title} />
-          <meta property="og:title" content={title} />
-
-          {description && (
-            <>
-              <meta property="og:description" content={description} />
-              <meta name="twitter:description" content={description} />
-              <meta name="description" content={description} />
-            </>
-          )}
-
-          {creator && <meta name="twitter:creator" content={creator} />}
-
-          {imageUrl
-            ? (
-              <>
-                <meta name="twitter:image" content={imageUrl} />
-                <meta property="og:image" content={imageUrl} />
-                {alt && (
-                  <>
-                    <meta name="twitter:image:alt" content={alt} />
-                    <meta property="og:image:alt" content={alt} />
-                  </>
-                )}
-              </>
-            )
-            : (
-              <>
-                <meta name="twitter:image" content="/images/hero.png" />
-                <meta property="og:image" content="/images/hero.png" />
-                <meta name="twitter:image:alt" content="7 foot tall cactus logo" />
-                <meta property="og:image:alt" content="7 foot tall cactus logo" />
-              </>
-            )}
-
-          <meta property="og:type" content={type} />
-          <meta property="og:site_name" content="7 foot tall cactus" />
-          <meta property="og:locale" content="en_AU" />
-
-          <meta name="keywords" content={keywords.join(", ")} />
-
-          {canonical && <link rel="canonical" href={`https://kitsonkelly.com${canonical}`} />}
-
-          <link rel="stylesheet" href="/styles.css" />
-        </head>
-        <body class="font-body bg-white text-black dark:bg-black dark:text-white">
-          <Component />
-        </body>
-      </html>
-    );
-  })
-  .notFound((ctx: Context<State>) => {
-    ctx.state.title = "Not Found | 7 foot tall cactus";
-    ctx.state.description = "The requested page could not be found.";
-    ctx.state.keywords = ["not found"];
-    return ctx.render(<NotFound />);
-  })
+        <link rel="stylesheet" href="/styles.css" />
+      </head>
+      <body class="font-body bg-white text-black dark:bg-black dark:text-white">
+        <Component />
+      </body>
+    </html>
+  ))
+  .notFound((ctx: Context<State>) => ctx.render(<NotFound />))
   .get("/posts/:id/:path+", async (ctx: Context<State>) => {
     try {
       const url = new URL(ctx.url);
@@ -123,12 +61,8 @@ app
       }
       const path = resolve(Deno.cwd(), `./posts/${ctx.params.id}/${ctx.params.path}`);
       const stat = await Deno.stat(path);
-      const contentType = typeByExtension(extname(path)) ??
-        "application/octet-stream";
-      const hash = await crypto.subtle.digest(
-        "SHA-1",
-        encoder.encode(BUILD_ID + path),
-      );
+      const contentType = typeByExtension(extname(path)) ?? "application/octet-stream";
+      const hash = await crypto.subtle.digest("SHA-1", encoder.encode(BUILD_ID + path));
       const etag = Array.from(new Uint8Array(hash))
         .map((byte) => byte.toString(16).padStart(2, "0"))
         .join("");

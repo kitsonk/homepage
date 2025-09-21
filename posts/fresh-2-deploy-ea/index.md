@@ -8,10 +8,10 @@ summary: >
   what the current state of play was for both of these, in particular what it takes to move from Fresh 1 and the
   original Deno Deploy, which has been a host to this blog for a long time.
 tags:
-- deno
-- deno deploy
-- fresh
-- fresh 2
+  - deno
+  - deno deploy
+  - fresh
+  - fresh 2
 author: kitsonk
 ---
 
@@ -106,6 +106,9 @@ The biggest things that I needed to address, all of which fell outside of the ca
 - Dealing with removal of `<Head>` component, which also restructured the app wrapper
 - Restructuring error handling and other specialized capabilities
 
+> [!NOTE]
+> In the beta version of Fresh 2, the `<Head>` component was restored
+
 ### Migrating from Tailwind v3 to v4
 
 There aren't any real unique aspects of upgrading from Tailwind v3 to v4 that aren't broadly covered in the
@@ -141,6 +144,10 @@ The base of the `/static/styles.css` also has to change up a bit:
 ```
 
 ### Dealing with `<Head>` removal
+
+> [!NOTE]
+> In the beta release of Fresh 2, the `<Head>` component was restored and I reverted back to it, as it is really a much
+> cleaner abstraction than having to deal with what is described below.
 
 This by far was the most disruptive change for me. I had specifically invested in creating a component to ensure that
 the meta information for my blog effectively supported social media unfurling. The argument put forward by the team is

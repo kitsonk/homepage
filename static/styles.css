@@ -223,6 +223,66 @@
   @apply text-center py-4 text-gray-500;
 }
 
+.markdown .markdown-alert {
+  @apply p-4 mb-2 border-l-4;
+}
+
+.markdown .markdown-alert p {
+  @apply py-1 mb-4 last:mb-0;
+}
+
+.markdown .markdown-alert .markdown-alert-title {
+  @apply flex font-bold items-center;
+}
+
+.markdown .markdown-alert .octicon {
+  @apply mr-2;
+}
+
+.markdown .markdown-alert-note {
+  @apply border-l-blue-600 dark:border-l-blue-500 my-4;
+}
+
+.markdown .markdown-alert-note .markdown-alert-title {
+  @apply text-blue-600 dark:text-blue-500;
+}
+
+.markdown .markdown-alert-tip {
+  @apply border-l-green-600 my-4;
+}
+
+.markdown .markdown-alert-tip .markdown-alert-title {
+  @apply text-green-600;
+}
+
+.markdown .markdown-alert-important {
+  @apply border-l-purple-500 my-4;
+}
+
+.markdown .markdown-alert-important .markdown-alert-title {
+  @apply text-purple-500;
+}
+
+.markdown .markdown-alert-warning {
+  @apply border-l-yellow-600 dark:border-l-yellow-400 my-4;
+}
+
+.markdown .markdown-alert-warning .markdown-alert-title {
+  @apply text-yellow-600 dark:text-yellow-400;
+}
+
+.markdown .markdown-alert-caution {
+  @apply border-l-red-600 my-4;
+}
+
+.markdown .markdown-alert-caution .markdown-alert-title {
+  @apply text-red-600;
+}
+
+.markdown .octicon {
+  @apply inline-block;
+}
+
 .highlight .token {
   @apply text-green-600 dark:text-green-400;
 }
