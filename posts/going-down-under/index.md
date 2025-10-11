@@ -5,8 +5,8 @@ summary: >
   After over 11 years of calling the UK my home, Simon and I are moving to
   Australia.
 tags:
-- travel
-- Australia
+  - travel
+  - Australia
 hero: /posts/going-down-under/hero.jpg
 author: kitsonk
 ---

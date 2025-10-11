@@ -7,9 +7,9 @@ summary: >
   I started working full time on Deno on the 21st of September 2020 and wanted
   to share some of my thoughts.
 tags:
-- deno
-- work
-- work culture
+  - deno
+  - work
+  - work culture
 author: kitsonk
 ---
 

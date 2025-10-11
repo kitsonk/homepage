@@ -4,12 +4,12 @@ date: 2021-07-11T11:57:17+10:00
 hero: /posts/deno-cdns-and-types/hero.png
 summary: Deno and some CDNs offer an easy and powerful way to develop.
 tags:
-- deno
-- editors
-- TypeScript
-- SkyPack
-- esm.sh
-- CDNs
+  - deno
+  - editors
+  - TypeScript
+  - SkyPack
+  - esm.sh
+  - CDNs
 author: kitsonk
 ---
 

@@ -7,9 +7,9 @@ hero:
 summary: >
   Explaining the different mental model Deno has about managing dependant code.
 tags:
-- deno
-- package manager
-- registry
+  - deno
+  - package manager
+  - registry
 author: kitsonk
 ---
 

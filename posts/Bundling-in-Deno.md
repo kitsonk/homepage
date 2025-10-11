@@ -5,8 +5,8 @@ summary: >
   of, which I wanted to share a bit more detail on, is how we do bundling.
 date: 2019-12-10T09:00:00Z
 tags:
-- deno
-- bundling
+  - deno
+  - bundling
 hero: /images/DenoBundling.png
 author: kitsonk
 ---

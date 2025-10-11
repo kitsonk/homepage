@@ -8,10 +8,10 @@ summary: >
   to solve many problems in the Javascript eco-system. I was invited to take
   part in very early access to it and want to share my impressions.
 tags:
-- deno
-- jsr
-- npm
-- node
+  - deno
+  - jsr
+  - npm
+  - node
 author: kitsonk
 ---
 

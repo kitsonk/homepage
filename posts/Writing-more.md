@@ -3,7 +3,7 @@ title: Writing more?
 date: 2017-06-10 16:41:40
 summary: I am going to try to commit to writing and blogging a bit more.
 tags:
-- personal
+  - personal
 author: kitsonk
 ---
 

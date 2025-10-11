@@ -7,8 +7,8 @@ summary: >
   where we have socialised medical care. A word I was taught from all aspects as
   evil and anti-American. I can say without a doubt, I would never go back.
 tags:
-- politics
-- America
+  - politics
+  - America
 author: kitsonk
 ---
 

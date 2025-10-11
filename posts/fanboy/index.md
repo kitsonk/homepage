@@ -4,8 +4,8 @@ summary: I got to be a fanboy this week.
 hero: /posts/fanboy/hero.jpg
 date: 2017-06-16 20:05:50
 tags:
-- nerd
-- technology
+  - nerd
+  - technology
 author: kitsonk
 ---
 

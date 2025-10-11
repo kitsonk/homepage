@@ -9,12 +9,12 @@ summary: >
   Deploy, Node.js, Bun and Cloudflare Workers, I started to wonder if there
   would be performance differences. Well I found out.
 tags:
-- jsr
-- deno
-- deno deploy
-- node
-- bun
-- cloudflare workers
+  - jsr
+  - deno
+  - deno deploy
+  - node
+  - bun
+  - cloudflare workers
 author: kitsonk
 ---
 

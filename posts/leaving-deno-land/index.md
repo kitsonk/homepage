@@ -7,9 +7,9 @@ summary: >
   I left Deno at the end of October 2022 and have some reflections on what it
   has been like since then.
 tags:
-- deno
-- work
-- work culture
+  - deno
+  - work
+  - work culture
 author: kitsonk
 ---
 

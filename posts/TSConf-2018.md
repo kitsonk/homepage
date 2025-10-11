@@ -7,9 +7,9 @@ summary: >
   SitePen.
 hero: /images/TSConf_Sign_hero.jpeg
 tags:
-- conference
-- technology
-- TypeScript
+  - conference
+  - technology
+  - TypeScript
 author: kitsonk
 ---
 

@@ -10,11 +10,11 @@ summary: >
   taking the middleware framework I originally wrote for Deno and making it work
   under Node.js, Bun and Cloudflare Workers.
 tags:
-- jsr
-- deno
-- node
-- bun
-- cloudflare workers
+  - jsr
+  - deno
+  - node
+  - bun
+  - cloudflare workers
 author: kitsonk
 ---
 

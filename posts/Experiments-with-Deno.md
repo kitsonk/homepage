@@ -4,10 +4,10 @@ summary: My early explorations into Deno.
 date: 2018-05-31T09:18:03Z
 hero: /images/Dojo_Experiments.png
 tags:
-- v8
-- typescript
-- golang
-- deno
+  - v8
+  - typescript
+  - golang
+  - deno
 comments: true
 author: kitsonk
 ---
