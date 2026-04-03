@@ -47,9 +47,9 @@ export default define.page(function ResumeCV() {
             <p>
               <strong>Kitson P. Kelly</strong>
             </p>
-            <p>20b Fourth Street</p>
-            <p>Parkdale</p>
-            <p>Victoria 3195</p>
+            <p>1/4 Plummer Court</p>
+            <p>Mentone</p>
+            <p>Victoria 3194</p>
             <p>Australia</p>
           </div>
           <div class="md:flex-initial my-6 md:my-0">
@@ -127,10 +127,26 @@ export default define.page(function ResumeCV() {
           </p>
         </section>
         <section class="py-8 border-b-2">
+          <Role title="Chief Product and Technology Officer" company="A2B Australia" start="Apr 2026">
+            <p>
+              At{" "}
+              <a
+                href="https://www.a2baustralia.com/"
+                target="_blank"
+                class="text-green-600 dark:text-green-400 hover:underline"
+              >
+                A2B Australia Limited
+              </a>, I lead the Product and Technology initiatives, driving innovation within the largest taxi network in
+              Australia. My role involves collaborating with the executive team to transform the taxi and private hire
+              vehicle business globally. I focus on enhancing technology solutions, including payment and dispatch
+              systems, while preparing for the future of autonomous vehicles.
+            </p>
+          </Role>
           <Role
             title="Interim Director of Product & Technology"
             company="A2B Australia"
             start="Aug 2025"
+            end="Apr 2026"
           >
             <p>
               Assisting{" "}
@@ -149,6 +165,7 @@ export default define.page(function ResumeCV() {
             title="Director"
             company="CTO Labs"
             start="Nov 2022"
+            end="Apr 2026"
           >
             <p>
               Leading delivery for the Advisory practice within{" "}
@@ -163,9 +180,9 @@ export default define.page(function ResumeCV() {
               capability in the market and organise and manage the delivery of services.
             </p>
             <p>
-              Recently have been leading research and development into applying AI as part of the due diligence process
-              to help inform investments. Specifically creating agentic workflows with large language models to provide
-              early-stage analytical capabilities around investment deal research.
+              Also led research and development into applying AI as part of the due diligence process to help inform
+              investments. Specifically creating agentic workflows with large language models to provide early-stage
+              analytical capabilities around investment deal research.
             </p>
           </Role>
           <Role

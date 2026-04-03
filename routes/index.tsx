@@ -19,8 +19,7 @@ export default define.page(function Home() {
               Hi, I'm Kit.
             </p>
             <p class="mb-6 font-light text-gray-400 lg:mb-8 md:text-lg lg:text-xl">
-              I am a husband. I am a father. I am a technologist. I have lots of opinions. I work on M&amp;A due
-              diligence.
+              I am a husband. I am a father. I am a technologist. I have lots of opinions. I am a CPTO.
             </p>
             <a
               href="/resume-cv"
