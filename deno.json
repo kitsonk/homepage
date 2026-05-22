@@ -1,8 +1,9 @@
 {
   "tasks": {
     "check": "deno fmt --check . && deno lint . && deno check",
-    "dev": "deno run -A --watch=static/,routes/,posts/ --watch-exclude=posts.json dev.ts",
-    "build": "deno run -A dev.ts build",
+    "dev": "deno run -A --env-file npm:vite",
+    "build": "deno run -A --env-file npm:vite build",
+    "build:posts": "deno run -A utils/build_posts.ts",
     "start": "deno serve -A _fresh/server.js",
     "update": "deno run -A -r jsr:@fresh/update ."
   },
@@ -10,12 +11,15 @@
   "fmt": { "lineWidth": 120 },
   "exclude": ["**/_fresh/*"],
   "imports": {
-    "fresh": "jsr:@fresh/core@^2.1.2",
-    "@fresh/build-id": "jsr:@fresh/build-id@^1.0.1",
-    "@fresh/plugin-tailwind": "jsr:@fresh/plugin-tailwind@^1.0.0",
+    "@/": "./",
+    "fresh": "jsr:@fresh/core@^2.3.3",
+    "@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.1.2",
     "preact": "npm:preact@^10.27.2",
+    "preact-render-to-string": "npm:preact-render-to-string@^6.5.13",
     "prismjs": "npm:prismjs@1.30.0",
-    "tailwindcss": "npm:tailwindcss@^4.1.14",
+    "tailwindcss": "npm:tailwindcss@^4.2.4",
+    "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.2.4",
+    "vite": "npm:vite@^7.3.3",
     "@deno/fresh_charts": "https://deno.land/x/fresh_charts@0.3.1/mod.ts",
     "@deno/fresh_charts/utils": "https://deno.land/x/fresh_charts@0.3.1/utils.ts",
     "@deno/gfm": "jsr:/@deno/gfm@0.11.0",
@@ -45,7 +49,8 @@
       "base",
       "noscript",
       "template"
-    ]
+    ],
+    "types": ["vite/client"]
   },
   "nodeModulesDir": "auto"
 }

@@ -1,7 +1,14 @@
 // deno-lint-ignore-file jsx-void-dom-elements-no-children
+import { renderToString } from "preact-render-to-string";
+import type { RouteConfig } from "fresh";
 import postsJson from "../posts.json" with { type: "json" };
 import { define } from "../utils.ts";
 import "../utils/rss-types.ts";
+
+export const config: RouteConfig = {
+  skipAppWrapper: true,
+  skipInheritedLayouts: true,
+};
 
 interface Post {
   id: string;
@@ -18,7 +25,9 @@ interface Post {
 
 function Item({ post }: { post: Post }) {
   const href = new URL(post.href, "https://kitsonkelly.com").toString();
-  const hero = post.hero.src ? new URL(post.hero.src, "https://kitsonkelly.com").toString() : undefined;
+  const hero = post.hero.src
+    ? new URL(post.hero.src, "https://kitsonkelly.com").toString()
+    : undefined;
   const categories = post.tags &&
     post.tags.map((tag, idx) => <category key={idx}>{tag}</category>);
   return (
@@ -65,10 +74,11 @@ function RssFeed() {
 }
 
 export const handler = define.handlers({
-  GET(ctx) {
-    return ctx.render(<RssFeed />, {
+  GET() {
+    const body = renderToString(<RssFeed />);
+    return new Response(body, {
       headers: {
-        "content-type": "application/rss+xml",
+        "content-type": "application/rss+xml; charset=utf-8",
       },
     });
   },
