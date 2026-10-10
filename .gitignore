@@ -5,8 +5,9 @@
 .env.production.local
 .env.local
 
-# Fresh build directory
-_fresh/
+# Astro build output and generated types
+dist/
+.astro/
 # npm + other dependencies
 node_modules/
 vendor/

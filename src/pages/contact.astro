@@ -1,0 +1,40 @@
+---
+import App from "../layouts/App.astro";
+import Footer from "../components/Footer.astro";
+import ContactCard from "../components/ContactCard.astro";
+import type { MetaProps } from "../lib/meta.ts";
+
+const meta: MetaProps = {
+  title: "Contact | 7 foot tall cactus",
+  canonical: "/contact",
+  description: "Contact information for Kitson Kelly",
+  keywords: ["contact", "kitson kelly"],
+};
+---
+<App meta={meta}>
+  <section class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+      <div class="max-w-screen-md mb-8 lg:mb-16">
+        <h2 class="font-header mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+        Contact
+      </h2>
+        <p class="text-gray-500 sm:text-xl dark:text-gray-400">
+        If for whatever reason, you wanted to contact me, there are various methods to reach out.
+      </p>
+      </div>
+      <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
+        <ContactCard title="@kitsonkelly.com" icon="bluesky" href="https://bsky.app/profile/kitsonkelly.com" />
+        <ContactCard title="github.com/kitsonk" icon="github" href="https://github.com/kitsonk" />
+        <ContactCard
+          title="linkedin.com/in/kitsonkelly/"
+          icon="linkedin"
+          href="https://www.linkedin.com/in/kitsonkelly/"
+        />
+        <ContactCard title="me@kitsonkelly.com" icon="email" href="mailto:me@kitsonkelly.com" />
+        <ContactCard title="threads.net/@kitsonk" icon="threads" href="https://www.threads.net/@kitsonk" />
+        <ContactCard title="@kitsonk@aus.social" icon="mastodon" href="https://aus.social/@kitsonk" />
+      </div>
+    </div>
+  </section>
+  <Footer />
+</App>

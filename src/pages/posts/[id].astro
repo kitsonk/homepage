@@ -1,0 +1,40 @@
+---
+import App from "../../layouts/App.astro";
+import Footer from "../../components/Footer.astro";
+import NotFound from "../../components/NotFound.astro";
+import PostArticle from "../../components/PostArticle.astro";
+import Recent from "../../components/Recent.astro";
+import { type MetaProps, NOT_FOUND_META } from "../../lib/meta.ts";
+import { getPostContent, posts } from "@/utils/posts.ts";
+
+const post = posts.find(({ id }) => id.toLowerCase() === (Astro.params.id ?? "").toLowerCase());
+let meta: MetaProps = NOT_FOUND_META;
+let content = "";
+if (post) {
+  meta = {
+    title: post.title,
+    description: post.summary,
+    keywords: ["blog", ...post.tags],
+    image: post.hero.src,
+    alt: post.hero.alt,
+    type: "article",
+    canonical: post.href,
+  };
+  content = await getPostContent(post);
+} else {
+  Astro.response.status = 404;
+}
+---
+<App meta={meta}>
+  {
+    post ? (
+      <>
+        <PostArticle post={post} content={content} />
+        <Recent posts={posts} />
+        <Footer />
+      </>
+    ) : (
+      <NotFound />
+    )
+  }
+</App>

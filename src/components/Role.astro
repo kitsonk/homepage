@@ -1,0 +1,20 @@
+---
+interface Props {
+  title: string;
+  company: string;
+  start: string;
+  end?: string;
+}
+
+const { title, company, start, end = "Present" } = Astro.props;
+---
+<div class="py-6">
+  <div class="flex">
+    <div>
+      <strong>{title}</strong>;
+    </div>
+    <div class="flex-grow px-4">{company}</div>
+    <div>{start} — {end}</div>
+  </div>
+  <div class="space-y-4 pt-4"><slot /></div>
+</div>

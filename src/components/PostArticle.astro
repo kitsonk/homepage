@@ -1,0 +1,68 @@
+---
+import { render } from "@deno/gfm";
+
+import "prismjs/components/prism-diff.js";
+import "prismjs/components/prism-jsx.js";
+import "prismjs/components/prism-javascript.js";
+import "prismjs/components/prism-json.js";
+import "prismjs/components/prism-rust.js";
+import "prismjs/components/prism-tsx.js";
+import "prismjs/components/prism-typescript.js";
+
+import config from "@/config.json";
+import type { Post } from "@/utils/posts.ts";
+
+interface Props {
+  post: Post;
+  content: string;
+}
+
+const { post, content } = Astro.props;
+const { title, author, date } = post;
+const { name, title: authorTitle, avatar } = config.authors[author as keyof typeof config["authors"]];
+const html = render(content, { allowIframes: true });
+const formatMedium = new Intl.DateTimeFormat("en-GB", { dateStyle: "medium" });
+const formatLong = new Intl.DateTimeFormat("en-GB", { dateStyle: "long" });
+---
+<main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900">
+  <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
+    <article class="mx-auto w-full max-w-2xl markdown">
+      <header class="mb-4 lg:mb-6">
+        <address class="flex items-center mb-6 not-italic">
+          <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+            <img
+              class="mr-4 w-16 h-16 rounded-full"
+              src={avatar}
+              alt={`${name} avatar`}
+            />
+            <div class="px-4">
+              <a
+                href="#"
+                rel="author"
+                class="font-header text-xl font-bold text-gray-900 dark:text-white"
+              >
+                {name}
+              </a>
+              <p class="text-base font-light text-gray-500 dark:text-gray-400">
+                {authorTitle}
+              </p>
+              <p class="text-base font-light text-gray-500 dark:text-gray-400">
+                <time
+                  dateTime={date.toISOString()}
+                  title={formatLong.format(date)}
+                >
+                  {formatMedium.format(date)}
+                </time>
+              </p>
+            </div>
+          </div>
+        </address>
+        <h1
+          class="font-header mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
+          {title}
+        </h1>
+      </header>
+      <div class="markdown" set:html={html}></div>
+    </article>
+  </div>
+</main>

@@ -1,0 +1,84 @@
+---
+import "../styles/global.css";
+import type { MetaProps } from "../lib/meta.ts";
+
+interface Props {
+  meta: MetaProps;
+}
+
+const { meta } = Astro.props;
+const {
+  title,
+  description,
+  creator = "@kitsonk",
+  image,
+  alt,
+  type = "website",
+  keywords = ["homepage", "kitson kelly"],
+  canonical,
+} = meta;
+const imageUrl = image ? new URL(image, "https://kitsonkelly.com/").toString() : undefined;
+const hasImage = Boolean(imageUrl);
+const imageAlt = hasImage ? alt : "7 foot tall cactus logo";
+const showImageAlt = hasImage ? Boolean(alt) : true;
+---
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:domain" content="kitsonkelly.com" />
+    <meta name="twitter:site" content="@kitsonk" />
+    <title>{title}</title>
+    <meta name="twitter:title" content={title} />
+    <meta property="og:title" content={title} />
+
+    {
+      description ? (
+        <>
+          <meta property="og:description" content={description} />
+          <meta name="twitter:description" content={description} />
+          <meta name="description" content={description} />
+        </>
+      ) : null
+    }
+
+    {creator ? <meta name="twitter:creator" content={creator} /> : null}
+
+    {
+      hasImage ? (
+        <>
+          <meta name="twitter:image" content={imageUrl} />
+          <meta property="og:image" content={imageUrl} />
+        </>
+      ) : (
+        <>
+          <meta name="twitter:image" content="/images/hero.png" />
+          <meta property="og:image" content="/images/hero.png" />
+        </>
+      )
+    }
+
+    {
+      showImageAlt ? (
+        <>
+          <meta name="twitter:image:alt" content={imageAlt} />
+          <meta property="og:image:alt" content={imageAlt} />
+        </>
+      ) : null
+    }
+
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="7 foot tall cactus" />
+    <meta property="og:locale" content="en_AU" />
+
+    <meta name="keywords" content={keywords.join(", ")} />
+
+    {canonical ? <link rel="canonical" href={`https://kitsonkelly.com${canonical}`} /> : null}
+  </head>
+  <body class="font-body bg-white text-black dark:bg-black dark:text-white">
+    <slot />
+  </body>
+</html>
