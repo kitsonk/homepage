@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "homepage",
+  "name": "kitsonk-homepage",
   "compatibility_date": "2026-11-03",
   "compatibility_flags": ["nodejs_compat"],
   "observability": {
