@@ -1,27 +1,25 @@
 # homepage
 
 My homepage on the internet — [kitsonkelly.com](https://kitsonkelly.com). A server-rendered blog, CV and projects page
-built with [Astro](https://astro.build/) 7 in SSR mode on [Deno](https://deno.com/), deployed to Deno Deploy. Posts are
-Markdown, charts are rendered server-side as SVG, and there is no client-side JavaScript.
+built with [Astro](https://astro.build/) 7 in SSR mode on Node 26 + pnpm, targeted at
+[Cloudflare Workers](https://workers.cloudflare.com/) via `@astrojs/cloudflare`. Posts are Markdown, charts are
+rendered server-side as SVG, and there is no client-side JavaScript.
 
 ## Requirements
 
-- [Deno](https://deno.com/) 2.9 or later. That is the whole toolchain — there is no `package.json`, so no npm/yarn/pnpm
-  step; dependencies are declared in `deno.json` and fetched by Deno on first run.
-- No `.env` is needed for local work. Set `GA4_MEASUREMENT_ID` to exercise the analytics path.
+- Node 26 (the toolchain relies on native TypeScript execution for `utils/*.ts`) and [pnpm](https://pnpm.io/) 12.
+- No `.env` is needed for local work. `GOATCOUNTER_COUNT_URL` optionally redirects analytics counting to a local
+  listener; it defaults to the production GoatCounter endpoint.
 
 ## Commands
 
-| Command                 | What it does                                                                    |
-| ----------------------- | ------------------------------------------------------------------------------- |
-| `deno task dev`         | Development server with hot reload on <http://localhost:4321>                   |
-| `deno task build`       | Production build into `dist/`                                                   |
-| `deno task start`       | Serve the build on <http://localhost:8000> (the port is baked in at build time) |
-| `deno task build:posts` | Regenerate `posts.json` from `posts/` after adding or editing content           |
-| `deno task check`       | Formatting check, lint and type check — run this before committing              |
-| `TZ=UTC deno test`      | Unit tests (no `test` task exists)                                              |
-
-`deno fmt` applies formatting, including `.astro` files.
+| Command            | What it does                                                                                 |
+| ------------------ | -------------------------------------------------------------------------------------------- |
+| `pnpm dev`         | Development server with hot reload on <http://localhost:4321> (binds `[::1]` only; stop with `pnpm exec astro dev stop`) |
+| `pnpm build`       | Production build into `dist/` (worker + statics), including the post-asset copy step           |
+| `pnpm start`       | Serve the build on <http://localhost:8787> via `wrangler dev` (requires a prior `pnpm build`) |
+| `pnpm build:posts` | Regenerate `posts.json` from `posts/` after adding or editing content                          |
+| `pnpm test`        | Unit tests (Vitest)                                                                           |
 
 ## Writing a post
 
@@ -51,42 +49,43 @@ Post body in Markdown. A directory post's assets are referenced by absolute path
 
 - `title`, `date` and `author` are required; `author` must be a key in `config.json` (currently only `kitsonk`).
 - `summary` is what cards and the RSS feed show; it falls back to `description`.
-- `hero` is a site-absolute URL to an image next to `index.md`; assets in a post directory are served from
-  `/posts/<id>/<file>` at request time and are never copied by the build.
+- `hero` is a site-absolute URL to an image next to `index.md`; assets in a post directory are copied into the static
+  build and served from `/posts/<id>/<file>` (`index.md` itself is never published).
 - `tags` is optional (defaults to an empty list) and becomes the RSS `<category>` entries.
 
 `posts.json` — the index every page, listing and the RSS feed reads — is generated and committed. After changing
 anything in `posts/`, run:
 
 ```sh
-deno task build:posts
+pnpm build:posts
 ```
 
 ## Project structure
 
 ```
-src/pages/        routes: .astro pages and .ts endpoints (charts, RSS, post assets)
+src/pages/        routes: .astro pages and .ts endpoints (charts, RSS)
 src/components/   presentational components (PostCard, PostArticle, Project, Role, …)
 src/layouts/      App.astro — the HTML shell and all <head> metadata
-src/lib/          shared types and helpers (meta, RSS builder, CommonJS interop shims)
+src/lib/          shared types and helpers (meta, RSS builder, bundled post content)
 src/styles/       global.css — the Tailwind entry point
 posts/            Markdown source of truth, plus per-post assets
-public/           static assets served at / (images, favicon, RSS logo)
-utils/            post pipeline: reading, building posts.json, read-time estimate
-astro.config.ts   Astro/Deno adapter and Vite configuration
+public/           static assets served at / (images, favicon, RSS logo, _headers)
+utils/            post pipeline: reading, building posts.json, post-asset copy, read-time estimate
+astro.config.ts   Astro/Cloudflare adapter and Vite configuration
 ```
 
 `AGENTS.md` documents the conventions, patterns and traps in more depth (aimed at AI assistants).
 
 ## Deployment
 
-Deno Deploy, with Astro framework detection: build command `deno task build`, entrypoint `dist/server/entry.mjs`. The
-server serves `dist/client` for static files and renders the 404 page for unmatched paths. Analytics reporting is
-server-side and does nothing unless `GA4_MEASUREMENT_ID` is set in the environment.
+Cloudflare Workers: build with `pnpm build`; the adapter emits `dist/server/wrangler.json` (worker entry plus the
+static assets in `dist/client`, including post assets and the `_headers` caching rules). Analytics counting is
+server-side (GoatCounter, fire-and-forget from middleware) and needs no configuration.
 
 ## Notes
 
 - The chart SVGs (`/charts/rps-local`, `/charts/latency-edge`, …) and the RSS feed (`/rss-feed`) are rendered on demand
   from the data and content committed in the repository.
-- Post assets respond with a SHA-1 `ETag`, honour `If-None-Match` with `304`, and switch to immutable caching when a
-  `?__frsh_c=` cache-busting parameter is present.
+- Post assets are served by the Workers asset layer with `Cache-Control: public, max-age=0, must-revalidate` and
+  platform-native `ETag`/`304` handling (`public/_headers`). The old `?__frsh_c=` immutable-caching variant is gone —
+  header rules cannot match query strings.
