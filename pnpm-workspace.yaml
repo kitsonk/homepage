@@ -1,0 +1,11 @@
+# The Cloudflare adapter and wrangler ship together; both were published in the
+# last 24h, so the default minimumReleaseAge guard rejects the lockfile. Scope
+# the exemption to those packages instead of disabling the guard repo-wide.
+minimumReleaseAgeExclude:
+  - "@astrojs/cloudflare"
+  - wrangler
+  - miniflare
+
+allowBuilds:
+  esbuild: true
+  workerd: true

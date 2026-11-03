@@ -1,4 +1,5 @@
 import { extract } from "@std/front-matter/any";
+import { readdir, readFile } from "node:fs/promises";
 import { readEstimate } from "./readEstimate.ts";
 import postsJson from "../posts.json" with { type: "json" };
 
@@ -33,10 +34,10 @@ export const posts: Post[] = postsJson.map(({ date, tags, ...rest }) => ({
 }));
 
 export async function buildPosts(): Promise<Post[]> {
-  const files = Deno.readDir("./posts");
-  const promises = [];
-  for await (const file of files) {
-    if (file.isDirectory) {
+  const files = await readdir("./posts", { withFileTypes: true });
+  const promises: Promise<Post>[] = [];
+  for (const file of files) {
+    if (file.isDirectory()) {
       promises.push(getPost(file.name, true));
     } else if (file.name.endsWith(".md")) {
       promises.push(getPost(file.name.replace(".md", "")));
@@ -48,7 +49,7 @@ export async function buildPosts(): Promise<Post[]> {
 
 async function getPost(id: string, isDir = false): Promise<Post> {
   const path = isDir ? `./posts/${id}/index.md` : `./posts/${id}.md`;
-  const str = await Deno.readTextFile(path);
+  const str = await readFile(path, "utf8");
   const {
     attrs: { title, description, date, author, hero = "", tags, summary },
     body: content,
@@ -65,11 +66,4 @@ async function getPost(id: string, isDir = false): Promise<Post> {
     readEstimate: readEstimate(content),
     isDir,
   };
-}
-
-export async function getPostContent({ id, isDir }: Post): Promise<string> {
-  const path = isDir ? `./posts/${id}/index.md` : `./posts/${id}.md`;
-  const str = await Deno.readTextFile(path);
-  const { body } = extract(str);
-  return body;
 }

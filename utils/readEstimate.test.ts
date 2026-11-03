@@ -1,9 +1,7 @@
-import { assertEquals } from "@std/assert/equals";
+import { expect, test } from "vitest";
 import { readEstimate } from "./readEstimate.ts";
 
-Deno.test({
-  name: "readEstimate - basic",
-  fn() {
+test("readEstimate - basic", () => {
     const actual = readEstimate(
       `Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
         euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
@@ -64,6 +62,5 @@ Deno.test({
         grammatica, pronunciation e plu sommun paroles.
         `,
     );
-    assertEquals(actual, 3);
-  },
+  expect(actual).toBe(3);
 });
