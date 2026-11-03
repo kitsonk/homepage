@@ -2,6 +2,7 @@
   "name": "homepage",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@12.16.1",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build && node utils/copy_post_assets.ts",
