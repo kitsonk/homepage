@@ -75,7 +75,7 @@
       "node"
     ],
     "summary": "JSR is a new package repository being introduced by the team at Deno that aims to solve many problems in the Javascript eco-system. I was invited to take part in very early access to it and want to share my impressions.\n",
-    "readEstimate": 15,
+    "readEstimate": 14,
     "isDir": true
   },
   {
@@ -132,7 +132,7 @@
       "CDNs"
     ],
     "summary": "Deno and some CDNs offer an easy and powerful way to develop.",
-    "readEstimate": 10,
+    "readEstimate": 9,
     "isDir": true
   },
   {
@@ -187,7 +187,7 @@
       "deno"
     ],
     "summary": "My early explorations into Deno.",
-    "readEstimate": 5,
+    "readEstimate": 4,
     "isDir": false
   },
   {
@@ -468,7 +468,7 @@
       "dojo"
     ],
     "summary": "With the release of Dojo 1.8, I thought I might share my thoughts on criticisms of Dojo and if I think they are valid.  So I am going to try to take an honest look at those criticisms and give my opinion of where the community is at.\n",
-    "readEstimate": 6,
+    "readEstimate": 5,
     "isDir": false
   },
   {
@@ -513,7 +513,7 @@
       "dojo"
     ],
     "summary": "It seems that my dojo/request article got a few views, so I figured I would take a moment to talk about dojo/promise, another major enhancement in the core of the Dojo Toolkit in 1.8. Mark Wubben rewrote the promise API while keeping it compatible with the “modern” Dojo promise API.\n",
-    "readEstimate": 3,
+    "readEstimate": 2,
     "isDir": false
   },
   {
@@ -1310,7 +1310,7 @@
     },
     "href": "/posts/depressed-homosexual-tendencies",
     "summary": "I was a bit frustrated last week. I had purchased tickets long ago to see Rufus Wainwright in concert.\n",
-    "readEstimate": 1,
+    "readEstimate": 0,
     "isDir": false
   },
   {

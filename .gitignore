@@ -12,3 +12,5 @@ dist/
 node_modules/
 vendor/
 
+# Wrangler local state
+.wrangler/
