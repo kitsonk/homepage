@@ -6,8 +6,8 @@ no hydration, no signals — so every interactive concern is a plain hyperlink o
 
 ## Project Overview
 
-- 8 HTML pages, 6 chart-SVG endpoints, an RSS feed, a post-asset endpoint, plus GA4 server-side pageview reporting in
-  middleware.
+- 8 HTML pages, 6 chart-SVG endpoints (ApexCharts SSR → static SVG), an RSS feed, a post-asset endpoint, plus GA4
+  server-side pageview reporting in middleware.
 - Content is committed Markdown under `posts/`, pre-processed into a committed `posts.json` index.
 - Rendering is per-request (SSR). Nothing is prerendered; nothing is cached in memory.
 - `README.md` is stale (Fresh-era, documents only `deno task dev`). Treat this file as the source of truth for tooling
@@ -43,18 +43,18 @@ endpoints: src/pages/**/*.ts export `const GET: APIRoute` and return a Response 
 
 ## Key Directories
 
-| Path                    | Purpose                                                                                                                                                                            |
-| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `src/pages/`            | Routes. `.astro` = page, `.ts` = endpoint (`export const GET: APIRoute`). File path maps to URL; `output: "server"` means no `getStaticPaths`.                                     |
-| `src/components/`       | Presentational `.astro` components (`PostCard`, `PostArticle`, `Recent`, `Project`, `Role`, `ContactCard`, `NotFound`, `Footer`).                                                  |
-| `src/layouts/App.astro` | Single HTML shell + all `<head>` meta.                                                                                                                                             |
-| `src/lib/`              | Shared TypeScript-only modules: `meta.ts` (`MetaProps`), `rss.ts` (`buildRss`, `escapeXml`, `RssPost`), plus CJS `createRequire` shims (`prismjs.ts`, `sanitizeHtml.ts`, `he.ts`). |
-| `src/styles/global.css` | Only stylesheet: Tailwind v4 entry (`@import "tailwindcss"`, `@theme` tokens, `.markdown`/`.highlight` rules). Imported only by the layout.                                        |
-| `utils/`                | Content/domain logic: `posts.ts` (types, `posts`, `buildPosts`, `getPostContent`), `build_posts.ts` (`build:posts` task), `readEstimate.ts` + its test.                            |
-| `posts/`                | Markdown source of truth plus per-post assets.                                                                                                                                     |
-| `public/`               | Static assets served verbatim at `/` (`images/**`, `favicon.ico`, `logo.svg`, `rss-logo.png`).                                                                                     |
-| `dist/`                 | Build output (gitignored): `dist/server/entry.mjs` (Deno Deploy entry), `dist/server/chunks/**`, `dist/client/_astro/*.css` + copied `public/`.                                    |
-| `.vscode/`              | Deno extension config, default formatter, Tailwind CSS custom data.                                                                                                                |
+| Path                    | Purpose                                                                                                                                                                                                                                             |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `src/pages/`            | Routes. `.astro` = page, `.ts` = endpoint (`export const GET: APIRoute`). File path maps to URL; `output: "server"` means no `getStaticPaths`.                                                                                                      |
+| `src/components/`       | Presentational `.astro` components (`PostCard`, `PostArticle`, `Recent`, `Project`, `Role`, `ContactCard`, `NotFound`, `Footer`).                                                                                                                   |
+| `src/layouts/App.astro` | Single HTML shell + all `<head>` meta.                                                                                                                                                                                                              |
+| `src/lib/`              | Shared TypeScript-only modules: `meta.ts` (`MetaProps`), `rss.ts` (`buildRss`, `escapeXml`, `RssPost`), plus CJS `createRequire` shims (`prismjs.ts`, `sanitizeHtml.ts`, `he.ts`).                                                                  |
+| `src/styles/global.css` | Only stylesheet: Tailwind v4 entry (`@import "tailwindcss"`, `@theme` tokens, `.markdown`/`.highlight` rules). Imported only by the layout.                                                                                                         |
+| `utils/`                | Content/domain logic: `posts.ts` (types, `posts`, `buildPosts`, `getPostContent`), `build_posts.ts` (`build:posts` task), `readEstimate.ts` + its test, `charts/` (ApexCharts SSR bridge + shared chart options, used only by the chart endpoints). |
+| `posts/`                | Markdown source of truth plus per-post assets.                                                                                                                                                                                                      |
+| `public/`               | Static assets served verbatim at `/` (`images/**`, `favicon.ico`, `logo.svg`, `rss-logo.png`).                                                                                                                                                      |
+| `dist/`                 | Build output (gitignored): `dist/server/entry.mjs` (Deno Deploy entry), `dist/server/chunks/**`, `dist/client/_astro/*.css` + copied `public/`.                                                                                                     |
+| `.vscode/`              | Deno extension config, default formatter, Tailwind CSS custom data.                                                                                                                                                                                 |
 
 ## Development Commands
 
@@ -124,7 +124,17 @@ deno fmt             # apply formatting (120 cols, .astro via unstable fmt-compo
   (`resolve.noExternal: true` only when `command === "build"`; bare externals are unresolvable at runtime because there
   is no `package.json`), and the `sanitize-html`/`prismjs`/`he` aliases to the shims in `src/lib/`. Removing any of
   these breaks dev SSR or the production build.
-- `@deno/fresh_charts` must stay remapped to `render.ts`/`utils.ts`; the package root pulls in a Preact `Chart.tsx`.
+- Chart endpoints (`src/pages/charts/*.ts`) render through `utils/charts/ssr.ts`, the only module allowed to import
+  `apexcharts` (`apexcharts/ssr` → `renderToHTML`). That helper keeps just the `<svg>` element and discards the
+  hydration wrapper and its base64 config, so charts stay client-JavaScript-free. Never import `apexcharts` from an
+  endpoint, and never add `prerender = true` to a chart endpoint: Astro emits prerendered endpoints as extensionless
+  files, and the Deno adapter serves them through `serveFile`, which sends **no** `Content-Type` (verified on
+  `@deno/astro-adapter` 0.6.0 — `app.match()` skips prerendered routes by default). `<img>` SVG rendering then depends
+  on sniffing; the endpoints must stay server-rendered to return `image/svg+xml; charset=utf-8`.
+- Two ApexCharts quirks the chart module works around: `BODY_TYPEFACE` must stay **single**-quoted, because `fontFamily`
+  is interpolated unescaped into double-quoted SVG attributes (double quotes yield `font-family=""Mali"…"` and an
+  unparseable SVG); and SSR serialises only the `<svg>` — the legend is HTML, so `legend` options never appear in the
+  output.
 - `src/components/PostArticle.astro` keeps seven `prismjs/components/prism-*.js` side-effect imports (drop one and that
   language stops highlighting) and `render(content, { allowIframes: true })`.
 - `App.astro` head order/defaults are intentional and mirrored from the previous site.
@@ -136,26 +146,27 @@ deno fmt             # apply formatting (120 cols, .astro via unstable fmt-compo
 
 ## Important Files
 
-| File                                      | Why it matters                                                                                     |
-| ----------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `deno.json`                               | Single source of dependencies (`imports`), tasks, lint/fmt/`unstable`/`exclude`/`compilerOptions`. |
-| `astro.config.ts`                         | SSR output, Deno adapter, Tailwind, Vite resolution workarounds, `@/` alias.                       |
-| `src/middleware.ts`                       | GA4 reporting; keeps one connection object per remote address so sessions stay continuous.         |
-| `src/layouts/App.astro`                   | Document shell and every head tag.                                                                 |
-| `src/lib/meta.ts`                         | `MetaProps` / `NOT_FOUND_META` — change here first when meta changes.                              |
-| `src/pages/posts/[id].astro`              | Dynamic post page + 404 branch.                                                                    |
-| `src/pages/posts/[id]/[...path].ts`       | Asset endpoint: SHA-1 `etag`, `304`, `?__frsh_c=…` → immutable caching.                            |
-| `src/pages/rss-feed.ts`, `src/lib/rss.ts` | RSS endpoint and escaped XML builder (`<generator>Astro</generator>`).                             |
-| `utils/posts.ts`                          | Post types, `posts: Post[]`, `buildPosts()`, `getPostContent()`.                                   |
-| `utils/build_posts.ts`                    | `build:posts` generator for the committed `posts.json`.                                            |
-| `posts.json`                              | Generated, committed content index (86 entries, 2-space indent, newest first).                     |
-| `config.json`                             | Author registry (`authors.kitsonk`).                                                               |
+| File                                      | Why it matters                                                                                       |
+| ----------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `deno.json`                               | Single source of dependencies (`imports`), tasks, lint/fmt/`unstable`/`exclude`/`compilerOptions`.   |
+| `astro.config.ts`                         | SSR output, Deno adapter, Tailwind, Vite resolution workarounds, `@/` alias.                         |
+| `src/middleware.ts`                       | GA4 reporting; keeps one connection object per remote address so sessions stay continuous.           |
+| `src/layouts/App.astro`                   | Document shell and every head tag.                                                                   |
+| `src/lib/meta.ts`                         | `MetaProps` / `NOT_FOUND_META` — change here first when meta changes.                                |
+| `src/pages/posts/[id].astro`              | Dynamic post page + 404 branch.                                                                      |
+| `src/pages/posts/[id]/[...path].ts`       | Asset endpoint: SHA-1 `etag`, `304`, `?__frsh_c=…` → immutable caching.                              |
+| `src/pages/rss-feed.ts`, `src/lib/rss.ts` | RSS endpoint and escaped XML builder (`<generator>Astro</generator>`).                               |
+| `utils/posts.ts`                          | Post types, `posts: Post[]`, `buildPosts()`, `getPostContent()`.                                     |
+| `utils/build_posts.ts`                    | `build:posts` generator for the committed `posts.json`.                                              |
+| `utils/charts/ssr.ts`                     | ApexCharts SSR bridge (`renderToHTML` → bare `<svg>`); the only module that may import `apexcharts`. |
+| `posts.json`                              | Generated, committed content index (86 entries, 2-space indent, newest first).                       |
+| `config.json`                             | Author registry (`authors.kitsonk`).                                                                 |
 
 ## Runtime/Tooling Preferences
 
 - **Deno only.** No `package.json`, no npm/yarn/pnpm, no `node_modules` management by hand — add dependencies to
-  `deno.json` `imports` (`npm:`/`jsr:`/`https:` specifiers; JSR and the `fresh_charts` URL are version-pinned).
-  `nodeModulesDir: "auto"` lets Deno materialise `node_modules/` (gitignored).
+  `deno.json` `imports` (`npm:`/`jsr:` specifiers; JSR specifiers are version-pinned). `nodeModulesDir: "auto"` lets
+  Deno materialise `node_modules/` (gitignored).
 - Runtime: Deno 2.9+ is required (not pinned in the repo — no CI, no `engines`).
 - **Vite is configured only inside `astro.config.ts`** (`vite:` key); there is no `vite.config.ts`. Do not call
   `astro`/`vite` binaries directly — go through `deno task`.
@@ -177,8 +188,9 @@ deno fmt             # apply formatting (120 cols, .astro via unstable fmt-compo
 - **Existing convention:** co-located `<module>.test.ts`, `Deno.test({ name: "<fn> - <case>", fn() {} })`, assertions
   from the `@std/assert/equals` subpath (`assertEquals`). No fake timers, no mocking, no table-driven or `t.step` cases
   in the repo yet — follow the existing single-test style.
-- **Coverage today:** one unit test, `utils/readEstimate.test.ts`. `utils/posts.ts`, `utils/build_posts.ts`,
-  `src/lib/**`, every endpoint, the middleware and all `.astro` rendering are untested by automation.
+- **Coverage today:** two unit tests, `utils/readEstimate.test.ts` and `utils/charts/ssr.test.ts`. `utils/posts.ts`,
+  `utils/build_posts.ts`, `src/lib/**`, every endpoint, the middleware and all `.astro` rendering are untested by
+  automation.
 - **Expectation:** keep the existing test passing and add co-located unit tests for new pure logic in
   `utils/`/`src/lib/`. Do not introduce a test framework. Behaviour of routes, endpoints, RSS, ETag handling and markup
   is verified by smoke runs, not unit tests.
