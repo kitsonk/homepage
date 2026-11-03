@@ -1,2 +1,5 @@
 /posts/*
   Cache-Control: public, max-age=0, must-revalidate
+
+/charts/*
+  Content-Type: image/svg+xml; charset=utf-8

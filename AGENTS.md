@@ -13,9 +13,10 @@ no signals — so every interactive concern is a plain hyperlink or form.
   static output at build time.
 - Content is committed Markdown under `posts/`, pre-processed into a committed
   `posts.json` index.
-- Rendering is per-request (SSR). Nothing is prerendered; nothing is cached in
-  memory. (Prerendering content routes is the documented mitigation if Workers
-  CPU limits bite; chart prerender is a tracked follow-up.)
+- Everything is rendered per-request (SSR) and nothing is cached in memory,
+  with one exception: the six chart endpoints are prerendered at build time
+  (`export const prerender = true`) and served as Workers assets. (Prerendering
+  content routes is the documented mitigation if Workers CPU limits bite.)
 - This repo migrated off Deno (Deno Deploy) in Nov 2026. Deno is gone from the
   toolchain; the only `Deno.` string left is site prose about Oak in
   `src/pages/index.astro`.
@@ -169,15 +170,23 @@ surrounding style by hand.
   build time — never hand-write that rule in `public/_headers`. `/posts/*` is
   `max-age=0, must-revalidate` deliberately: `_headers` cannot match query
   strings, so the old `?__frsh_c=` immutable behaviour is retired (see the
-  migration handoff); ETag/304 come natively from the Workers asset layer. Do
-  not add `/charts/*` rules here — chart MIME is a tracked follow-up card.
+  migration handoff); ETag/304 come natively from the Workers asset layer.
+  `/charts/*` maps `Content-Type: image/svg+xml; charset=utf-8` because Astro
+  writes prerendered endpoint snapshots as extensionless files
+  (`dist/client/charts/<name>`), which the Workers asset layer would otherwise
+  serve without a useful `Content-Type`.
 - Chart endpoints (`src/pages/charts/*.ts`) render through
   `utils/charts/ssr.ts`, the only module allowed to import `apexcharts`
   (`apexcharts/ssr` → `renderToHTML`). That helper keeps just the `<svg>`
   element and discards the hydration wrapper and its base64 config, so charts
-  stay client-JavaScript-free. Never import `apexcharts` from an endpoint. Chart
-  endpoints stay SSR for now (no `prerender = true` — prerender + `_headers`
-  MIME is a tracked follow-up).
+  stay client-JavaScript-free. Never import `apexcharts` from an endpoint.
+  These endpoints carry `export const prerender = true` (build-time snapshots),
+  which is adapter-specific history: on `@deno/astro-adapter` 0.6.0 prerendered
+  endpoint snapshots were served via `serveFile` with no `Content-Type`,
+  breaking `<img>` embeds, so prerender was deferred; on `@astrojs/cloudflare`
+  the same snapshots are Workers assets, and the `/charts/*` `_headers` rule
+  restores the MIME — `export const prerender = true` is the sanctioned pattern
+  for these endpoints.
 - Two ApexCharts quirks the chart module works around: `BODY_TYPEFACE` must stay
   **single**-quoted, because `fontFamily` is interpolated unescaped into
   double-quoted SVG attributes (double quotes yield `font-family=""Mali"…"` and
@@ -217,7 +226,7 @@ surrounding style by hand.
 | `utils/posts.ts`                          | Post types, `posts: Post[]`, `buildPosts()` (build-time, node:fs).                                                               |
 | `utils/build_posts.ts`                    | `build:posts` generator for the committed `posts.json` (ICU-sensitive — see traps).                                              |
 | `utils/copy_post_assets.ts`               | Post-asset copy into `dist/client/posts/<id>/` (part of `pnpm build`).                                                           |
-| `public/_headers`                         | `/posts/*` caching rule (`max-age=0, must-revalidate`).                                                                          |
+| `public/_headers`                         | `/posts/*` caching; `/charts/*` SVG MIME rules.                                                                                  |
 | `utils/charts/ssr.ts`                     | ApexCharts SSR bridge (`renderToHTML` → bare `<svg>`); the only module that may import `apexcharts`.                             |
 | `posts.json`                              | Generated, committed content index (86 entries, 2-space indent, newest first).                                                   |
 | `config.json`                             | Author registry (`authors.kitsonk`).                                                                                             |

@@ -2,6 +2,8 @@ import type { APIRoute } from "astro";
 import { barChartOptions } from "@/utils/charts/options.ts";
 import { renderChartResponse } from "@/utils/charts/ssr.ts";
 
+export const prerender = true;
+
 export const GET: APIRoute = () =>
   renderChartResponse(
     barChartOptions({
