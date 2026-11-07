@@ -77,6 +77,12 @@ const showImageAlt = hasImage ? Boolean(alt) : true;
     <meta name="keywords" content={keywords.join(", ")} />
 
     {canonical ? <link rel="canonical" href={`https://kitsonkelly.com${canonical}`} /> : null}
+
+    <script
+      data-goatcounter="https://kitsonk.goatcounter.com/count"
+      async
+      src="https://gc.zgo.at/count.js"
+      is:inline></script>
   </head>
   <body class="font-body bg-white text-black dark:bg-black dark:text-white">
     <slot />

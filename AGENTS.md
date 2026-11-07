@@ -3,13 +3,15 @@
 Personal homepage of Kitson P. Kelly (kitsonkelly.com): a server-rendered
 blog/CV site built with **Astro 7 SSR on Node 26 + pnpm**, targeted at
 **Cloudflare Workers** via `@astrojs/cloudflare`. Strictly Markdown +
-front-matter. There is **no client-side JavaScript** — no islands, no hydration,
-no signals — so every interactive concern is a plain hyperlink or form.
+front-matter. There is **no first-party client-side JavaScript** — no islands,
+no hydration, no signals — the only script is GoatCounter's `count.js` analytics
+embed, so every interactive concern is a plain hyperlink or form.
 
 ## Project Overview
 
 - 8 HTML pages, 6 chart-SVG endpoints (ApexCharts SSR → static SVG), an RSS
-  feed, plus GoatCounter hit counting in middleware. Post assets are copied to
+  feed, plus GoatCounter hit counting via the client-side `count.js` embed in
+  `src/layouts/App.astro`. Post assets are copied to
   static output at build time.
 - Content is committed Markdown under `posts/`, pre-processed into a committed
   `posts.json` index.
@@ -24,7 +26,7 @@ no signals — so every interactive concern is a plain hyperlink or form.
 ## Architecture & Data Flow
 
 ```
-request → src/middleware.ts (GoatCounter count, fire-and-forget via ctx.waitUntil) → src/layouts/App.astro → src/pages/*.astro
+request → src/layouts/App.astro (emits <head>, incl. the GoatCounter `count.js` embed) → src/pages/*.astro
                                                      ↑ `<App meta={meta}>…</App>` wraps every page
 endpoints: src/pages/**/*.ts export `const GET: APIRoute` and return a Response (no layout)
 ```
@@ -139,8 +141,9 @@ surrounding style by hand.
 
 - Missing post → 404 status + `<NotFound />` (no throw). Unmatched URL →
   `src/pages/404.astro`.
-- The middleware never blocks or fails a response: the GoatCounter fetch is
-  fire-and-forget (`.catch(() => undefined)`), and it must never be awaited.
+- The GoatCounter `count.js` embed is async third-party code: if it fails to
+  load or send (ad-blocked, offline), page delivery must be completely
+  unaffected — never gate rendering on it.
 - Never leak user text into the RSS XML — every node/attribute goes through
   `escapeXml`.
 
@@ -156,16 +159,15 @@ surrounding style by hand.
   builds) churns `readEstimate` values, because ICU splits URLs into words
   differently. Regenerate only with the pinned Node 26 toolchain; the committed
   file is Node-26-generated.
-- Middleware analytics (GoatCounter): the count fetch must be wrapped in
-  `ctx.waitUntil` via `Astro.locals.cfContext` — bare `queueMicrotask`/floating
-  promises race isolate teardown and silently drop counts. `locals.runtime.ctx`
-  **throws** on the installed adapter ("removed in Astro v6") — don't reach for
-  it. Skip counting when `context.isPrerendered` (build passes must emit no
-  hits) and for non-HTML responses.
+- Analytics (GoatCounter) is client-side by design: the standard `count.js`
+  embed in `src/layouts/App.astro` natively sends `p` (path), `t` (title),
+  `r` (`document.referrer`) and `s` (`window.screen.width`); GoatCounter derives
+  language from the hit's `Accept-Language`. Never reintroduce a server-side
+  count fetch alongside it and never call `goatcounter.count()` manually — both
+  double-count.
 - Env plumbing differs per runtime: Vite blanks `process.env` in `astro dev`
-  (read `import.meta.env`), and wrangler exposes no shell env to the worker (the
-  `start` script passes `--var GOATCOUNTER_COUNT_URL:…`; the seam defaults to
-  `https://kitsonk.goatcounter.com/count`).
+  (read `import.meta.env`), and wrangler exposes no shell env to the worker.
+  There are no env seams in the app — don't add one just to configure analytics.
 - `_headers`: the adapter **prepends** its own `/_astro/*` immutable rule at
   build time — never hand-write that rule in `public/_headers`. `/posts/*` is
   `max-age=0, must-revalidate` deliberately: `_headers` cannot match query
@@ -217,8 +219,7 @@ surrounding style by hand.
 | `package.json` / `pnpm-workspace.yaml`    | Scripts, dependencies, pnpm 12 policy config. JSR deps arrive via `npx jsr add` (`.npmrc` @jsr scope).                           |
 | `astro.config.ts`                         | SSR output, `@astrojs/cloudflare` adapter (`imageService: "passthrough"`, `session: false`), Tailwind, `@/` alias.               |
 | `wrangler.jsonc`                          | Source-level Wrangler config (name, compat date/flags). The **generated** `dist/server/wrangler.json` is what `pnpm start` uses. |
-| `src/middleware.ts`                       | GoatCounter counting (documents only, `ctx.waitUntil`, `isPrerendered` guard).                                                   |
-| `src/layouts/App.astro`                   | Document shell and every head tag.                                                                                               |
+| `src/layouts/App.astro`                   | Document shell and every head tag, plus the GoatCounter `count.js` embed.                                                        |
 | `src/lib/meta.ts`                         | `MetaProps` / `NOT_FOUND_META` — change here first when meta changes.                                                            |
 | `src/lib/postContent.ts`                  | Bundled post markdown (`import.meta.glob ?raw`) + `getPostContent()`.                                                            |
 | `src/pages/posts/[id].astro`              | Dynamic post page + 404 branch.                                                                                                  |
@@ -239,9 +240,8 @@ surrounding style by hand.
 - **Vite is configured only inside `astro.config.ts`** (`vite:` key); there is
   no `vite.config.ts`. Do not call `astro`/`vite` binaries directly — go through
   `pnpm` scripts.
-- `.env` is optional. The only env seam is `GOATCOUNTER_COUNT_URL` (defaults to
-  the production count URL; used to point counting at a local listener during
-  verification).
+- `.env` is optional. There are no env seams — the app reads no environment
+  configuration (analytics ships as the static `count.js` embed).
 - Deployment: Cloudflare Workers. Build with `pnpm build`; the adapter generates
   `dist/server/wrangler.json` (worker entry + `assets.directory: ../client`,
   `nodejs_compat`, asset fallback). Deploy is handled by a separate
@@ -258,7 +258,7 @@ surrounding style by hand.
   `utils/charts/ssr.test.ts`.
 - **Coverage today:** those two unit tests. `utils/posts.ts`,
   `utils/build_posts.ts`, `utils/copy_post_assets.ts`, `src/lib/**`, every
-  endpoint, the middleware and all `.astro` rendering are untested by
+  endpoint and all `.astro` rendering are untested by
   automation.
 - **Expectation:** keep the existing tests passing and add co-located unit tests
   for new pure logic in `utils/`/`src/lib/`. Behaviour of routes, endpoints,

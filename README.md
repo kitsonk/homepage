@@ -3,13 +3,13 @@
 My homepage on the internet — [kitsonkelly.com](https://kitsonkelly.com). A server-rendered blog, CV and projects page
 built with [Astro](https://astro.build/) 7 in SSR mode on Node 26 + pnpm, targeted at
 [Cloudflare Workers](https://workers.cloudflare.com/) via `@astrojs/cloudflare`. Posts are Markdown, charts are
-rendered server-side as SVG, and there is no client-side JavaScript.
+rendered server-side as SVG, and there is no first-party client-side JavaScript — the only script is GoatCounter's
+`count.js` analytics embed.
 
 ## Requirements
 
 - Node 26 (the toolchain relies on native TypeScript execution for `utils/*.ts`) and [pnpm](https://pnpm.io/) 12.
-- No `.env` is needed for local work. `GOATCOUNTER_COUNT_URL` optionally redirects analytics counting to a local
-  listener; it defaults to the production GoatCounter endpoint.
+- No `.env` is needed for local work.
 
 ## Commands
 
@@ -80,7 +80,7 @@ astro.config.ts   Astro/Cloudflare adapter and Vite configuration
 
 Cloudflare Workers: build with `pnpm build`; the adapter emits `dist/server/wrangler.json` (worker entry plus the
 static assets in `dist/client`, including post assets and the `_headers` caching rules). Analytics counting is
-server-side (GoatCounter, fire-and-forget from middleware) and needs no configuration.
+client-side (the standard GoatCounter `count.js` embed in `src/layouts/App.astro`) and needs no configuration.
 
 ## Notes
 

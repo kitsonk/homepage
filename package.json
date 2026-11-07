@@ -7,7 +7,7 @@
     "dev": "astro dev",
     "build": "astro build && node utils/copy_post_assets.ts",
     "build:posts": "node utils/build_posts.ts",
-    "start": "wrangler dev -c dist/server/wrangler.json --var GOATCOUNTER_COUNT_URL:${GOATCOUNTER_COUNT_URL:-https://kitsonk.goatcounter.com/count}",
+    "start": "wrangler dev -c dist/server/wrangler.json",
     "test": "vitest run"
   },
   "dependencies": {
